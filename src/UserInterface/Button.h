@@ -12,23 +12,22 @@
 #include <string>
 
 class Button {
-    private:
-        SDL_Rect* clickRegion {};
-        SDL_Rect* buttonRect {};
+   private:
+    SDL_Rect* clickRegion{};
+    SDL_Rect* buttonRect{};
 
-        std::string imgPath = "../resources/StartButten.png";
-        SDL_Texture* buttonTexture {};
+    std::string imgPath = "../resources/StartButten.png";
+    SDL_Texture* buttonTexture{};
 
-        bool clicked = false;
-        bool clickStarted = false;
+    bool clicked = false;
+    bool clickStarted = false;
 
-    public:
-        Button();
+   public:
+    Button(std::string imgPath, SDL_Rect dims);
 
-        void Display();
-        void CheckClick();
-        [[nodiscard]] bool IsClicked() const { return clicked; }
+    void Display();
+    void CheckClick();
+    [[nodiscard]] bool IsClicked() const { return clicked; }
 };
 
-
-#endif //HACK_A_DUCK_BUTTON_H
+#endif  // HACK_A_DUCK_BUTTON_H
