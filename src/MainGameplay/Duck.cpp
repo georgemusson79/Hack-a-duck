@@ -15,6 +15,10 @@ Duck::Duck() {
 }
 
 void Duck::Display() {
+//    SDL_SetRenderDrawColor(window->GetRenderer(), 0, 0, 255, 255);
+//    SDL_RenderFillRect(window->GetRenderer(), duckRect);
+//    SDL_SetRenderDrawColor(window->GetRenderer(), 0, 0, 0, 255);
+
     SDL_RenderCopy(window->GetRenderer(), duckTexture, nullptr, duckRect);
 }
 

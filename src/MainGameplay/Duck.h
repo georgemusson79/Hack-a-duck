@@ -42,7 +42,9 @@ inline std::vector<std::unique_ptr<Duck>> playerDucks;
 
 class BreadCrubProjectile {
     private:
-        int a;
+        std::string imgPath = "../resources/chick.png";
+        SDL_Texture* breadTexture;
+        SDL_Rect* breadRect;
 
     public:
 

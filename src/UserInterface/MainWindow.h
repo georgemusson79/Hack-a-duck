@@ -6,24 +6,25 @@
 #define HACK_A_DUCK_MAINWINDOW_H
 
 #include <SDL.h>
-
 #include <memory>
 #include <unordered_map>
 #include <vector>
-class Texture;
+
+#include "Texture.h"
+
 class MainWindow {
-   private:
-    SDL_Window* window{};
-    void renderTextures();
-    std::unordered_map<std::string, Texture> textures;
+    private:
+        SDL_Window* window{};
+        void renderTextures();
+        std::unordered_map<std::string, Texture> textures;
 
-   public:
-    MainWindow();
-    void Display();
-    SDL_Renderer* renderer{};
+    public:
+        MainWindow();
+        void Display();
+        SDL_Renderer* renderer{};
 
-    [[nodiscard]] SDL_Window* GetWindow() const { return window; }
-    [[nodiscard]] SDL_Renderer* GetRenderer() const { return renderer; }
+        [[nodiscard]] SDL_Window* GetWindow() const { return window; }
+        [[nodiscard]] SDL_Renderer* GetRenderer() const { return renderer; }
 };
 
 inline std::unique_ptr<MainWindow> window;
