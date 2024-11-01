@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Hack_a_duck.dir\\src\\main.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\main.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/main.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainWindow.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\MainWindow.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/MainWindow.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/MainWindow.cpp.obj"
+}
+]
