@@ -2,4 +2,4 @@ class GameplayManager {
    public:
 };
 
-class EnemyPath
+class EnemyPath;

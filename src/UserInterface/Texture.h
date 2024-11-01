@@ -1,10 +1,15 @@
+
+#ifndef TEXTUREHEADER_H
+#define TEXTUREHEADER_H
+
+
 #include <SDL.h>
 #include <SDL_image.h>
 
 #include <iostream>
 
 #include "MainWindow.h"
-#include "Vector2.h"
+#include "../MainGameplay/Vector2.h"
 
 class Texture {
    protected:
@@ -65,3 +70,5 @@ class Texture {
         this->deleteTexture();
     }
 };
+
+#endif

@@ -3,8 +3,8 @@
 //
 
 #include "Duck.h"
-#include "../UserInterface/MainWindow.h"
 #include "../UserInterface/Mouse.h"
+#include "../UserInterface/MainWindow.h"
 
 Duck::Duck() {
     duckRect = new SDL_Rect{150,150,50,50};
@@ -20,6 +20,14 @@ void Duck::Display() {
 //    SDL_SetRenderDrawColor(window->GetRenderer(), 0, 0, 0, 255);
 
     SDL_RenderCopy(window->GetRenderer(), duckTexture, nullptr, duckRect);
+}
+
+
+// determine if a cat position is within duck range, and lock on to it
+void Duck::FindTarget() {
+//    for (const auto& cat : cats) {
+//
+//    }
 }
 
 Duck* Duck::DuckAtMouse(float _mouseRadius) {

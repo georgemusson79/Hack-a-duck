@@ -12,6 +12,6 @@ class Vector2 {
         this->x = x;
         this->y = y;
     }
-}
+};
 
 #endif /* EB8F59A9_5045_40A5_B52E_488E8E3ED531 */
