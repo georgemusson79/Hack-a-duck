@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj.d"
   "CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj"
   "CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj.d"
+  "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj"
+  "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj.d"
   "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj"
   "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj.d"
   "Hack_a_duck.exe"

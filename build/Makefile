@@ -176,6 +176,30 @@ src/User_Interface/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.s
 .PHONY : src/User_Interface/MainWindow.cpp.s
 
+src/User_Interface/Mouse.obj: src/User_Interface/Mouse.cpp.obj
+.PHONY : src/User_Interface/Mouse.obj
+
+# target to build an object file
+src/User_Interface/Mouse.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj
+.PHONY : src/User_Interface/Mouse.cpp.obj
+
+src/User_Interface/Mouse.i: src/User_Interface/Mouse.cpp.i
+.PHONY : src/User_Interface/Mouse.i
+
+# target to preprocess a source file
+src/User_Interface/Mouse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.i
+.PHONY : src/User_Interface/Mouse.cpp.i
+
+src/User_Interface/Mouse.s: src/User_Interface/Mouse.cpp.s
+.PHONY : src/User_Interface/Mouse.s
+
+# target to generate assembly for a file
+src/User_Interface/Mouse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.s
+.PHONY : src/User_Interface/Mouse.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -215,6 +239,9 @@ help:
 	@echo ... src/User_Interface/MainWindow.obj
 	@echo ... src/User_Interface/MainWindow.i
 	@echo ... src/User_Interface/MainWindow.s
+	@echo ... src/User_Interface/Mouse.obj
+	@echo ... src/User_Interface/Mouse.i
+	@echo ... src/User_Interface/Mouse.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

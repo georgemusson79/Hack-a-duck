@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/User Interface/Button.cpp" "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj" "gcc" "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj.d"
   "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/User Interface/MainWindow.cpp" "CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj" "gcc" "CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj.d"
+  "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/User Interface/Mouse.cpp" "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj" "gcc" "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj.d"
   "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/main.cpp" "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj.d"
   )
 
