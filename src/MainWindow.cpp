@@ -2,7 +2,7 @@
 // Created by cew05 on 01/11/2024.
 //
 
-#include "MainWindow.h"
+#include "headers/MainWindow.h"
 
 MainWindow::MainWindow() {
     window = SDL_CreateWindow("Ducks Bread Defence",
@@ -14,5 +14,10 @@ MainWindow::MainWindow() {
                                   SDL_RENDERER_ACCELERATED);
 
     SDL_SetWindowPosition(window, 50, 50);
+}
+
+void MainWindow::Display() {
+    SDL_RenderPresent(renderer);
+    SDL_RenderClear(renderer);
 }
 

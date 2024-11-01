@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27)
 project(Hack_a_duck)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 set(LIBPATH "C:/Libs/")
 

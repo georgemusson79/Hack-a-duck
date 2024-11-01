@@ -8,10 +8,9 @@
 #include "MainWindow.h"
 
 int main(int argc, char** argv) {
-    MainWindow* w = new MainWindow();
+    window = std::make_unique<MainWindow>();
 
     bool running = true;
-
     while (running) {
 
         SDL_Event e;
@@ -23,8 +22,7 @@ int main(int argc, char** argv) {
             }
         }
 
-        SDL_RenderPresent(w->GetRenderer());
-        SDL_RenderClear(w->GetRenderer());
+        window->Display();
 
 
     }
