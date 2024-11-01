@@ -16,7 +16,7 @@ class Menu {
 
         [[nodiscard]] SDL_Window* GetWindow() const { return window; }
         [[nodiscard]] SDL_Renderer* GetRenderer() const { return renderer; }
-}
+};
 
 inline std::unique_ptr<Menu> window;
 

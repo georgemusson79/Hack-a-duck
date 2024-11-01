@@ -13,14 +13,17 @@ include_directories(${PROJECT_NAME}
 
 add_executable(Hack_a_duck
         src/main.cpp
-        "src/UserInterface/MainWindow.h"
-        "src/UserInterface/MainWindow.cpp"
-        "src/UserInterface/Button.h"
-        "src/UserInterface/Button.cpp"
-        "src/UserInterface/Mouse.h"
-        "src/UserInterface/Mouse.cpp"
+        src/UserInterface/MainWindow.h
+        src/UserInterface/MainWindow.cpp
+        src/UserInterface/Button.h
+        src/UserInterface/Button.cpp
+        src/UserInterface/Mouse.h
+        src/UserInterface/Mouse.cpp
         src/MainGameplay/Duck.h
-        src/MainGameplay/Duck.cpp)
+        src/MainGameplay/Duck.cpp
+        src/UserInterface/Menu.cpp
+        src/UserInterface/Menu.h
+        src/UserInterface/Menu.h)
 
 target_link_libraries(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"
