@@ -5,7 +5,7 @@
 #define SDL_MAIN_HANDLED
 
 #include <iostream>
-#include "MainWindow.h"
+#include "headers/MainWindow.h"
 
 int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();

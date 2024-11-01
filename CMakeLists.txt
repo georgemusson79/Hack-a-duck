@@ -13,7 +13,7 @@ include_directories(${PROJECT_NAME}
 
 add_executable(Hack_a_duck
         src/main.cpp
-        src/MainWindow.h
+        src/headers/MainWindow.h
         src/MainWindow.cpp)
 
 target_link_libraries(${PROJECT_NAME}
