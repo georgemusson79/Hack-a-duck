@@ -7,19 +7,25 @@
 class GenericCat {
    protected:
     Texture t;
-    Path p;
+    int PathWidth = 1000 / 20;
 
    public:
     int health = 100;
+    int speed = 1;
+    Path currentPath;
 
     void hurt(int dmg) {
+    }
+
+    void moveToNextPath() {
+        currentPath
     }
 
     void die() {
     }
 
     void dealDmgToPlayer() {
-        }
+    }
 
     void setRotation(double rot) {
         this->t.rotation = rot;

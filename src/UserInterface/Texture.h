@@ -4,14 +4,14 @@
 #include <iostream>
 
 #include "MainWindow.h"
+#include "Vector2.h"
 
 class Texture {
-    protected:
-        SDL_Texture* texture = nullptr;
-        std::string path;
+   protected:
+    SDL_Texture* texture = nullptr;
+    std::string path;
 
-
-    public:
+   public:
     int x;
     int y;
     int w;
@@ -23,6 +23,10 @@ class Texture {
     double rotation = 0;
     void deleteTexture() {
         SDL_DestroyTexture(texture);
+    }
+
+    Vector2 getCenter() {
+        return Vector2(this->x + (this->w / 2), this->y + (this->y / 2));
     }
 
     void setPath(std::string path) {

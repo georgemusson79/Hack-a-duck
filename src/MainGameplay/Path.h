@@ -5,7 +5,7 @@
 
 class Path {
     Vector2 currentTilePos;
-    Path nextTile;
+    Path* nextTile;
     bool isLastTile;
     Path();
 }
