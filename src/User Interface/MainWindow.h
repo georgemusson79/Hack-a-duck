@@ -16,12 +16,12 @@ class MainWindow {
     public:
         MainWindow();
 
-
+        void Display();
 
         [[nodiscard]] SDL_Window* GetWindow() const { return window; }
         [[nodiscard]] SDL_Renderer* GetRenderer() const { return renderer; }
-
 };
 
+inline std::unique_ptr<MainWindow> window;
 
 #endif //HACK_A_DUCK_MAINWINDOW_H

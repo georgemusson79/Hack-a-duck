@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27)
 project(Hack_a_duck)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 set(LIBPATH "C:/Libs/")
 
@@ -13,8 +13,10 @@ include_directories(${PROJECT_NAME}
 
 add_executable(Hack_a_duck
         src/main.cpp
-        src/MainWindow.h
-        src/MainWindow.cpp)
+        "src/User Interface/MainWindow.h"
+        "src/User Interface/MainWindow.cpp"
+        "src/User Interface/Button.h"
+        "src/User Interface/Button.cpp")
 
 target_link_libraries(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"

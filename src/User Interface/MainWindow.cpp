@@ -16,3 +16,8 @@ MainWindow::MainWindow() {
     SDL_SetWindowPosition(window, 50, 50);
 }
 
+void MainWindow::Display() {
+    SDL_RenderPresent(renderer);
+    SDL_RenderClear(renderer);
+}
+

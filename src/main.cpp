@@ -6,13 +6,12 @@
 
 #include <iostream>
 
-#include "MainWindow.h"
+#include "User Interface/MainWindow.h"
 
 int main(int argc, char** argv) {
-    MainWindow* w = new MainWindow();
+    window = std::make_unique<MainWindow>();
 
     bool running = true;
-
     while (running) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
