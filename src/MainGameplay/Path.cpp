@@ -6,7 +6,7 @@ Node::Node(Vector2 _nodePos, Node* _lastNode, bool isLast) {
 	nodePos = _nodePos;
 	isFirstNode = (_lastNode == nullptr);
 	isLastNode = isLast; 
-	if (_lastNode != nullptr) _lastNode.nextNode = this;
+	if (_lastNode != nullptr) _lastNode->nextNode = this;
 }
 /**
  * @brief Chooses a valid move from an array of moves. 
@@ -28,5 +28,3 @@ Node::Node(Vector2 _nodePos, Node* _lastNode, bool isLast) {
  *
  * @return int[][] A 2d array of possible moves.
  **/
-// Again, this is here just in case we want to have multiple possible paths.
->>>>>>> 556fbba (Corrected Path.cpp)
