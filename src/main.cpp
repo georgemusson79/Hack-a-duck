@@ -3,13 +3,15 @@
 //
 
 #define SDL_MAIN_HANDLED
-
 #include <iostream>
 
-#include "User Interface/MainWindow.h"
+#include "UserInterface/MainWindow.h"
+#include "UserInterface/Button.h"
 
 int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
+
+    Button b;
 
     bool running = true;
     while (running) {
@@ -22,6 +24,7 @@ int main(int argc, char** argv) {
             }
         }
 
+        b.Display();
         window->Display();
     }
 

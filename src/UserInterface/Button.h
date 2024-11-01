@@ -13,17 +13,19 @@
 
 class Button {
     private:
-        SDL_Rect* clickRegion;
-        SDL_Rect* buttonRect;
+        SDL_Rect* clickRegion {};
+        SDL_Rect* buttonRect {};
 
         std::string imgPath = "../../resources/StartButten.png";
+        SDL_Texture* buttonTexture {};
 
-        bool clicked;
-        bool clickStarted;
+        bool clicked = false;
+        bool clickStarted = false;
 
     public:
         Button();
 
+        void Display();
         void CheckClick();
 };
 
