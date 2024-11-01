@@ -7,20 +7,20 @@
 },
 {
   "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\User_Interface\\MainWindow.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\User Interface\\MainWindow.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/User Interface/MainWindow.cpp",
-  "output": "CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\MainWindow.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\UserInterface\\MainWindow.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/UserInterface/MainWindow.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj"
 },
 {
   "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\User_Interface\\Button.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\User Interface\\Button.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/User Interface/Button.cpp",
-  "output": "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\Button.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\UserInterface\\Button.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/UserInterface/Button.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj"
 },
 {
   "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\User_Interface\\Mouse.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\User Interface\\Mouse.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/User Interface/Mouse.cpp",
-  "output": "CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\Mouse.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\UserInterface\\Mouse.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/UserInterface/Mouse.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj"
 }
 ]

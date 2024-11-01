@@ -86,65 +86,65 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/main.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\main.cpp" -o CMakeFiles\Hack_a_duck.dir\src\main.cpp.s
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj: CMakeFiles/Hack_a_duck.dir/flags.make
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj: CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/User\ Interface/MainWindow.cpp
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj: CMakeFiles/Hack_a_duck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj -MF CMakeFiles\Hack_a_duck.dir\src\User_Interface\MainWindow.cpp.obj.d -o CMakeFiles\Hack_a_duck.dir\src\User_Interface\MainWindow.cpp.obj -c "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\MainWindow.cpp"
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj: CMakeFiles/Hack_a_duck.dir/flags.make
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj: CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/MainWindow.cpp
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj: CMakeFiles/Hack_a_duck.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj -MF CMakeFiles\Hack_a_duck.dir\src\UserInterface\MainWindow.cpp.obj.d -o CMakeFiles\Hack_a_duck.dir\src\UserInterface\MainWindow.cpp.obj -c "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\MainWindow.cpp"
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\MainWindow.cpp" > CMakeFiles\Hack_a_duck.dir\src\User_Interface\MainWindow.cpp.i
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\MainWindow.cpp" > CMakeFiles\Hack_a_duck.dir\src\UserInterface\MainWindow.cpp.i
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\MainWindow.cpp" -o CMakeFiles\Hack_a_duck.dir\src\User_Interface\MainWindow.cpp.s
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\MainWindow.cpp" -o CMakeFiles\Hack_a_duck.dir\src\UserInterface\MainWindow.cpp.s
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj: CMakeFiles/Hack_a_duck.dir/flags.make
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj: CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/User\ Interface/Button.cpp
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj: CMakeFiles/Hack_a_duck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj -MF CMakeFiles\Hack_a_duck.dir\src\User_Interface\Button.cpp.obj.d -o CMakeFiles\Hack_a_duck.dir\src\User_Interface\Button.cpp.obj -c "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\Button.cpp"
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: CMakeFiles/Hack_a_duck.dir/flags.make
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Button.cpp
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: CMakeFiles/Hack_a_duck.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj -MF CMakeFiles\Hack_a_duck.dir\src\UserInterface\Button.cpp.obj.d -o CMakeFiles\Hack_a_duck.dir\src\UserInterface\Button.cpp.obj -c "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\Button.cpp"
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\Button.cpp" > CMakeFiles\Hack_a_duck.dir\src\User_Interface\Button.cpp.i
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\Button.cpp" > CMakeFiles\Hack_a_duck.dir\src\UserInterface\Button.cpp.i
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\Button.cpp" -o CMakeFiles\Hack_a_duck.dir\src\User_Interface\Button.cpp.s
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\Button.cpp" -o CMakeFiles\Hack_a_duck.dir\src\UserInterface\Button.cpp.s
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj: CMakeFiles/Hack_a_duck.dir/flags.make
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj: CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/User\ Interface/Mouse.cpp
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj: CMakeFiles/Hack_a_duck.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj -MF CMakeFiles\Hack_a_duck.dir\src\User_Interface\Mouse.cpp.obj.d -o CMakeFiles\Hack_a_duck.dir\src\User_Interface\Mouse.cpp.obj -c "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\Mouse.cpp"
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj: CMakeFiles/Hack_a_duck.dir/flags.make
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj: CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Mouse.cpp
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj: CMakeFiles/Hack_a_duck.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj -MF CMakeFiles\Hack_a_duck.dir\src\UserInterface\Mouse.cpp.obj.d -o CMakeFiles\Hack_a_duck.dir\src\UserInterface\Mouse.cpp.obj -c "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\Mouse.cpp"
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\Mouse.cpp" > CMakeFiles\Hack_a_duck.dir\src\User_Interface\Mouse.cpp.i
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\Mouse.cpp" > CMakeFiles\Hack_a_duck.dir\src\UserInterface\Mouse.cpp.i
 
-CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\User Interface\Mouse.cpp" -o CMakeFiles\Hack_a_duck.dir\src\User_Interface\Mouse.cpp.s
+CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\src\UserInterface\Mouse.cpp" -o CMakeFiles\Hack_a_duck.dir\src\UserInterface\Mouse.cpp.s
 
 # Object files for target Hack_a_duck
 Hack_a_duck_OBJECTS = \
 "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj" \
-"CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj" \
-"CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj" \
-"CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj"
+"CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj" \
+"CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj" \
+"CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj"
 
 # External object files for target Hack_a_duck
 Hack_a_duck_EXTERNAL_OBJECTS =
 
 Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj
-Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj
-Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj
-Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/User_Interface/Mouse.cpp.obj
+Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj
+Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj
+Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj
 Hack_a_duck.exe: CMakeFiles/Hack_a_duck.dir/build.make
 Hack_a_duck.exe: C:/Libs/SDL2-2.28.5/lib/x64/SDL2.lib
 Hack_a_duck.exe: C:/Libs/SDL2_image-2.8.2/lib/x64/SDL2_image.lib

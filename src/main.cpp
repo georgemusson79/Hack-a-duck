@@ -5,8 +5,8 @@
 #define SDL_MAIN_HANDLED
 #include <iostream>
 
-#include "UserInterface/MainWindow.h"
 #include "UserInterface/Button.h"
+#include "UserInterface/MainWindow.h"
 
 int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
