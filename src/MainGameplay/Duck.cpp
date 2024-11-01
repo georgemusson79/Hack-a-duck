@@ -25,9 +25,16 @@ void Duck::Display() {
 
 // determine if a cat position is within duck range, and lock on to it
 void Duck::FindTarget() {
-//    for (const auto& cat : cats) {
-//
-//    }
+    for (const auto& cat : cats) {
+        int x = cat->catRect->x - duckRect->x + 25;
+        int y = cat->catRect->y - duckRect->y + 25;
+
+        if (float(x*x) + float(y*y) < radius*radius){
+            target = cat.get();
+            printf("QUACK! TARGET FOUND!\n");
+            return;
+        }
+    }
 }
 
 Duck* Duck::DuckAtMouse(float _mouseRadius) {

@@ -12,6 +12,7 @@
 #include <memory>
 #include <vector>
 
+#include "Cat.h"
 
 class BreadCrumbProjectile;
 
@@ -24,7 +25,7 @@ class Duck {
 
         // projectiles
         std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
-//        GenericCat* target {};
+        GenericCat* target {};
         float radius = 100;
 
         // abilities
