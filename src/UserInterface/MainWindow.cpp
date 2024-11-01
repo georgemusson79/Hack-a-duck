@@ -19,9 +19,3 @@ void MainWindow::Display() {
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
 }
-
-void MainWindow::renderTextures() {
-    for (auto pair : this->textures) {
-        pair.second.render();
-    }
-}

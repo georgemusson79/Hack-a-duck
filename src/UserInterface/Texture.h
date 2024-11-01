@@ -3,11 +3,13 @@
 
 #include <iostream>
 
+#include "MainWindow.h"
+
 class Texture {
    protected:
     SDL_Texture* texture = nullptr;
     std::string path;
-    SDL_Renderer* renderer;
+    MainWindow* window;
 
    public:
     int x;
@@ -25,14 +27,17 @@ class Texture {
     void setPath(std::string path) {
         this->path = path;
         this->deleteTexture();
-        this->texture = IMG_LoadTexture(this->renderer, path.c_str());
+        auto s = IMG_Load(path.c_str());
+        this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+        if (!this->texture) std::cerr << "fucked\n";
     }
 
     std::string getPath() {
         return this->path;
     }
 
-    Texture(SDL_Renderer* renderer, std::string path, int x, int y, int w, int h) {
+    Texture(MainWindow* window, std::string path, int x, int y, int w, int h) {
+        this->window = window;
         this->setPath(path);
         this->x = x;
         this->w = w;
@@ -42,13 +47,14 @@ class Texture {
 
     void render() {
         SDL_Rect dstrect = {x, y, w, h};
-        SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
+        SDL_RenderCopy(this->window->GetRenderer(), this->texture, NULL, NULL);
+        // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
 
     void render(int sx, int sy, int sw, int sh) {
         SDL_Rect dstrect = {x, y, w, h};
         SDL_Rect srcrect = {sx, sy, sw, sh};
-        SDL_RenderCopyEx(renderer, texture, &srcrect, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
+        SDL_RenderCopyEx(this->window->GetRenderer(), texture, &srcrect, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
 
     ~Texture() {
