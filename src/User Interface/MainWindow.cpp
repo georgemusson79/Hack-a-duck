@@ -2,7 +2,7 @@
 // Created by cew05 on 01/11/2024.
 //
 
-#include "headers/MainWindow.h"
+#include "MainWindow.h"
 
 MainWindow::MainWindow() {
     window = SDL_CreateWindow("Ducks Bread Defence",

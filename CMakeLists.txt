@@ -13,10 +13,10 @@ include_directories(${PROJECT_NAME}
 
 add_executable(Hack_a_duck
         src/main.cpp
-        src/headers/MainWindow.h
-        src/MainWindow.cpp
-        src/headers/Button.h
-        src/Button.cpp)
+        "src/User Interface/MainWindow.h"
+        "src/User Interface/MainWindow.cpp"
+        "src/User Interface/Button.h"
+        "src/User Interface/Button.cpp")
 
 target_link_libraries(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"
