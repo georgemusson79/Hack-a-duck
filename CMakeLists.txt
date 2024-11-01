@@ -18,7 +18,9 @@ add_executable(Hack_a_duck
         "src/UserInterface/Button.h"
         "src/UserInterface/Button.cpp"
         "src/UserInterface/Mouse.h"
-        "src/UserInterface/Mouse.cpp")
+        "src/UserInterface/Mouse.cpp"
+        src/MainGameplay/Duck.h
+        src/MainGameplay/Duck.cpp)
 
 target_link_libraries(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"

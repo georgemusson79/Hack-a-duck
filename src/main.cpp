@@ -8,10 +8,13 @@
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Button.h"
 #include "UserInterface/Mouse.h"
+#include "MainGameplay/Duck.h"
 
 int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
+
+    Duck::PlaceDuck();
 
     Button b;
 
