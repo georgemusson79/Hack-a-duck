@@ -9,8 +9,9 @@
 #include <SDL_image.h>
 
 #include <string>
-#include <vector>
 #include <memory>
+#include <vector>
+
 
 class BreadCrumbProjectile;
 
@@ -19,11 +20,12 @@ class Duck {
         // image
         std::string imgPath = "../resources/chick.png";
         SDL_Texture* duckTexture;
-        SDL_Rect* duckRect;
+        SDL_Rect* duckRect = new SDL_Rect{0,0,40,40};
 
         // projectiles
-//        std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
-        float radius = 5;
+        std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
+//        GenericCat* target {};
+        float radius = 100;
 
         // abilities
         std::string displayName {"Basic Bread-Lobbing Duck"};
@@ -41,14 +43,14 @@ class Duck {
 
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
 
-class BreadCrubProjectile {
+class BreadCrumbProjectile {
     private:
         std::string imgPath = "../resources/chick.png";
-        SDL_Texture* breadTexture;
-        SDL_Rect* breadRect;
+        SDL_Texture* breadTexture {};
+        SDL_Rect* breadRect {};
 
     public:
-
+        BreadCrumbProjectile() = default;
 };
 
 #endif //HACK_A_DUCK_DUCK_H

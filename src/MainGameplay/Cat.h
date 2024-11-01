@@ -1,7 +1,7 @@
 #ifndef C2418716_F499_4A05_875C_908D63ED3D84
 #define C2418716_F499_4A05_875C_908D63ED3D84
 
-#include "../MainGameplay/Path.h"
+#include "Path.h"
 #include "../UserInterface/Texture.h"
 
 class GenericCat {
@@ -18,7 +18,7 @@ class GenericCat {
     }
 
     void moveToNextPath() {
-        currentPath
+        currentPath;
     }
 
     void die() {
@@ -41,6 +41,8 @@ class GenericCat {
 
     void update() {
     }
-}
+};
+
+inline std::vector<std::unique_ptr<GenericCat>> cats;
 
 #endif /* C2418716_F499_4A05_875C_908D63ED3D84 */

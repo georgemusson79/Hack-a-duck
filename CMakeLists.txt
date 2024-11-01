@@ -24,7 +24,12 @@ add_executable(Hack_a_duck
         src/UserInterface/Menu.cpp
         src/UserInterface/Menu.h
         src/UserInterface/Menu.h
-        src/UserInterface/Texture.h)
+        src/UserInterface/Texture.h
+        src/MainGameplay/Cat.h
+        src/MainGameplay/MainGameplay.h
+        src/MainGameplay/Vector2.h
+        src/MainGameplay/Path.h
+        src/MainGameplay/Path.cpp)
 
 target_link_libraries(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"
