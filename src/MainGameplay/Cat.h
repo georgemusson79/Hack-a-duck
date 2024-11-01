@@ -6,7 +6,6 @@
 
 class GenericCat {
    protected:
-    SDL_Rect* catRect{};
     std::string imgPath{"../resources/redcat1.png"};
     SDL_Texture* catTexture;
     //            int PathWidth = 1000 / 20;
@@ -18,6 +17,7 @@ class GenericCat {
 
    public:
     GenericCat();
+    SDL_Rect* catRect{};
 
     void hurt(int dmg);
     void moveToNextPath();

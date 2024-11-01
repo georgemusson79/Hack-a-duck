@@ -34,5 +34,11 @@
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Path.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\MainGameplay\\Path.cpp\"",
   "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/MainGameplay/Path.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj"
+},
+{
+  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Cat.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\MainGameplay\\Cat.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/MainGameplay/Cat.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj"
 }
 ]
