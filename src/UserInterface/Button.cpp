@@ -24,6 +24,7 @@ void Button::CheckClick() {
     }
 }
 Button::Button(std::string imgPath, SDL_Rect dims) {
+    this->imgPath = imgPath;
     buttonRect = new SDL_Rect{0, 0, 50, 50};
     clickRegion = buttonRect;
 
