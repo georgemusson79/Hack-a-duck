@@ -50,7 +50,7 @@ class Texture {
     }
 
     void render() {
-        SDL_RenderCopy(window->GetRenderer(), this->texture, NULL, r);
+        SDL_RenderCopyEx(window->GetRenderer(), this->texture, NULL, r, this->rotation, NULL, SDL_FLIP_NONE);
         // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
 
