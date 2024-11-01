@@ -44,7 +44,6 @@ void Duck::FindTarget() {
 
         if (float(x*x) + float(y*y) < radius*radius){
             target = cat.get();
-            printf("QUACK! TARGET FOUND!\n");
             return;
         }
     }
@@ -55,7 +54,7 @@ Duck* Duck::DuckAtMouse(float _mouseRadius) {
         int x = duck->duckRect->x - mouse->GetPosition().first +25;
         int y = duck->duckRect->y - mouse->GetPosition().second +25;
 
-        printf("dist %d %d\n", x, y);
+//        printf("dist %d %d\n", x, y);
 
         if (float(x*x) + float(y*y) < _mouseRadius*_mouseRadius) return duck.get();
     }

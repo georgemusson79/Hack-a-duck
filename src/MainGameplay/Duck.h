@@ -28,7 +28,7 @@ class Duck {
         // projectiles
         std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
         GenericCat* target {};
-        float radius = 100;
+        float radius = 200;
 
         // abilities
         std::string displayName {"Basic Bread-Lobbing Duck"};

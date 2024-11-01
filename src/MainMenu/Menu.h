@@ -22,12 +22,16 @@ class Menu {
         }
     }
     Menu() {
-        this->bg = new Texture("resources/mapback.png", 0, 0, 800, 800);
+        this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
         int w = 200;
         int h = 150;
         int x = 400 - (w / 2);
         int y = 400 - (h / 2);
-        this->buttons.push_back(Button("resources/StartButten.png", {x, y, w, h}, startGame));
+        this->buttons.push_back(Button("../resources/StartButten.png", {x, y, w, h}, startGame));
+    }
+
+    void Display() {
+        bg->render();
     }
 };
 

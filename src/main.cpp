@@ -9,10 +9,16 @@
 #include "MainMenu/Menu.h"
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Mouse.h"
+#include "MainGameplay/Path.h"
 
 int main(int argc, char** argv) {
+    /*
+     * SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP
+     */
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
+    SetupPath();
+
     Menu m;
 
     Duck::PlaceDuck();
@@ -39,6 +45,7 @@ int main(int argc, char** argv) {
         }
         mouse->UpdateActive();
         m.update();
+        m.Display();
 
         /*
          * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS
@@ -62,8 +69,8 @@ int main(int argc, char** argv) {
 
         for (auto& cat : cats) {
             cat->Display();
+            cat->moveToNextPath();
         }
-
 
         window->Display();
     }

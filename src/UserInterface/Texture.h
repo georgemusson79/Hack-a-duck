@@ -32,20 +32,17 @@ class Texture {
         return Vector2(r->x + (r->w / 2), r->y + (r->y / 2));
     }
 
-    void setPath(std::string path) {
-        this->path = path;
-        this->deleteTexture();
-        auto s = IMG_Load(path.c_str());
-        this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        if (!this->texture) std::cerr << "fucked\n";
-    }
-
     std::string getPath() {
         return this->path;
     }
 
     Texture(const std::string& path, int x, int y, int w, int h) {
-        this->setPath(path);
+        this->path = path;
+
+        auto s = IMG_Load(path.c_str());
+        texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+        SDL_FreeSurface(s);
+
         r->x = x;
         r->w = w;
         r->h = h;
