@@ -1,15 +1,10 @@
 #ifndef PATHHEADER_H
 #define PATHHEADER_H
-
 #include "Vector2.h"
 
-
-class Path {
-	Vector2 tilePos;
+// Each Tile is 20x20, making a 50x50 grid.
+class Node {
+	Vector2 nodePos;
+	Node *nextNode
 	bool isLastTile;
-	Path *nextPath;
-
-//	Path();
-};
-
-#endif
+}

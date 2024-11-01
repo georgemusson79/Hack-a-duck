@@ -8,6 +8,7 @@ class GenericCat {
    protected:
     Texture t;
     int PathWidth = 1000 / 20;
+    SDL_Rect rectPos;
 
    public:
     int health = 100;
