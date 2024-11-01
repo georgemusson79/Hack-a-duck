@@ -37,7 +37,7 @@ void Duck::PlaceDuck() {
     if (!mouse->IsUnheldActive()) return;
 
     // is space occupied by another duck?
-    if (DuckAtMouse() != nullptr) {
+    if (DuckAtMouse(25) != nullptr) {
         // highlight duck in red
         // ...
         return;
