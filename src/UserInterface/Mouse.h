@@ -10,8 +10,8 @@
 
 class Mouse {
     private:
-        int x;
-        int y;
+        int x {0};
+        int y {0};
 
         bool nextActive = false;
         bool active = false;
@@ -19,7 +19,9 @@ class Mouse {
         bool heldactive = false;
 
     public:
+        void MouseDown(bool _down);
         void UpdatePosition() { SDL_GetMouseState(&x, &y); }
+        void UpdateActive();
 
         bool InRect(SDL_Rect* _rect);
         bool UnheldClick(SDL_Rect* _rect);

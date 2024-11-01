@@ -27,6 +27,7 @@ class Button {
 
         void Display();
         void CheckClick();
+        [[nodiscard]] bool IsClicked() const { return clicked; }
 };
 
 

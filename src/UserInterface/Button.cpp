@@ -28,15 +28,6 @@ void Button::CheckClick() {
 
     // mousedown over the button
     if (mouse->IsUnheldActive()) {
-        clickStarted = true;
-    }
-
-    // mousedown released, over the button
-    if (clickStarted && mouse->ClickOnRelease(buttonRect)) {
-        clickStarted = false;
         clicked = true;
     }
-
-    // mousedown released, not over button
-    if (clickStarted && !mouse->IsHeldActive()) clickStarted = false;
 }
