@@ -17,7 +17,7 @@ class Texture {
         std::string path;
 
     public:
-        SDL_Rect* r;
+        SDL_Rect* r = new SDL_Rect();
         int rx;
         int ry;
         int rw;
@@ -38,7 +38,6 @@ class Texture {
             this->deleteTexture();
             auto s = IMG_Load(path.c_str());
             this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-            if (!this->texture) std::cerr << "fucked\n";
         }
 
         std::string getPath() {

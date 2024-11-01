@@ -5,7 +5,7 @@
 
 MainWindow::MainWindow() {
     window = SDL_CreateWindow("Ducks Bread Defence",
-                              0, 0, 500, 500,
+                              0, 0, 800, 800,
                               SDL_RENDERER_ACCELERATED);
 
     renderer = SDL_CreateRenderer(window,

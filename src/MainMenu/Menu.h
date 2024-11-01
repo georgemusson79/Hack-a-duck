@@ -22,8 +22,8 @@ class Menu {
         }
     }
     Menu() {
-        this->bg = new Texture("resources/mapback.png", 0, 0, 1000, 1000);
-        this->buttons.push_back(Button("resources/StartButten.png", {250, 500, 500, 200}, fn));
+        this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
+        this->buttons.push_back(Button("../resources/StartButten.png", {250, 500, 500, 200}, fn));
     }
 };
 
