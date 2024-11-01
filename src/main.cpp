@@ -22,8 +22,7 @@ int main(int argc, char** argv) {
             }
         }
 
-        SDL_RenderPresent(w->GetRenderer());
-        SDL_RenderClear(w->GetRenderer());
+        window->Display();
     }
 
     return 0;
