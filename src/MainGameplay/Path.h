@@ -9,8 +9,11 @@
 // Each Tile is 20x20, making a 50x50 grid.
 class Node {
 	Vector2 nodePos;
-	Node *nextNode;
+	Node* nextNode
 	bool isLastNode;
-};
+	bool isFirstNode;
+}
 
-#endif
+Node getNextNode() {
+	return nextNode;
+}
