@@ -5,31 +5,30 @@
 #include "Path.h"
 
 class GenericCat {
-    protected:
-        SDL_Rect* catRect{};
-        std::string imgPath {"../resources/redcat1.png"};
-        SDL_Texture* catTexture;
-//        Texture t;
-        int PathWidth = 1000 / 20;
+   protected:
+    SDL_Rect* catRect{};
+    std::string imgPath{"../resources/redcat1.png"};
+    SDL_Texture* catTexture;
+    //            int PathWidth = 1000 / 20;
 
-        int health = 100;
-        int speed = 1;
+    int health = 100;
+    int speed = 1;
 
-        friend class Duck;
+    friend class Duck;
 
-    public:
-        GenericCat();
+   public:
+    GenericCat();
 
-        void hurt(int dmg);
-        void moveToNextPath();
-        void die();
-        void dealDmgToPlayer();
-        void setRotation(double rot);
+    void hurt(int dmg);
+    void moveToNextPath();
+    void die();
+    void dealDmgToPlayer();
+    void setRotation(double rot);
 
-        void Display();
-        void update();
+    void Display();
+    void update();
 
-//        [[nodiscard]] double getRotation() {return this->t.rotation;}
+    //        [[nodiscard]] double getRotation() {return this->t.rotation;}
 };
 
 inline std::vector<std::unique_ptr<GenericCat>> cats;

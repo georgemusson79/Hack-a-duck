@@ -6,12 +6,14 @@
 #include <iostream>
 
 #include "MainGameplay/Duck.h"
+#include "MainMenu/Menu.h"
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Mouse.h"
 
 int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
+    Menu m;
 
     Duck::PlaceDuck();
 
@@ -36,6 +38,7 @@ int main(int argc, char** argv) {
             }
         }
         mouse->UpdateActive();
+        m.update();
 
         /*
          * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS

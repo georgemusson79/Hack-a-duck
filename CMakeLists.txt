@@ -21,9 +21,6 @@ add_executable(Hack_a_duck
         src/UserInterface/Mouse.cpp
         src/MainGameplay/Duck.h
         src/MainGameplay/Duck.cpp
-        src/UserInterface/Menu.cpp
-        src/UserInterface/Menu.h
-        src/UserInterface/Menu.h
         src/UserInterface/Texture.h
         src/MainGameplay/Cat.h
         src/MainGameplay/MainGameplay.h
