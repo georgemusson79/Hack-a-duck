@@ -1,9 +1,11 @@
-#include <Vector2>
+#include <../MainGameplay/Cat.h>
 #include <../UserInterface/Texture.h>
-#include <../UserInterface/Cat.h>
+
+#include "Vector2.h"
 
 class Path {
-	Vector2 currentTilePos;
-	Path nextTile;
-	bool isLastTile;
+    Vector2 currentTilePos;
+    Path nextTile;
+    bool isLastTile;
+    Path();
 }
