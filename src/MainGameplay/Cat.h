@@ -18,7 +18,7 @@ class GenericCat {
     }
 
     void moveToNextPath() {
-        currentPath
+        currentPath.
     }
 
     void die() {

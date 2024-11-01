@@ -7,7 +7,7 @@
 
 class Menu {
    public:
-    std::vector<Button> buttons;
+        std::vector<Button> buttons;
     void update();
     Menu();
 }
