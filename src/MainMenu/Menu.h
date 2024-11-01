@@ -13,6 +13,7 @@ void startGame() {
 class Menu {
    public:
     Texture* bg;
+    Texture* path;
     std::vector<Button> buttons;
     void update() {
         this->bg->render();
@@ -23,6 +24,7 @@ class Menu {
     }
     Menu() {
         this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
+        path = new Texture("../resources/Path.png", 0, 0, 800, 800);
         int w = 200;
         int h = 150;
         int x = 400 - (w / 2);
@@ -32,6 +34,7 @@ class Menu {
 
     void Display() {
         bg->render();
+        path->render();
     }
 };
 
