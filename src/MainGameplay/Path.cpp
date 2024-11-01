@@ -3,10 +3,6 @@
 
 
 /**
-<<<<<<< HEAD
- * @brief Chooses a valid move from an array of moves.
- *
-=======
  * @brief 
  * 
  * @param firstTile The current tile of the cat.
@@ -19,7 +15,6 @@ void Path::Move(Tile &firstTile, Tile &nextTile) {
 /**
  * @brief Chooses a valid move from an array of moves. 
  * 
->>>>>>> cced3c2 (Updated Path.h)
  * @param currentTile The current tile of the cat.
  **/
 // This is here just in case we want to have multiple possible paths :3
