@@ -35,6 +35,7 @@ class Duck {
         void Display();
         void FindTarget();
 
+        static Duck* DuckAtMouse(float _mouseRadius);
         static void PlaceDuck();
 };
 
