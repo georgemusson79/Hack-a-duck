@@ -5,14 +5,17 @@
 #define SDL_MAIN_HANDLED
 #include <iostream>
 
-#include "UserInterface/MainWindow.h"
-#include "UserInterface/Button.h"
-#include "UserInterface/Mouse.h"
 #include "MainGameplay/Duck.h"
+#include "UserInterface/MainWindow.h"
+#include "UserInterface/Mouse.h"
+#include "UserInterface/Texture.h"
 
 int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
+
+    Duck::PlaceDuck();
+    Texture t(window->renderer, "resources/ArmoredDuckSheet.png", 0, 0, 100, 100);
 
     bool running = true;
     while (running) {
@@ -40,6 +43,7 @@ int main(int argc, char** argv) {
             duck->Display();
         }
 
+        t.render();
         window->Display();
     }
 

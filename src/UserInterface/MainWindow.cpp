@@ -1,7 +1,6 @@
 //
 // Created by cew05 on 01/11/2024.
 //
-
 #include "MainWindow.h"
 
 MainWindow::MainWindow() {
@@ -21,3 +20,8 @@ void MainWindow::Display() {
     SDL_RenderClear(renderer);
 }
 
+void MainWindow::renderTextures() {
+    for (auto pair : this->textures) {
+        pair.second.render();
+    }
+}
