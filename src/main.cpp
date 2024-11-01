@@ -6,10 +6,10 @@
 #include <iostream>
 
 #include "MainGameplay/Duck.h"
+#include "MainGameplay/Path.h"
 #include "MainMenu/Menu.h"
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Mouse.h"
-#include "MainGameplay/Path.h"
 
 int main(int argc, char** argv) {
     /*
@@ -44,7 +44,6 @@ int main(int argc, char** argv) {
             }
         }
         mouse->UpdateActive();
-        m.update();
         m.Display();
 
         /*
