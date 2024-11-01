@@ -152,6 +152,30 @@ src/MainGameplay/Duck.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.s
 .PHONY : src/MainGameplay/Duck.cpp.s
 
+src/MainGameplay/Path.obj: src/MainGameplay/Path.cpp.obj
+.PHONY : src/MainGameplay/Path.obj
+
+# target to build an object file
+src/MainGameplay/Path.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj
+.PHONY : src/MainGameplay/Path.cpp.obj
+
+src/MainGameplay/Path.i: src/MainGameplay/Path.cpp.i
+.PHONY : src/MainGameplay/Path.i
+
+# target to preprocess a source file
+src/MainGameplay/Path.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.i
+.PHONY : src/MainGameplay/Path.cpp.i
+
+src/MainGameplay/Path.s: src/MainGameplay/Path.cpp.s
+.PHONY : src/MainGameplay/Path.s
+
+# target to generate assembly for a file
+src/MainGameplay/Path.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.s
+.PHONY : src/MainGameplay/Path.cpp.s
+
 src/UserInterface/Button.obj: src/UserInterface/Button.cpp.obj
 .PHONY : src/UserInterface/Button.obj
 
@@ -199,30 +223,6 @@ src/UserInterface/MainWindow.s: src/UserInterface/MainWindow.cpp.s
 src/UserInterface/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.s
 .PHONY : src/UserInterface/MainWindow.cpp.s
-
-src/UserInterface/Menu.obj: src/UserInterface/Menu.cpp.obj
-.PHONY : src/UserInterface/Menu.obj
-
-# target to build an object file
-src/UserInterface/Menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/UserInterface/Menu.cpp.obj
-.PHONY : src/UserInterface/Menu.cpp.obj
-
-src/UserInterface/Menu.i: src/UserInterface/Menu.cpp.i
-.PHONY : src/UserInterface/Menu.i
-
-# target to preprocess a source file
-src/UserInterface/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/UserInterface/Menu.cpp.i
-.PHONY : src/UserInterface/Menu.cpp.i
-
-src/UserInterface/Menu.s: src/UserInterface/Menu.cpp.s
-.PHONY : src/UserInterface/Menu.s
-
-# target to generate assembly for a file
-src/UserInterface/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/UserInterface/Menu.cpp.s
-.PHONY : src/UserInterface/Menu.cpp.s
 
 src/UserInterface/Mouse.obj: src/UserInterface/Mouse.cpp.obj
 .PHONY : src/UserInterface/Mouse.obj
@@ -284,15 +284,15 @@ help:
 	@echo ... src/MainGameplay/Duck.obj
 	@echo ... src/MainGameplay/Duck.i
 	@echo ... src/MainGameplay/Duck.s
+	@echo ... src/MainGameplay/Path.obj
+	@echo ... src/MainGameplay/Path.i
+	@echo ... src/MainGameplay/Path.s
 	@echo ... src/UserInterface/Button.obj
 	@echo ... src/UserInterface/Button.i
 	@echo ... src/UserInterface/Button.s
 	@echo ... src/UserInterface/MainWindow.obj
 	@echo ... src/UserInterface/MainWindow.i
 	@echo ... src/UserInterface/MainWindow.s
-	@echo ... src/UserInterface/Menu.obj
-	@echo ... src/UserInterface/Menu.i
-	@echo ... src/UserInterface/Menu.s
 	@echo ... src/UserInterface/Mouse.obj
 	@echo ... src/UserInterface/Mouse.i
 	@echo ... src/UserInterface/Mouse.s

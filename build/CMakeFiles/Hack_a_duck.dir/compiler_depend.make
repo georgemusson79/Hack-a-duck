@@ -346,6 +346,8 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.obj: C:/Users/george/Docume
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xtestintrin.h \
   C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Duck.h
 
+CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Path.cpp
+
 CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Button.cpp \
   C:/Libs/SDL2-2.28.5/include/SDL.h \
   C:/Libs/SDL2-2.28.5/include/SDL_assert.h \
@@ -406,9 +408,11 @@ CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: C:/Users/george/Doc
   C:/msys64/mingw64/include/_mingw_stat64.h \
   C:/msys64/mingw64/include/_mingw_stdarg.h \
   C:/msys64/mingw64/include/_timeval.h \
+  C:/msys64/mingw64/include/c++/13.2.0/array \
   C:/msys64/mingw64/include/c++/13.2.0/backward/auto_ptr.h \
   C:/msys64/mingw64/include/c++/13.2.0/backward/binders.h \
   C:/msys64/mingw64/include/c++/13.2.0/bit \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/algorithmfwd.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/align.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/alloc_traits.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/allocated_ptr.h \
@@ -468,11 +472,14 @@ CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: C:/Users/george/Doc
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr_atomic.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr_base.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/std_abs.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/std_function.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/std_mutex.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algo.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algobase.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_bvector.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_construct.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_function.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/stl_heap.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_types.h \
@@ -485,6 +492,7 @@ CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: C:/Users/george/Doc
   C:/msys64/mingw64/include/c++/13.2.0/bits/streambuf_iterator.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/string_view.tcc \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stringfwd.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/uniform_int_dist.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/unique_ptr.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/unordered_map.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/uses_allocator.h \
@@ -511,6 +519,7 @@ CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj: C:/Users/george/Doc
   C:/msys64/mingw64/include/c++/13.2.0/ext/numeric_traits.h \
   C:/msys64/mingw64/include/c++/13.2.0/ext/string_conversions.h \
   C:/msys64/mingw64/include/c++/13.2.0/ext/type_traits.h \
+  C:/msys64/mingw64/include/c++/13.2.0/functional \
   C:/msys64/mingw64/include/c++/13.2.0/initializer_list \
   C:/msys64/mingw64/include/c++/13.2.0/ios \
   C:/msys64/mingw64/include/c++/13.2.0/iosfwd \
@@ -1417,6 +1426,11 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj: C:/Users/george/Documents/comp\ sci
   C:/Libs/SDL2-2.28.5/include/begin_code.h \
   C:/Libs/SDL2-2.28.5/include/close_code.h \
   C:/Libs/SDL2_image-2.8.2/include/SDL_image.h \
+  C:/Libs/SDL2_ttf-2.20.2/include/SDL_ttf.h \
+  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Vector2.h \
+  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Button.h \
+  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/MainWindow.h \
+  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Texture.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -1424,9 +1438,11 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj: C:/Users/george/Documents/comp\ sci
   C:/msys64/mingw64/include/_mingw_stat64.h \
   C:/msys64/mingw64/include/_mingw_stdarg.h \
   C:/msys64/mingw64/include/_timeval.h \
+  C:/msys64/mingw64/include/c++/13.2.0/array \
   C:/msys64/mingw64/include/c++/13.2.0/backward/auto_ptr.h \
   C:/msys64/mingw64/include/c++/13.2.0/backward/binders.h \
   C:/msys64/mingw64/include/c++/13.2.0/bit \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/algorithmfwd.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/align.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/alloc_traits.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/allocated_ptr.h \
@@ -1487,11 +1503,14 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj: C:/Users/george/Documents/comp\ sci
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr_atomic.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr_base.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/std_abs.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/std_function.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/std_mutex.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algo.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algobase.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_bvector.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_construct.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_function.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/stl_heap.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_types.h \
@@ -1504,6 +1523,7 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj: C:/Users/george/Documents/comp\ sci
   C:/msys64/mingw64/include/c++/13.2.0/bits/streambuf_iterator.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/string_view.tcc \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stringfwd.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/uniform_int_dist.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/unique_ptr.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/unordered_map.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/uses_allocator.h \
@@ -1530,6 +1550,7 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj: C:/Users/george/Documents/comp\ sci
   C:/msys64/mingw64/include/c++/13.2.0/ext/numeric_traits.h \
   C:/msys64/mingw64/include/c++/13.2.0/ext/string_conversions.h \
   C:/msys64/mingw64/include/c++/13.2.0/ext/type_traits.h \
+  C:/msys64/mingw64/include/c++/13.2.0/functional \
   C:/msys64/mingw64/include/c++/13.2.0/initializer_list \
   C:/msys64/mingw64/include/c++/13.2.0/ios \
   C:/msys64/mingw64/include/c++/13.2.0/iosfwd \
@@ -1710,9 +1731,9 @@ CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj: C:/Users/george/Documents/comp\ sci
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsavesintrin.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xtestintrin.h \
   C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Duck.h \
+  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainMenu/Menu.h \
   C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/MainWindow.h \
-  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Mouse.h \
-  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Texture.h
+  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Mouse.h
 
 
 C:/Libs/SDL2-2.28.5/include/close_code.h:
@@ -2207,6 +2228,8 @@ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++locale.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/ctype_base.h:
 
+C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Path.cpp:
+
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/tsxldtrkintrin.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/gthr.h:
@@ -2232,6 +2255,8 @@ C:/msys64/mingw64/include/c++/13.2.0/iostream:
 C:/msys64/mingw64/include/process.h:
 
 C:/msys64/mingw64/include/psdk_inc/intrin-impl.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/functional:
 
 C:/msys64/mingw64/include/pthread.h:
 
@@ -2289,6 +2314,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx2intrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx5124fmapsintrin.h:
 
+C:/msys64/mingw64/include/c++/13.2.0/bits/algorithmfwd.h:
+
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/wmmintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx5124vnniwintrin.h:
@@ -2328,6 +2355,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vlbwintrin.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vldqintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vnniintrin.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/bits/uniform_int_dist.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vnnivlintrin.h:
 
@@ -2413,12 +2442,24 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsaveoptintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsavesintrin.h:
 
+C:/msys64/mingw64/include/c++/13.2.0/array:
+
+C:/msys64/mingw64/include/c++/13.2.0/bits/std_function.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algo.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/bits/stl_heap.h:
+
 C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Button.h:
 
 C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/MainWindow.cpp:
 
 C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/UserInterface/Mouse.cpp:
 
+C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Vector2.h:
+
 C:/msys64/mingw64/include/c++/13.2.0/bits/istream.tcc:
 
 C:/msys64/mingw64/include/c++/13.2.0/istream:
+
+C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainMenu/Menu.h:

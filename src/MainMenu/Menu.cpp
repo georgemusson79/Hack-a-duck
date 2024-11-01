@@ -1,8 +1,5 @@
-#include "Menu.h"
+#include "../MainMenu/Menu.h"
 
-void Menu::update() {
-}
+#include <iostream>
 
-Menu::Menu() {
-    this->buttons
-}
+#include "../UserInterface/Button.h"

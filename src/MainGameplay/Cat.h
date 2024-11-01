@@ -6,10 +6,10 @@
 
 class GenericCat {
    protected:
-    Texture t;
     int PathWidth = 1000 / 20;
 
    public:
+    Texture t;
     int health = 100;
     int speed = 1;
     Path currentPath;
