@@ -14,10 +14,6 @@ int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
 
-    Duck::PlaceDuck();
-
-    Button b;
-
     bool running = true;
     while (running) {
         SDL_Event e;
@@ -38,11 +34,11 @@ int main(int argc, char** argv) {
         }
         mouse->UpdateActive();
 
-        b.Display();
+        Duck::PlaceDuck();
 
-        b.CheckClick();
-
-        if (b.IsClicked()) printf("wwwwwwww");
+        for (auto& duck : playerDucks) {
+            duck->Display();
+        }
 
         window->Display();
     }

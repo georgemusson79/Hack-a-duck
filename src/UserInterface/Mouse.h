@@ -29,6 +29,7 @@ class Mouse {
 
     [[nodiscard]] bool IsHeldActive() const { return active; }
     [[nodiscard]] bool IsUnheldActive() const { return active && !prevactive; }
+    [[nodiscard]] std::pair<int, int> GetPosition() const { return {x, y}; }
 };
 
 inline std::unique_ptr<Mouse> mouse;

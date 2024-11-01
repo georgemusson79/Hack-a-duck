@@ -22,7 +22,7 @@ class Duck {
         SDL_Rect* duckRect;
 
         // projectiles
-        std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
+//        std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
         float radius = 5;
 
         // abilities
@@ -41,6 +41,10 @@ class Duck {
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
 
 class BreadCrubProjectile {
+    private:
+        int a;
+
+    public:
 
 };
 
