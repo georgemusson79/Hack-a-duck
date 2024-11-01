@@ -128,6 +128,30 @@ Hack_a_duck/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/build
 .PHONY : Hack_a_duck/fast
 
+src/MainGameplay/Duck.obj: src/MainGameplay/Duck.cpp.obj
+.PHONY : src/MainGameplay/Duck.obj
+
+# target to build an object file
+src/MainGameplay/Duck.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.obj
+.PHONY : src/MainGameplay/Duck.cpp.obj
+
+src/MainGameplay/Duck.i: src/MainGameplay/Duck.cpp.i
+.PHONY : src/MainGameplay/Duck.i
+
+# target to preprocess a source file
+src/MainGameplay/Duck.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.i
+.PHONY : src/MainGameplay/Duck.cpp.i
+
+src/MainGameplay/Duck.s: src/MainGameplay/Duck.cpp.s
+.PHONY : src/MainGameplay/Duck.s
+
+# target to generate assembly for a file
+src/MainGameplay/Duck.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.s
+.PHONY : src/MainGameplay/Duck.cpp.s
+
 src/UserInterface/Button.obj: src/UserInterface/Button.cpp.obj
 .PHONY : src/UserInterface/Button.obj
 
@@ -233,6 +257,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Hack_a_duck
+	@echo ... src/MainGameplay/Duck.obj
+	@echo ... src/MainGameplay/Duck.i
+	@echo ... src/MainGameplay/Duck.s
 	@echo ... src/UserInterface/Button.obj
 	@echo ... src/UserInterface/Button.i
 	@echo ... src/UserInterface/Button.s
