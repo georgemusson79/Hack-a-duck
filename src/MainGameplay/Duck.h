@@ -22,6 +22,8 @@ class Duck {
         std::string imgPath = "../resources/chick.png";
         SDL_Texture* duckTexture;
         SDL_Rect* duckRect = new SDL_Rect{0,0,40,40};
+        bool showRedError = false;
+        int shoddyTimer = 0;
 
         // projectiles
         std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
