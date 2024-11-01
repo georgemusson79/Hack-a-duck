@@ -6,12 +6,12 @@
 #include "MainWindow.h"
 
 class Texture {
-   protected:
-    SDL_Texture* texture = nullptr;
-    std::string path;
-    MainWindow* window;
+    protected:
+        SDL_Texture* texture = nullptr;
+        std::string path;
 
-   public:
+
+    public:
     int x;
     int y;
     int w;
@@ -24,6 +24,7 @@ class Texture {
     void deleteTexture() {
         SDL_DestroyTexture(texture);
     }
+
     void setPath(std::string path) {
         this->path = path;
         this->deleteTexture();
@@ -36,8 +37,7 @@ class Texture {
         return this->path;
     }
 
-    Texture(MainWindow* window, std::string path, int x, int y, int w, int h) {
-        this->window = window;
+    Texture(const std::string& path, int x, int y, int w, int h) {
         this->setPath(path);
         this->x = x;
         this->w = w;
@@ -47,14 +47,14 @@ class Texture {
 
     void render() {
         SDL_Rect dstrect = {x, y, w, h};
-        SDL_RenderCopy(this->window->GetRenderer(), this->texture, NULL, NULL);
+        SDL_RenderCopy(window->GetRenderer(), this->texture, NULL, NULL);
         // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
 
     void render(int sx, int sy, int sw, int sh) {
         SDL_Rect dstrect = {x, y, w, h};
         SDL_Rect srcrect = {sx, sy, sw, sh};
-        SDL_RenderCopyEx(this->window->GetRenderer(), texture, &srcrect, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
+        SDL_RenderCopyEx(window->GetRenderer(), texture, &srcrect, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
 
     ~Texture() {

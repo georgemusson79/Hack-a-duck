@@ -11,16 +11,9 @@
 #include <unordered_map>
 #include <vector>
 
-#include "Texture.h"
-
 class MainWindow {
    private:
     SDL_Window* window{};
-
-   private:
-    SDL_Window* window{};
-    void renderTextures();
-    std::unordered_map<std::string, Texture> textures;
 
    public:
     MainWindow();
