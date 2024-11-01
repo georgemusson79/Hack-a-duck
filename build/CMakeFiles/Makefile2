@@ -84,12 +84,12 @@ clean: CMakeFiles/Hack_a_duck.dir/clean
 CMakeFiles/Hack_a_duck.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=1,2,3 "Built target Hack_a_duck"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" --progress-num=1,2,3,4 "Built target Hack_a_duck"
 .PHONY : CMakeFiles/Hack_a_duck.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Hack_a_duck.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Hack_a_duck.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" 0
 .PHONY : CMakeFiles/Hack_a_duck.dir/rule

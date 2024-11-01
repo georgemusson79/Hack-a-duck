@@ -128,29 +128,53 @@ Hack_a_duck/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/build
 .PHONY : Hack_a_duck/fast
 
-src/MainWindow.obj: src/MainWindow.cpp.obj
-.PHONY : src/MainWindow.obj
+src/User_Interface/Button.obj: src/User_Interface/Button.cpp.obj
+.PHONY : src/User_Interface/Button.obj
 
 # target to build an object file
-src/MainWindow.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainWindow.cpp.obj
-.PHONY : src/MainWindow.cpp.obj
+src/User_Interface/Button.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.obj
+.PHONY : src/User_Interface/Button.cpp.obj
 
-src/MainWindow.i: src/MainWindow.cpp.i
-.PHONY : src/MainWindow.i
+src/User_Interface/Button.i: src/User_Interface/Button.cpp.i
+.PHONY : src/User_Interface/Button.i
 
 # target to preprocess a source file
-src/MainWindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainWindow.cpp.i
-.PHONY : src/MainWindow.cpp.i
+src/User_Interface/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.i
+.PHONY : src/User_Interface/Button.cpp.i
 
-src/MainWindow.s: src/MainWindow.cpp.s
-.PHONY : src/MainWindow.s
+src/User_Interface/Button.s: src/User_Interface/Button.cpp.s
+.PHONY : src/User_Interface/Button.s
 
 # target to generate assembly for a file
-src/MainWindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainWindow.cpp.s
-.PHONY : src/MainWindow.cpp.s
+src/User_Interface/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/Button.cpp.s
+.PHONY : src/User_Interface/Button.cpp.s
+
+src/User_Interface/MainWindow.obj: src/User_Interface/MainWindow.cpp.obj
+.PHONY : src/User_Interface/MainWindow.obj
+
+# target to build an object file
+src/User_Interface/MainWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.obj
+.PHONY : src/User_Interface/MainWindow.cpp.obj
+
+src/User_Interface/MainWindow.i: src/User_Interface/MainWindow.cpp.i
+.PHONY : src/User_Interface/MainWindow.i
+
+# target to preprocess a source file
+src/User_Interface/MainWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.i
+.PHONY : src/User_Interface/MainWindow.cpp.i
+
+src/User_Interface/MainWindow.s: src/User_Interface/MainWindow.cpp.s
+.PHONY : src/User_Interface/MainWindow.s
+
+# target to generate assembly for a file
+src/User_Interface/MainWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/User_Interface/MainWindow.cpp.s
+.PHONY : src/User_Interface/MainWindow.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -185,9 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Hack_a_duck
-	@echo ... src/MainWindow.obj
-	@echo ... src/MainWindow.i
-	@echo ... src/MainWindow.s
+	@echo ... src/User_Interface/Button.obj
+	@echo ... src/User_Interface/Button.i
+	@echo ... src/User_Interface/Button.s
+	@echo ... src/User_Interface/MainWindow.obj
+	@echo ... src/User_Interface/MainWindow.i
+	@echo ... src/User_Interface/MainWindow.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
