@@ -6,5 +6,5 @@
 class Node {
 	Vector2 nodePos;
 	Node *nextNode
-	bool isLastTile;
+	bool isLastNode;
 }

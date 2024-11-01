@@ -1,10 +1,12 @@
 #include "Path.h"
 #include "Cat.h"
+#include <vector>
 
-Node::Node() {
-	this->tilePos = 
+Node::Node(Node current, Node *next, bool isLast) {
+	this->nodePos = current;
+	this->*nextNode = next;
+	this->isLastNode = isLast;
 }
-
 /**
  * @brief Chooses a valid move from an array of moves. 
  * 
