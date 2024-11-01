@@ -5,10 +5,29 @@
 #define SDL_MAIN_HANDLED
 
 #include <iostream>
-#include <SDL.h>
+#include "MainWindow.h"
 
 int main(int argc, char** argv) {
-    printf("this is doomed");
+    MainWindow* w = new MainWindow();
+
+    bool running = true;
+
+    while (running) {
+
+        SDL_Event e;
+        while (SDL_PollEvent(&e)) {
+            switch (e.type) {
+                case SDL_QUIT:
+                    running = false;
+                    break;
+            }
+        }
+
+        SDL_RenderPresent(w->GetRenderer());
+        SDL_RenderClear(w->GetRenderer());
+
+
+    }
 
     return 0;
 }
