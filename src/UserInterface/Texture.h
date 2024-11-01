@@ -43,12 +43,6 @@ class Texture {
     std::string getPath() {
         return this->path;
     }
-    void setPath(std::string path) {
-        this->path = path;
-        this->deleteTexture();
-        auto s = IMG_Load(path.c_str());
-        this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-    }
 
     Texture(const std::string& path, int x, int y, int w, int h) {
         this->setPath(path);
