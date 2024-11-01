@@ -26,7 +26,8 @@ add_executable(Hack_a_duck
         src/MainGameplay/MainGameplay.h
         src/MainGameplay/Vector2.h
         src/MainGameplay/Path.h
-        src/MainGameplay/Path.cpp)
+        src/MainGameplay/Path.cpp
+        src/MainGameplay/Cat.cpp)
 
 target_link_libraries(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"

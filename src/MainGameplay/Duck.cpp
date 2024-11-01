@@ -15,9 +15,22 @@ Duck::Duck() {
 }
 
 void Duck::Display() {
-//    SDL_SetRenderDrawColor(window->GetRenderer(), 0, 0, 255, 255);
-//    SDL_RenderFillRect(window->GetRenderer(), duckRect);
-//    SDL_SetRenderDrawColor(window->GetRenderer(), 0, 0, 0, 255);
+    if (showRedError) {
+        SDL_Rect r = *duckRect;
+        r.w *= 2;
+        r.h *= 2;
+        r.x -= duckRect->w/2;
+        r.y -= duckRect->h/2;
+
+        auto s = IMG_Load("../resources/red (1).png");
+        auto t = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+        SDL_RenderCopy(window->GetRenderer(), t, nullptr, &r);
+        shoddyTimer++;
+        if (shoddyTimer > 50) {
+            showRedError = false;
+            shoddyTimer = 0;
+        }
+    }
 
     SDL_RenderCopy(window->GetRenderer(), duckTexture, nullptr, duckRect);
 }
@@ -25,9 +38,16 @@ void Duck::Display() {
 
 // determine if a cat position is within duck range, and lock on to it
 void Duck::FindTarget() {
-//    for (const auto& cat : cats) {
-//
-//    }
+    for (const auto& cat : cats) {
+        int x = cat->catRect->x - duckRect->x + 25;
+        int y = cat->catRect->y - duckRect->y + 25;
+
+        if (float(x*x) + float(y*y) < radius*radius){
+            target = cat.get();
+            printf("QUACK! TARGET FOUND!\n");
+            return;
+        }
+    }
 }
 
 Duck* Duck::DuckAtMouse(float _mouseRadius) {
@@ -47,9 +67,9 @@ void Duck::PlaceDuck() {
     if (!mouse->IsUnheldActive()) return;
 
     // is space occupied by another duck?
-    if (DuckAtMouse(50) != nullptr) {
-        // highlight duck in red
-        // ...
+    Duck* duck;
+    if ((duck = DuckAtMouse(50)) != nullptr) {
+        duck->showRedError = true;
         return;
     }
 

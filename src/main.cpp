@@ -17,6 +17,8 @@ int main(int argc, char** argv) {
 
     Duck::PlaceDuck();
 
+    cats.emplace_back(new GenericCat());
+
     bool running = true;
     while (running) {
         SDL_Event e;
@@ -38,11 +40,30 @@ int main(int argc, char** argv) {
         mouse->UpdateActive();
         m.update();
 
+        /*
+         * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS
+         */
+
+        // Check for the user trying to place a duck down
         Duck::PlaceDuck();
 
         for (auto& duck : playerDucks) {
             duck->Display();
+
+            // find target
+            duck->FindTarget();
+
+            // attack target
         }
+
+        /*
+         * CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS
+         */
+
+        for (auto& cat : cats) {
+            cat->Display();
+        }
+
 
         window->Display();
     }

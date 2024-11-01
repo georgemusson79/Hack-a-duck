@@ -12,63 +12,60 @@
 #include "../MainGameplay/Vector2.h"
 
 class Texture {
-   protected:
-    SDL_Texture* texture = nullptr;
-    std::string path;
+    protected:
+        SDL_Texture* texture = nullptr;
+        std::string path;
 
-   public:
-    int x;
-    int y;
-    int w;
-    int h;
-    int rx;
-    int ry;
-    int rw;
-    int rh;
-    double rotation = 0;
-    void deleteTexture() {
-        SDL_DestroyTexture(texture);
-    }
+    public:
+        SDL_Rect* r;
+        int rx;
+        int ry;
+        int rw;
+        int rh;
+        double rotation = 0;
 
-    Vector2 getCenter() {
-        return Vector2(this->x + (this->w / 2), this->y + (this->y / 2));
-    }
 
-    void setPath(std::string path) {
-        this->path = path;
-        this->deleteTexture();
-        auto s = IMG_Load(path.c_str());
-        this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        if (!this->texture) std::cerr << "fucked\n";
-    }
+        void deleteTexture() {
+            SDL_DestroyTexture(texture);
+        }
 
-    std::string getPath() {
-        return this->path;
-    }
+        Vector2 getCenter() {
+            return Vector2(r->x + (r->w / 2), r->y + (r->y / 2));
+        }
 
-    Texture(const std::string& path, int x, int y, int w, int h) {
-        this->setPath(path);
-        this->x = x;
-        this->w = w;
-        this->h = h;
-        this->y = y;
-    }
+        void setPath(std::string path) {
+            this->path = path;
+            this->deleteTexture();
+            auto s = IMG_Load(path.c_str());
+            this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+            if (!this->texture) std::cerr << "fucked\n";
+        }
 
-    void render() {
-        SDL_Rect dstrect = {x, y, w, h};
-        SDL_RenderCopy(window->GetRenderer(), this->texture, NULL, NULL);
-        // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
-    }
+        std::string getPath() {
+            return this->path;
+        }
 
-    void render(int sx, int sy, int sw, int sh) {
-        SDL_Rect dstrect = {x, y, w, h};
-        SDL_Rect srcrect = {sx, sy, sw, sh};
-        SDL_RenderCopyEx(window->GetRenderer(), texture, &srcrect, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
-    }
+        Texture(const std::string& path, int x, int y, int w, int h) {
+            this->setPath(path);
+            r->x = x;
+            r->w = w;
+            r->h = h;
+            r->y = y;
+        }
 
-    ~Texture() {
-        this->deleteTexture();
-    }
+        void render() {
+            SDL_RenderCopy(window->GetRenderer(), this->texture, NULL, r);
+            // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
+        }
+
+        void render(int sx, int sy, int sw, int sh) {
+            SDL_Rect srcrect = {sx, sy, sw, sh};
+            SDL_RenderCopyEx(window->GetRenderer(), texture, &srcrect, r, this->rotation, NULL, SDL_FLIP_NONE);
+        }
+
+        ~Texture() {
+            this->deleteTexture();
+        }
 };
 
 #endif
