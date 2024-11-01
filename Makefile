@@ -1,9 +1,8 @@
 HEADERS = ./headers/
 SRCFILES = ./src/
-CXXFLAGS = -std=c++20 -I ($HEADERS) -I ($SRCFILES) -Wall -Wfatal-errors
+CXXFLAGS = -std=c++20 -I $(SRCFILES) -I $(HEADERS) -Wall -Wfatal-errors
 
-vpath %.h $(HEADERS)
-vpath %.cpp $(SRCFILES)
+vpath %.h $(HEADERS): %.cpp $(SRCFILES)
 
 # Phoney Targets
 
@@ -17,9 +16,9 @@ PHONY: clean all
 # Executable Files
 
 Main: Main.o
-	g++ ($CXXFLAGS) Main.o -o Main -l SDL
+	g++ $(CXXFLAGS) Main.o -o Main
 
 # Object FIles
 
 Main.o: main.cpp main.h
-	g++ ($CXXFLAGS) -c main.cpp main.h
+	g++ $(CXXFLAGS) -c main.cpp
