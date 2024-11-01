@@ -6,7 +6,7 @@
 #include "../UserInterface/Button.h"
 #include "../UserInterface/Texture.h"
 
-void fn() {
+void startGame() {
     std::cout << "b";
 }
 
@@ -22,8 +22,12 @@ class Menu {
         }
     }
     Menu() {
-        this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
-        this->buttons.push_back(Button("../resources/StartButten.png", {250, 500, 500, 200}, fn));
+        this->bg = new Texture("resources/mapback.png", 0, 0, 800, 800);
+        int w = 200;
+        int h = 150;
+        int x = 400 - (w / 2);
+        int y = 400 - (h / 2);
+        this->buttons.push_back(Button("resources/StartButten.png", {x, y, w, h}, startGame));
     }
 };
 
