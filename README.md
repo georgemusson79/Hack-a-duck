@@ -10,6 +10,8 @@ The aim of **Duck Bread Defence** is to eliminate the enemy cats before they rea
 
 # Game Instructions
 ## Placing Ducks
+To place ducks you need to first use your scroll wheel to select the type of duck you want, and then use the LMB (Left Mouse Button) to place it in the desired place.
 
+## Upgrading Ducks
 
 # Technical Explanation
