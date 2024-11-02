@@ -15,8 +15,8 @@ Duck::~Duck() {
     SDL_DestroyTexture(duckTexture);
 }
 Duck::Duck() {
-    spawnSnd1 = std::make_unique<Sound>("resources/placeDuckSFX1.wav");
-    shootSnd1 = std::make_unique<Sound>("resources/duckShoot1.wav");
+    spawnSnd1 = std::make_unique<Sound>("../resources/placeDuckSFX1.wav");
+    shootSnd1 = std::make_unique<Sound>("../resources/duckShoot1.wav");
     shootSnd1->setVolume(30);
     duckRect = new SDL_Rect{150, 150, 50, 50};
 
@@ -42,7 +42,7 @@ void Duck::Display() {
         r.x -= duckRect->w / 2;
         r.y -= duckRect->h / 2;
 
-        auto s = IMG_Load("resources/red (1).png");
+        auto s = IMG_Load("../resources/red (1).png");
         auto t = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
         SDL_RenderCopy(window->GetRenderer(), t, nullptr, &r);
         SDL_FreeSurface(s);
@@ -200,27 +200,27 @@ void Duck::Upgrade() {
     std::string modelPath;
     switch (lvl) {
         case 2:
-            modelPath = "resources/helmetDuckSheet.png";
+            modelPath = "../resources/helmetDuckSheet.png";
             srcRect = new SDL_Rect{304, 0, 304, 224};
             break;
 
         case 3:
-            modelPath = "resources/ArmoredDuckSheet.png";
+            modelPath = "../resources/ArmoredDuckSheet.png";
             srcRect = new SDL_Rect{304, 0, 304, 224};
             break;
 
         case 4:
-            modelPath = "resources/BlackGooseling.png";
+            modelPath = "../resources/BlackGooseling.png";
             srcRect = new SDL_Rect{0, 0, 304, 224};
             break;
 
         case 5:
-            modelPath = "resources/BlackHelmetGoose.png";
+            modelPath = "../resources/BlackHelmetGoose.png";
             srcRect = new SDL_Rect{0, 0, 304, 256};
             break;
 
         default:
-            modelPath = "resources/BlackArmoredGoose.png";
+            modelPath = "../resources/BlackArmoredGoose.png";
             srcRect = new SDL_Rect{0, 0, 304, 287};
             break;
     }
