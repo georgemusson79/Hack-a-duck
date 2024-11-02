@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.obj.d"
   "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj"
   "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj.d"
+  "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Player.cpp.obj"
+  "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Player.cpp.obj.d"
   "CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj"
   "CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj.d"
   "CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj"

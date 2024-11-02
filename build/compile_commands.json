@@ -1,44 +1,50 @@
 [
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\main.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\main.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/main.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\main.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\main.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/main.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/main.cpp.obj"
 },
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\MainWindow.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\UserInterface\\MainWindow.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/UserInterface/MainWindow.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\MainWindow.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\UserInterface\\MainWindow.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/UserInterface/MainWindow.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/UserInterface/MainWindow.cpp.obj"
 },
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\Button.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\UserInterface\\Button.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/UserInterface/Button.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\Button.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\UserInterface\\Button.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/UserInterface/Button.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/UserInterface/Button.cpp.obj"
 },
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\Mouse.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\UserInterface\\Mouse.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/UserInterface/Mouse.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\UserInterface\\Mouse.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\UserInterface\\Mouse.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/UserInterface/Mouse.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/UserInterface/Mouse.cpp.obj"
 },
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Duck.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\MainGameplay\\Duck.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/MainGameplay/Duck.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Duck.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\MainGameplay\\Duck.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/MainGameplay/Duck.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Duck.cpp.obj"
 },
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Path.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\MainGameplay\\Path.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/MainGameplay/Path.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Path.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\MainGameplay\\Path.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/MainGameplay/Path.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj"
 },
 {
-  "directory": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Cat.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackaduck4\\Hack-a-duck\\src\\MainGameplay\\Cat.cpp\"",
-  "file": "C:/Users/george/Documents/comp sci/hackaduck4/Hack-a-duck/src/MainGameplay/Cat.cpp",
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Cat.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\MainGameplay\\Cat.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/MainGameplay/Cat.cpp",
   "output": "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj"
+},
+{
+  "directory": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Hack_a_duck.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\Hack_a_duck.dir\\src\\MainGameplay\\Player.cpp.obj -c \"C:\\Users\\george\\Documents\\comp sci\\hackerduck6\\Hack-a-duck\\src\\MainGameplay\\Player.cpp\"",
+  "file": "C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/src/MainGameplay/Player.cpp",
+  "output": "CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Player.cpp.obj"
 }
 ]

@@ -12,20 +12,20 @@
 // Each Tile is 20x20, making a 50x50 grid.
 class Node {
    private:
-    Texture t;
+    Texture* t;
     Vector2 nodePos;
     Node* nextNode;
     bool isLastNode;
     bool isFirstNode;
-    int w = 800 / 20;
-    int h = 800 / 20;
+    int w = 1000 / 10;
+    int h = 1000 / 10;
 
    public:
     Node(Vector2 _nodePos, Node* _lastNode, bool isLast = false);
     [[nodiscard]] Node* GetNextNode() const { return nextNode; };
     [[nodiscard]] Vector2 GetPosition() const { return nodePos; };
-    void display() {
-        this->t.render();
+    void render() {
+        t->render();
     }
 };
 

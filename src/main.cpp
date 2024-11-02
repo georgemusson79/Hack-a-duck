@@ -6,13 +6,12 @@
 #include <iostream>
 
 #include "MainGameplay/Duck.h"
+#include "MainGameplay/Path.h"
 #include "MainMenu/Menu.h"
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Mouse.h"
-#include "MainGameplay/Path.h"
 
 int main(int argc, char** argv) {
-
     /*
      * SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP
      */
@@ -27,6 +26,7 @@ int main(int argc, char** argv) {
     }
 
     Menu m;
+    Node n({0, 0}, NULL, true);
 
     // Path creation
     SetupPath();
@@ -78,6 +78,7 @@ int main(int argc, char** argv) {
          */
 
         m.Display();
+        n.render();
 
         /*
          * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS
@@ -105,8 +106,10 @@ int main(int argc, char** argv) {
             cat->get()->Display();
             cat->get()->MoveToNode();
 
-            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
-            else cat++;
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd())
+                cat = cats.erase(cat);
+            else
+                cat++;
         }
 
         /*

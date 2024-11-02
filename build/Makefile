@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck"
+CMAKE_SOURCE_DIR = "C:\Users\george\Documents\comp sci\hackerduck6\Hack-a-duck"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build"
+CMAKE_BINARY_DIR = "C:\Users\george\Documents\comp sci\hackerduck6\Hack-a-duck\build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackerduck6\Hack-a-duck\build\CMakeFiles" "C:\Users\george\Documents\comp sci\hackerduck6\Hack-a-duck\build\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackaduck4\Hack-a-duck\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\george\Documents\comp sci\hackerduck6\Hack-a-duck\build\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -199,6 +199,30 @@ src/MainGameplay/Path.s: src/MainGameplay/Path.cpp.s
 src/MainGameplay/Path.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.s
 .PHONY : src/MainGameplay/Path.cpp.s
+
+src/MainGameplay/Player.obj: src/MainGameplay/Player.cpp.obj
+.PHONY : src/MainGameplay/Player.obj
+
+# target to build an object file
+src/MainGameplay/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Player.cpp.obj
+.PHONY : src/MainGameplay/Player.cpp.obj
+
+src/MainGameplay/Player.i: src/MainGameplay/Player.cpp.i
+.PHONY : src/MainGameplay/Player.i
+
+# target to preprocess a source file
+src/MainGameplay/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Player.cpp.i
+.PHONY : src/MainGameplay/Player.cpp.i
+
+src/MainGameplay/Player.s: src/MainGameplay/Player.cpp.s
+.PHONY : src/MainGameplay/Player.s
+
+# target to generate assembly for a file
+src/MainGameplay/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hack_a_duck.dir\build.make CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Player.cpp.s
+.PHONY : src/MainGameplay/Player.cpp.s
 
 src/UserInterface/Button.obj: src/UserInterface/Button.cpp.obj
 .PHONY : src/UserInterface/Button.obj
@@ -314,6 +338,9 @@ help:
 	@echo ... src/MainGameplay/Path.obj
 	@echo ... src/MainGameplay/Path.i
 	@echo ... src/MainGameplay/Path.s
+	@echo ... src/MainGameplay/Player.obj
+	@echo ... src/MainGameplay/Player.i
+	@echo ... src/MainGameplay/Player.s
 	@echo ... src/UserInterface/Button.obj
 	@echo ... src/UserInterface/Button.i
 	@echo ... src/UserInterface/Button.s
