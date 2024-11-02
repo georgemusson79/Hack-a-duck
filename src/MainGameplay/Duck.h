@@ -59,6 +59,7 @@ class Duck {
 
    public:
     Duck();
+    ~Duck();
 
     void Display();
     void FindTarget();
@@ -85,7 +86,6 @@ inline Duck* selectedDuck{};
 
 inline std::unique_ptr<Duck> displayDuck;
 inline DUCK lastDuck = DUCK::NONE;
-
 inline void DisplayDuckMode() {
     DUCK d = player->HoldingDuck();
 

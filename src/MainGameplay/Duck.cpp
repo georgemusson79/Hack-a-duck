@@ -9,7 +9,11 @@
 #include "../UserInterface/MainWindow.h"
 #include "../UserInterface/Mouse.h"
 #include "../UserInterface/Sound.h"
-
+Duck::~Duck() {
+    delete this->upgButton;
+    SDL_DestroyTexture(this->upgLabelTexture);
+    SDL_DestroyTexture(duckTexture);
+}
 Duck::Duck() {
     spawnSnd1 = std::make_unique<Sound>("resources/placeDuckSFX1.wav");
     shootSnd1 = std::make_unique<Sound>("resources/duckShoot1.wav");
@@ -41,6 +45,8 @@ void Duck::Display() {
         auto s = IMG_Load("resources/red (1).png");
         auto t = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
         SDL_RenderCopy(window->GetRenderer(), t, nullptr, &r);
+        SDL_FreeSurface(s);
+        SDL_DestroyTexture(t);
         shoddyTimer++;
         if (shoddyTimer > 50) {
             showRedError = false;

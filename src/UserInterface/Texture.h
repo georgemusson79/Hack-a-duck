@@ -61,7 +61,7 @@ class Texture {
     void render() {
         if (!this->ready) return;
         if (!SDL_RenderCopyEx(window->GetRenderer(), this->texture, NULL, r, this->rotation, NULL, SDL_FLIP_NONE)) {
-//            std::cerr << SDL_GetError() << "\n";
+            //            std::cerr << SDL_GetError() << "\n";
         }
         // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
@@ -74,6 +74,7 @@ class Texture {
 
     ~Texture() {
         this->deleteTexture();
+        delete this->r;
     }
 };
 
