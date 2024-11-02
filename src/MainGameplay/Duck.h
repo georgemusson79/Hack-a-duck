@@ -47,7 +47,7 @@ class Duck {
         void Display();
         void FindTarget();
         void AttackTarget(Uint64 _deltaTicks);
-        void Update();
+        void Update(Uint64 _deltaTicks);
 
         static Duck* DuckAtMouse(float _mouseRadius);
         static void PlaceDuck();
@@ -61,17 +61,21 @@ inline int Duck::cost = 125;
 
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
 inline std::unique_ptr<Duck> displayDuck;
+inline DUCK lastDuck = DUCK::NONE;
 
 inline void DisplayDuckMode() {
     DUCK d = player->HoldingDuck();
 
-    switch (d) {
-        case DUCK::BASIC:
-            displayDuck = std::make_unique<Duck>();
-            break;
+    if (lastDuck != d) {
+        switch (d) {
+            case DUCK::BASIC:
+                displayDuck = std::make_unique<Duck>();
+                break;
 
-        default: // DUCK::NONE
-            displayDuck.reset();
+            default: // DUCK::NONE
+                displayDuck.reset();
+        }
+        lastDuck = d;
     }
 
     if (displayDuck != nullptr) {
@@ -90,15 +94,19 @@ class BreadCrumbProjectile {
 
         GenericCat* target;
         double x = 0, y = 0;
-        double spd = 0.3;
+        double spd = 300;
         bool hitTarget = false;
 
+        Uint64 decayTime = 100;
+
         Duck* parentDuck {};
+
+        friend class Duck;
 
     public:
         BreadCrumbProjectile(Duck* _parent, GenericCat* _target, SDL_Rect _origin);
 
-        void MoveToTarget();
+        void MoveToTarget(Uint64 _deltaTicks);
         void Display();
 
         [[nodiscard]] bool HitTarget() const { return hitTarget; };

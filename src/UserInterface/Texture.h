@@ -54,16 +54,14 @@ class Texture {
     void setPath(const std::string& path) {
         this->path = path;
         SDL_Surface* s = IMG_Load(path.c_str());
-        std::cerr << SDL_GetError() << "\n";
         this->texture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        std::cerr << SDL_GetError() << "\n";
         SDL_FreeSurface(s);
     }
 
     void render() {
         if (!this->ready) return;
         if (!SDL_RenderCopyEx(window->GetRenderer(), this->texture, NULL, r, this->rotation, NULL, SDL_FLIP_NONE)) {
-            std::cerr << SDL_GetError() << "\n";
+//            std::cerr << SDL_GetError() << "\n";
         }
         // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }

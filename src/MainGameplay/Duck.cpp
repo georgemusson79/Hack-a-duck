@@ -72,11 +72,15 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
         origin.w = 40;
         origin.h = 40;
         breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
+
+        for (auto& crumb : breadCrumbs) {
+            if (crumb->target == nullptr) crumb->target = target;
+        }
     }
 }
 
 
-void Duck::Update() {
+void Duck::Update(Uint64 _deltaTicks) {
     for (auto bc = breadCrumbs.begin(); bc != breadCrumbs.end();) {
         if (bc->get()->HitTarget()) {
             bc = breadCrumbs.erase(bc);
@@ -84,7 +88,7 @@ void Duck::Update() {
         }
 
         // otherwise
-        bc->get()->MoveToTarget();
+        bc->get()->MoveToTarget(_deltaTicks);
         bc++;
     }
 }
@@ -147,10 +151,20 @@ BreadCrumbProjectile::BreadCrumbProjectile(Duck* _parent, GenericCat *_target, S
     SDL_FreeSurface(s);
 }
 
-void BreadCrumbProjectile::MoveToTarget() {
-    if (hitTarget) return;
+void BreadCrumbProjectile::MoveToTarget(Uint64 _deltaTicks) {
+    if (hitTarget || target == nullptr) {
+        decayTime -= _deltaTicks;
+        if ((int)decayTime < 0) {
+            hitTarget = true;
+        }
+        return;
+    }
 
     // Distance to target
+    if (target->IsDead()) {
+        target = nullptr;
+        return;
+    }
     int distX = target->GetRect()->x - breadRect.x;
     int distY = target->GetRect()->y - breadRect.y;
 
@@ -162,8 +176,8 @@ void BreadCrumbProjectile::MoveToTarget() {
     }
 
     // Move to target
-    x += spd * ((distX < 0) ? -1 : 1);
-    y += spd * ((distY < 0) ? -1 : 1);
+    x += spd * (_deltaTicks / 1000.0) * ((distX < 0) ? -1 : 1);
+    y += spd * (_deltaTicks / 1000.0) * ((distY < 0) ? -1 : 1);
 
     breadRect.x = (int)x;
     breadRect.y = (int)y;
@@ -171,6 +185,7 @@ void BreadCrumbProjectile::MoveToTarget() {
 
 
 void BreadCrumbProjectile::Display() {
+    if (hitTarget) return;
     SDL_Rect src{0,0,192,140};
     SDL_RenderCopy(window->GetRenderer(), breadTexture, &src, &breadRect);
 }

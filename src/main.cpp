@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
         return 0;
     }
 
-    Menu m;
+    Menu userMenu;
     Node* b = new Node({50, 50}, NULL, true);
     Node* n = new Node({0, 0}, b, false);
     b->generateTextures();
@@ -82,11 +82,11 @@ int main(int argc, char** argv) {
          * MAIN MENU / BACKGROUND / MAIN MENU / BACKGROUND
          */
 
-        m.Display();
+        userMenu.Display();
 
         if (!gameMenuFlop) {
-            m.CheckButtons();
-            gameMenuFlop = m.MenuClosed();
+            userMenu.CheckButtons();
+            gameMenuFlop = userMenu.MenuClosed();
         }
 
         /*
@@ -107,19 +107,27 @@ int main(int argc, char** argv) {
 
             // attack target
             duck->AttackTarget(deltaTicks);
-            duck->Update();
+            duck->Update(deltaTicks);
         }
 
         /*
          * CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS
          */
 
+        if (userMenu.RoundStarted() && !catsSummoned) SummonCats();
+
         for (auto cat = cats.begin(); cat != cats.end();) {
             cat->get()->Display();
-            cat->get()->MoveToNode();
+            cat->get()->MoveToNode(deltaTicks);
 
             if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
             else cat++;
+        }
+
+        // cats defeated?
+        if (catsSummoned && cats.empty()) {
+            player->AddMoney(userMenu.EndRound());
+            catsSummoned = false;
         }
 
         /*

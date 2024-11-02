@@ -15,6 +15,11 @@ class Menu {
 
         SDL_Rect* menuRect = new SDL_Rect{800,0,200,800};
 
+        // Rounds
+        bool roundStarted = false;
+        int roundNumber = 1;
+        int roundReward = 250;
+
     public:
         Menu() {
             this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
@@ -26,6 +31,10 @@ class Menu {
             this->buttons.push_back(Button("../resources/StartButten.png",
                                            {x, y, w, h},
                                            [this]{Start();}));
+
+            buttons.push_back(Button("../resources/justbutten.png",
+                                     {805, 720, 75, 75}, [this]{roundStarted = true;}));
+            buttons[1].MakeHidden(true);
         }
 
         void Display() {
@@ -50,10 +59,20 @@ class Menu {
         void Start() {
             player->Setup();
             buttons[0].MakeHidden(true);
+            buttons[1].MakeHidden(false);
             exitMenu = true;
         }
 
+        int EndRound() {
+            roundStarted = false;
+            roundNumber++;
+            int r = roundReward;
+            roundReward = int((float)roundReward * 1.28);
+            return r;
+        }
+
         [[nodiscard]] bool MenuClosed() const { return exitMenu;};
+        [[nodiscard]] bool RoundStarted() const { return roundStarted; };
 };
 
 #endif
