@@ -25,10 +25,10 @@ int main(int argc, char** argv) {
         return 0;
     }
 
-    Menu m;
-
-    Node* b = new Node({400, 500}, NULL, false);
-    Node* n = new Node({0, 0}, b, true);
+    Menu userMenu;
+    Node* b = new Node({50, 50}, NULL, true);
+    Node* n = new Node({0, 0}, b, false);
+    b->generateTextures();
 
     // Path creation
     SetupPath();
@@ -82,12 +82,11 @@ int main(int argc, char** argv) {
          * MAIN MENU / BACKGROUND / MAIN MENU / BACKGROUND
          */
 
-        m.Display();
-        b->render();
+        userMenu.Display();
 
         if (!gameMenuFlop) {
-            m.CheckButtons();
-            gameMenuFlop = m.MenuClosed();
+            userMenu.CheckButtons();
+            gameMenuFlop = userMenu.MenuClosed();
         }
 
         /*
@@ -97,7 +96,20 @@ int main(int argc, char** argv) {
         // Check for the user trying to place a duck down
         if (gameMenuFlop) {
             DisplayDuckMode();
-            Duck::PlaceDuck();
+
+            Duck::DuckAtMouse(40);
+            if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck != nullptr) {
+                mouseHoverDuck->ShowUpgradeWindow(true);
+                selectedDuck = mouseHoverDuck;
+            } else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {
+                if (selectedDuck != nullptr && mouse->GetPosition().first <= 800) {
+                    selectedDuck->ShowUpgradeWindow(false);
+                    selectedDuck = nullptr;
+                }
+            }
+
+            else
+                Duck::PlaceDuck();
         }
 
         for (auto& duck : playerDucks) {
@@ -108,21 +120,29 @@ int main(int argc, char** argv) {
 
             // attack target
             duck->AttackTarget(deltaTicks);
-            duck->Update();
+            duck->Update(deltaTicks);
         }
 
         /*
          * CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS
          */
 
+        if (userMenu.RoundStarted() && !catsSummoned) SummonCats();
+
         for (auto cat = cats.begin(); cat != cats.end();) {
             cat->get()->Display();
-            cat->get()->MoveToNode();
+            cat->get()->MoveToNode(deltaTicks);
 
             if (cat->get()->IsDead() || cat->get()->ReachedEnd())
                 cat = cats.erase(cat);
             else
                 cat++;
+        }
+
+        // cats defeated?
+        if (catsSummoned && cats.empty()) {
+            player->AddMoney(userMenu.EndRound());
+            catsSummoned = false;
         }
 
         /*

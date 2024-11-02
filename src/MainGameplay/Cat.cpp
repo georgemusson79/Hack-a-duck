@@ -7,10 +7,10 @@
 #include "Player.h"
 
 GenericCat::GenericCat() {
-    catRect = new SDL_Rect{200,200,50,50};
-    x = 200;
-    y = 200;
     currPathNode = pathNodes.front().get();
+    catRect = new SDL_Rect{currPathNode->GetPosition().x,currPathNode->GetPosition().y,50,50};
+    x = catRect->x;
+    y = catRect->y;
 
     auto s = IMG_Load(imgPath.c_str());
     catTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
@@ -18,8 +18,10 @@ GenericCat::GenericCat() {
 }
 
 void GenericCat::Display() {
-//    this->t.render();
-    SDL_RenderCopy(window->GetRenderer(), catTexture, nullptr, catRect);
+    SDL_Rect displayRect = *catRect;
+    displayRect.x -= displayRect.w/2;
+    displayRect.h -= displayRect.h/2;
+    SDL_RenderCopy(window->GetRenderer(), catTexture, nullptr, &displayRect);
 }
 
 void GenericCat::TakeDamage(int dmg) {
@@ -27,12 +29,16 @@ void GenericCat::TakeDamage(int dmg) {
 
     // cat perish
     if (health <= 0) {
-
+        player->AddMoney(1);
     }
 }
 
-void GenericCat::MoveToNode() {
+void GenericCat::MoveToNode(Uint64 _deltaTicks) {
     if (currPathNode == nullptr) return; // end of track
+
+    waitTicks -= _deltaTicks;
+    if ((int)waitTicks > 0) return; // YES THE INT IS NECESSARY
+    waitTicks = -1;
 
     int distX = currPathNode->GetPosition().x - catRect->x;
     int distY = currPathNode->GetPosition().y - catRect->y;
@@ -50,11 +56,23 @@ void GenericCat::MoveToNode() {
         currPathNode = currPathNode->GetNextNode();
     }
 
-    x += spd * ((distX < 0) ? -1 : 1);
-    y += spd * ((distY < 0) ? -1 : 1);
+    x += spd * ((int)_deltaTicks / 1000.0) * ((distX < 0) ? -1 : 1);
+    y += spd * ((int)_deltaTicks / 1000.0) * ((distY < 0) ? -1 : 1);
 
-    catRect->x = (int)x;
-    catRect->y = (int)y;
+    catRect->x = (int)std::round(x);
+    catRect->y = (int)std::round(y);
+
+}
+
+void GenericCat::AddDelayBeforeMoving(Uint64 _ticksDelay) {
+    waitTicks = _ticksDelay;
+}
+
+void GenericCat::MoveToRect(SDL_Rect _rect) {
+    catRect->x = _rect.x;
+    catRect->y = _rect.y;
+    catRect->w = _rect.w;
+    catRect->h = _rect.h;
 }
 
 void GenericCat::setRotation(double rot) {

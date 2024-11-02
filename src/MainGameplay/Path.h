@@ -73,22 +73,18 @@ inline void SetupPath() {
     pathNodes.clear();
 
     // Populate the path nodes
-    pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, nullptr));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{250, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{280, 700}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{300, 680}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{350, 650}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{410, 610}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{510, 500}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{570, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{600, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{630, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{660, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{690, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get(), true));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 700}, nullptr));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{500, 700}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{680, 570}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{750, 500}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{750, 400}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{680, 350}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{580, 350}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{200, 425}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{75, 375}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{75, 250}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{225, 150}, pathNodes.back().get()));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{900, 150}, pathNodes.back().get(), true));
 }
 
 #endif
