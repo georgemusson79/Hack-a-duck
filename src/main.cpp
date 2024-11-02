@@ -12,6 +12,7 @@
 #include "MainMenu/Menu.h"
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Mouse.h"
+#include "UserInterface/Sound.h"
 
 int main(int argc, char** argv) {
     /*
