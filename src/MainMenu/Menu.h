@@ -98,6 +98,14 @@ class Menu {
         roundNumber++;
         int r = roundReward;
         roundReward = int((float)roundReward * 1.28);
+
+        // update round label
+        std::string str {"Start Round " + std::to_string(roundNumber)};
+        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
+        auto s = TTF_RenderText_Blended(font, str.c_str(), {255, 255, 255, 255});
+        roundLabel = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+        SDL_FreeSurface(s);
+
         return r;
     }
 
