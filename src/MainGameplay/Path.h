@@ -14,6 +14,7 @@ class Node {
    private:
     Texture* t;
     Vector2 nodePos;
+    std::vector<Texture*> toNextNode = {};
     Node* nextNode;
     bool isLastNode;
     bool isFirstNode;
@@ -21,11 +22,34 @@ class Node {
     int h = 1000 / 10;
 
    public:
+    void generateTextures() {
+        std::vector<std::string> pngs = {"pad.png", "lilypad.png", "cluster.png"};
+        std::string png = "resources/" + pngs[rand() % 3];
+        this->t = new Texture(png, this->nodePos.x, this->nodePos.y, this->w, this->h);
+        double rotation = rand() % 360;
+        this->t->rotation = rotation;
+        if (!this->isLastNode) {
+            int spaceX = this->nextNode->nodePos.x - this->nodePos.x;
+            int spaceY = this->nextNode->nodePos.y - this->nodePos.y;
+            int margin = this->w / 2;
+
+            int y = std::min(this->nextNode->nodePos.y, this->nodePos.y);
+
+            for (int x = std::min(this->nextNode->nodePos.x, this->nodePos.x); x < std::max(this->nextNode->nodePos.x, this->nodePos.x); x += margin) {
+                if (y + margin < std::max(this->nextNode->nodePos.y, this->nodePos.y)) y = y + margin;
+                double rotation = rand() % 360;
+                std::vector<std::string> pngs = {"pad.png", "lilypad.png", "cluster.png"};
+                std::string png = "resources/" + pngs[rand() % 3];
+                this->toNextNode.push_back(new Texture(png, this->nodePos.x, this->nodePos.y, this->w, this->h));
+            }
+        }
+    }
     Node(Vector2 _nodePos, Node* _lastNode, bool isLast = false);
     [[nodiscard]] Node* GetNextNode() const { return nextNode; };
     [[nodiscard]] Vector2 GetPosition() const { return nodePos; };
     void render() {
         t->render();
+        for (Texture* t : this->toNextNode) t->render();
     }
 };
 

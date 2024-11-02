@@ -26,7 +26,9 @@ int main(int argc, char** argv) {
     }
 
     Menu m;
-    Node n({0, 0}, NULL, true);
+    Node* b = new Node({50, 50}, NULL, true);
+    Node* n = new Node({0, 0}, b, false);
+    b->generateTextures();
 
     // Path creation
     SetupPath();
@@ -78,7 +80,7 @@ int main(int argc, char** argv) {
          */
 
         m.Display();
-        n.render();
+        n->render();
 
         /*
          * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS
@@ -117,7 +119,6 @@ int main(int argc, char** argv) {
          */
 
         player->Display();
-
         window->Display();
     }
 
