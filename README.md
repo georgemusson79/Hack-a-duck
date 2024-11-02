@@ -1,6 +1,6 @@
 # Pre-Text
 This game was made by **The Sleepy Squad**, consisting of Callum, Tilly, George, and Iris (Justinas).
-We made this game for Nottingham Trent University 2nd Hack-a-Duck.
+We made this game for Nottingham Trent University's 2nd Hack-a-Duck.
 
 # Game Explanation
 Welcome to our game, **Duck Bread Defence**. This is our version of a tower defence style game, where the enemies are cats that want to attack you. You have to strategically place down the towers, which are ducks, that spit bread at the cats to kill them before they get to the end.
@@ -15,3 +15,7 @@ To place ducks you need to first use your scroll wheel to select the type of duc
 ## Upgrading Ducks
 
 # Technical Explanation
+To build the game we used CMake to make transfering between other machines and general library linking as easy as we could. The language that we decided on is C++ due to its machine cross-compatability, and because general knowledge of C++ was high within the group. To render the windows and images we used the SDL library,  
+
+## Difficulties
+Iris - "I would say that the most difficult part of the project for me was getting it to actually build and run on my machine xD I must have switched between Linux and Windows 3 or 4 times before I got it to work the first time, and the worst thing is that it broke straight after I pulled again! We got there in the end though, which is what matters."
