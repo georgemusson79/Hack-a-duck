@@ -109,8 +109,9 @@ int main(int argc, char** argv) {
                 }
             }
 
-
-            else Duck::PlaceDuck();
+            if (mouse->GetPosition().first >= 25 && mouse->GetPosition().first <= 775 &&
+                    mouse->GetPosition().second >= 25 && mouse->GetPosition().second <= 775)
+                Duck::PlaceDuck();
         }
 
         for (auto& duck : playerDucks) {

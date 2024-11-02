@@ -84,7 +84,7 @@ inline void SetupPath() {
     pathNodes.push_back(std::make_unique<Node>(Vector2{75, 375}, pathNodes.back().get()));
     pathNodes.push_back(std::make_unique<Node>(Vector2{75, 250}, pathNodes.back().get()));
     pathNodes.push_back(std::make_unique<Node>(Vector2{225, 150}, pathNodes.back().get()));
-    pathNodes.push_back(std::make_unique<Node>(Vector2{900, 150}, pathNodes.back().get(), true));
+    pathNodes.push_back(std::make_unique<Node>(Vector2{800, 150}, pathNodes.back().get(), true));
 }
 
 #endif
