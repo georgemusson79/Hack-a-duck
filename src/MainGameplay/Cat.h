@@ -45,7 +45,7 @@ class GenericCat {
 inline std::vector<std::unique_ptr<GenericCat>> cats;
 inline bool catsSummoned = false;
 
-inline void SummonCats() {
+inline void SummonCats(int _lvl) {
     int delay = 500;
     int quantity = 25;
 

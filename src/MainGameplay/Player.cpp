@@ -43,9 +43,6 @@ void Player::Display() {
 
     SDL_RenderCopy(window->GetRenderer(), livesTexture, nullptr, livesRect);
     SDL_RenderCopy(window->GetRenderer(), moneyTexture, nullptr, moneyRect);
-
-    // Display selected duck
-
 }
 
 void Player::UpdateSelection(int _scroll) {

@@ -26,9 +26,9 @@ int main(int argc, char** argv) {
     }
 
     Menu userMenu;
-    Node* b = new Node({50, 50}, NULL, true);
-    Node* n = new Node({0, 0}, b, false);
-    b->generateTextures();
+//    Node* b = new Node({50, 50}, NULL, true);
+//    Node* n = new Node({0, 0}, b, false);
+//    b->generateTextures();
 
     // Path creation
     SetupPath();
@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
          * CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS
          */
 
-        if (userMenu.RoundStarted() && !catsSummoned) SummonCats();
+        if (userMenu.RoundStarted() && !catsSummoned) SummonCats(userMenu.GetLevel());
 
         for (auto cat = cats.begin(); cat != cats.end();) {
             cat->get()->Display();

@@ -30,20 +30,20 @@ class Menu {
         int theight = 300;
         int tx = (800 / 2) - (twidth / 2);
         int tyStart = -theight - 50;
-        this->title = new Texture("resources/title2.png", tx, tyStart, twidth, theight);
-        this->bg = new Texture("resources/mapback.png", 0, 0, 800, 800);
-        this->overlay = new Texture("resources/overlay.png", 0, 0, 800, 800);
-        path = new Texture("resources/Path.png", 0, 0, 800, 800);
+        this->title = new Texture("../resources/title2.png", tx, tyStart, twidth, theight);
+        this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
+        this->overlay = new Texture("../resources/overlay.png", 0, 0, 800, 800);
+        path = new Texture("../resources/Path.png", 0, 0, 800, 800);
         int w = 200;
         int h = 150;
         int x = 400 - (w / 2);
         int y = 800 + h;
         endy = 400 - (h / 2);
-        this->buttons.push_back(Button("resources/red button.png",
+        this->buttons.push_back(Button("../resources/red button.png",
                                        {x, y, w, h},
                                        [this] { Start(); }));
 
-        buttons.push_back(Button("resources/justbutten.png",
+        buttons.push_back(Button("../resources/justbutten.png",
                                  {805, 720, 75, 75}, [this] { roundStarted = true; }));
         buttons[1].MakeHidden(true);
     }
@@ -57,7 +57,7 @@ class Menu {
         }
         bg->render();
         path->render();
-        title->render();
+        if (!exitMenu) title->render();
 
         SDL_SetRenderDrawColor(window->GetRenderer(), 0, 120, 30, 255);
         SDL_RenderFillRect(window->GetRenderer(), menuRect);
@@ -91,6 +91,7 @@ class Menu {
 
     [[nodiscard]] bool MenuClosed() const { return exitMenu; };
     [[nodiscard]] bool RoundStarted() const { return roundStarted; };
+    [[nodiscard]] int GetLevel() const { return roundNumber; };
 };
 
 #endif
