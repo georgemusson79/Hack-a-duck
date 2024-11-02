@@ -30,6 +30,9 @@ class Duck {
         GenericCat* target {};
         float radius = 200;
 
+        Uint64 attackTimer = 800;
+        Uint64 ticksSinceLastAttack = 0;
+
         // abilities
         std::string displayName {"Basic Bread-Lobbing Duck"};
         int catCount {0};
@@ -39,6 +42,8 @@ class Duck {
 
         void Display();
         void FindTarget();
+        void AttackTarget(Uint64 _deltaTicks);
+        void Update();
 
         static Duck* DuckAtMouse(float _mouseRadius);
         static void PlaceDuck();
@@ -48,12 +53,23 @@ inline std::vector<std::unique_ptr<Duck>> playerDucks;
 
 class BreadCrumbProjectile {
     private:
-        std::string imgPath = "../resources/chick.png";
+        Texture* t;
+        std::string imgPath = "../resources/bread.png";
         SDL_Texture* breadTexture {};
-        SDL_Rect* breadRect {};
+        SDL_Rect breadRect {};
+
+        GenericCat* target;
+        double x = 0, y = 0;
+        double spd = 0.3;
+        bool hitTarget = false;
 
     public:
-        BreadCrumbProjectile() = default;
+        BreadCrumbProjectile(GenericCat* _target, SDL_Rect _origin);
+
+        void MoveToTarget();
+        void Display();
+
+        [[nodiscard]] bool HitTarget() const { return hitTarget; };
 };
 
 #endif //HACK_A_DUCK_DUCK_H

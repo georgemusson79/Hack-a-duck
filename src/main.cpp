@@ -12,21 +12,32 @@
 #include "MainGameplay/Path.h"
 
 int main(int argc, char** argv) {
+
     /*
      * SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP
      */
+
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
-    SetupPath();
-
     Menu m;
 
-    Duck::PlaceDuck();
+    // Path creation
+    SetupPath();
+    cats.push_back(std::make_unique<GenericCat>());
 
-    cats.emplace_back(new GenericCat());
+    // Time tracking
+    Uint64 tickStart;
+    Uint64 tickEnd;
+    Uint64 deltaTicks;
 
     bool running = true;
     while (running) {
+        // Update deltaTicks
+        tickStart = SDL_GetTicks64();
+        deltaTicks = tickStart - tickEnd;
+        tickEnd = tickStart;
+
+        // Check for exit / other events
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
             switch (e.type) {
@@ -43,8 +54,14 @@ int main(int argc, char** argv) {
                     break;
             }
         }
+
+        // Update mouse
         mouse->UpdateActive();
-        m.update();
+
+        /*
+         * MAIN MENU / BACKGROUND / MAIN MENU / BACKGROUND
+         */
+
         m.Display();
 
         /*
@@ -61,6 +78,8 @@ int main(int argc, char** argv) {
             duck->FindTarget();
 
             // attack target
+            duck->AttackTarget(deltaTicks);
+            duck->Update();
         }
 
         /*

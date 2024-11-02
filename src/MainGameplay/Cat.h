@@ -26,12 +26,13 @@ class GenericCat {
 
         void hurt(int dmg);
         void moveToNextPath();
-        void die();
+        void die() {printf("CAT IS DEAD\n");};
         void dealDmgToPlayer();
         void setRotation(double rot);
 
         void update();
 
+        [[nodiscard]] SDL_Rect* GetRect() const { return catRect; };
         //        [[nodiscard]] double getRotation() {return this->t.rotation;}
 };
 
