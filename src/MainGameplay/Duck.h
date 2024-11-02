@@ -15,13 +15,14 @@
 #include "Cat.h"
 #include "Player.h"
 #include "../UserInterface/Mouse.h"
+#include "../UserInterface/Button.h"
 
 class BreadCrumbProjectile;
 
 class Duck {
     private:
         // image
-        std::string imgPath = "../resources/chick.png";
+        std::string baselvl = "../resources/chick.png";
         SDL_Texture* duckTexture;
         SDL_Rect* duckRect = new SDL_Rect{0,0,40,40};
         bool showRedError = false;
@@ -29,7 +30,7 @@ class Duck {
 
         // projectiles
         std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
-        GenericCat* target {};
+        std::vector<GenericCat*> targets {};
         float radius = 200;
         int dmg = 1;
 
@@ -37,9 +38,19 @@ class Duck {
         Uint64 ticksSinceLastAttack = 0;
 
         // abilities
-        static int cost;
+        static int baseCost;
+        int lvl = 1;
+        int upgradeCost = baseCost + 70;
+        bool showUpgWindow = false;
         std::string displayName {"Basic Bread-Lobbing Duck"};
         int catCount {0};
+
+        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
+        Button* upgButton = new Button("../resources/chick.png",
+                                       {825, 75, 25, 25},
+                                       [this]{Upgrade();});
+        SDL_Texture* labelTexture {};
+        SDL_Texture* upgLabelTexture {};
 
     public:
         Duck();
@@ -49,17 +60,25 @@ class Duck {
         void AttackTarget(Uint64 _deltaTicks);
         void Update(Uint64 _deltaTicks);
 
+        // upgrades
+        void ShowUpgradeWindow(bool _show);
         static Duck* DuckAtMouse(float _mouseRadius);
         static void PlaceDuck();
         void SetDuckPosition(SDL_Rect _rect);
+        void Upgrade();
 
         [[nodiscard]] int GetDamage() const { return dmg; };
-        [[nodiscard]] int GetCost() const { return cost; };
+        [[nodiscard]] int GetCost() const { return baseCost; };
 };
 
-inline int Duck::cost = 125;
-
+inline int Duck::baseCost = 125;
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
+inline Duck* mouseHoverDuck {};
+inline Duck* selectedDuck {};
+
+
+
+
 inline std::unique_ptr<Duck> displayDuck;
 inline DUCK lastDuck = DUCK::NONE;
 

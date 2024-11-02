@@ -96,7 +96,20 @@ int main(int argc, char** argv) {
         // Check for the user trying to place a duck down
         if (gameMenuFlop) {
             DisplayDuckMode();
-            Duck::PlaceDuck();
+
+            Duck::DuckAtMouse(40);
+            if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck != nullptr) {
+                mouseHoverDuck->ShowUpgradeWindow(true);
+                selectedDuck = mouseHoverDuck;
+            }
+            else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {
+                if (selectedDuck != nullptr && mouse->GetPosition().first <= 800) {
+                    selectedDuck->ShowUpgradeWindow(false);
+                    selectedDuck = nullptr;
+                }
+            }
+
+            else Duck::PlaceDuck();
         }
 
         for (auto& duck : playerDucks) {

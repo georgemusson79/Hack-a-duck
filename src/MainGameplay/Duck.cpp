@@ -9,8 +9,17 @@
 Duck::Duck() {
     duckRect = new SDL_Rect{150,150,50,50};
 
-    auto s = IMG_Load(imgPath.c_str());
+    auto s = IMG_Load(baselvl.c_str());
     duckTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+    SDL_FreeSurface(s);
+
+    SDL_Color c{255, 255, 255, 255};
+    s = TTF_RenderText_Blended(font, displayName.c_str(), c);
+    labelTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+    SDL_FreeSurface(s);
+
+    s = TTF_RenderText_Blended(font, "<- 150 coins!", c);
+    upgLabelTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
     SDL_FreeSurface(s);
 }
 
@@ -37,29 +46,43 @@ void Duck::Display() {
     for (const auto& crumb : breadCrumbs) {
         crumb->Display();
     }
+
+    if (!showUpgWindow) return;
+    // show upgrade window:
+
+    SDL_Rect r{812, 25, 175, 25};
+    SDL_RenderCopy(window->renderer, labelTexture, nullptr, &r);
+
+    r = SDL_Rect{863, 75, 125, 25};
+    SDL_RenderCopy(window->renderer, upgLabelTexture, nullptr, &r);
+
+    upgButton->Display();
 }
 
 
+void Duck::ShowUpgradeWindow(bool _show)  {
+    upgButton->MakeHidden(!_show);
+    showUpgWindow = _show;};
+
 // determine if a cat position is within duck range, and lock on to it
 void Duck::FindTarget() {
+    targets.clear();
+
     for (const auto& cat : cats) {
         int x = cat->catRect->x - duckRect->x + 25;
         int y = cat->catRect->y - duckRect->y + 25;
 
         if (float(x*x) + float(y*y) < radius*radius){
-            target = cat.get();
-            return;
+            targets.push_back(cat.get());
+            if (targets.size() > lvl) return;
         }
     }
-
-    // target lost
-    target = nullptr;
 }
 
 void Duck::AttackTarget(Uint64 _deltaTicks) {
     ticksSinceLastAttack += _deltaTicks;
 
-    if (target == nullptr) {
+    if (targets.empty()) {
         if (ticksSinceLastAttack > attackTimer) ticksSinceLastAttack = attackTimer;
         return;
     }
@@ -67,14 +90,16 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
     if (ticksSinceLastAttack >= attackTimer) {
         ticksSinceLastAttack -= attackTimer;
 
-        // throw projectile at target
-        SDL_Rect origin = *duckRect;
-        origin.w = 40;
-        origin.h = 40;
-        breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
+        for (auto& target : targets) {
+            // throw projectile at target
+            SDL_Rect origin = *duckRect;
+            origin.w = 40;
+            origin.h = 40;
+            breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
+        }
 
         for (auto& crumb : breadCrumbs) {
-            if (crumb->target == nullptr) crumb->target = target;
+            if (crumb->target == nullptr) crumb->target = targets.back();
         }
     }
 }
@@ -99,9 +124,13 @@ Duck* Duck::DuckAtMouse(float _mouseRadius) {
         int x = duck->duckRect->x - mouse->GetPosition().first +25;
         int y = duck->duckRect->y - mouse->GetPosition().second +25;
 
-        if (float(x*x) + float(y*y) < _mouseRadius*_mouseRadius) return duck.get();
+        if (float(x*x) + float(y*y) < _mouseRadius*_mouseRadius) {
+            mouseHoverDuck = duck.get();
+            return duck.get();
+        }
     }
 
+    mouseHoverDuck = nullptr;
     return nullptr;
 }
 
@@ -112,14 +141,13 @@ void Duck::PlaceDuck() {
     if (pd == DUCK::NONE) return; // not duck placing mode
 
     // is space occupied by another duck?
-    Duck* duck;
-    if ((duck = DuckAtMouse(50)) != nullptr) {
-        duck->showRedError = true;
+    if (mouseHoverDuck != nullptr) {
+        mouseHoverDuck->showRedError = true;
         return;
     }
 
     // Money Check
-    if (player->GetMoney() < cost) return;
+    if (player->GetMoney() < baseCost) return;
 
     // place a duck at the mouse position
     auto [x, y] = mouse->GetPosition();
@@ -128,7 +156,7 @@ void Duck::PlaceDuck() {
     d->duckRect = new SDL_Rect{x-25, y-25, 50, 50};
     playerDucks.push_back(std::move(d));
 
-    player->AddMoney(-cost);
+    player->AddMoney(-baseCost);
 }
 
 
@@ -136,7 +164,18 @@ void Duck::SetDuckPosition(SDL_Rect _rect) {
     duckRect = new SDL_Rect(_rect);
 }
 
+void Duck::Upgrade() {
+    if (player->GetMoney() < baseCost) return;
 
+    player->AddMoney(-baseCost);
+    upgradeCost += 70;
+
+    // apply upgrades
+    dmg++;
+    attackTimer -= 50;
+    lvl++;
+
+}
 
 
 BreadCrumbProjectile::BreadCrumbProjectile(Duck* _parent, GenericCat *_target, SDL_Rect _origin) {
