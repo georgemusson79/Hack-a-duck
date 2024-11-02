@@ -3,6 +3,7 @@
 //
 
 #include "Button.h"
+#include "TextureManager.h"
 
 #include <utility>
 
@@ -16,14 +17,11 @@ Button::Button(std::string imgPath, SDL_Rect dims, std::function<void()> _fn) {
     clickRegion = buttonRect;
     fn = std::move(_fn);
 
-    auto s = IMG_Load(imgPath.c_str());
-    buttonTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-    SDL_FreeSurface(s);
 }
 
 void Button::Display() {
     if (hide) return;
-    SDL_RenderCopy(window->GetRenderer(), buttonTexture, nullptr, &buttonRect);
+    SDL_RenderCopy(window->GetRenderer(), tm->GetTexture(imgPath), nullptr, &buttonRect);
 }
 
 void Button::CheckClick() {

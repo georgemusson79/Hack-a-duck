@@ -9,7 +9,7 @@ include_directories(${PROJECT_NAME}
         "${LIBPATH}SDL2-2.28.5/include"
         "${LIBPATH}SDL2_image-2.8.2/include"
         "${LIBPATH}SDL2_ttf-2.20.2/include"
-        "${LIBPATH}SDL2_mixer-2.8.0/include"
+        "${LIBPATH}SDL2_mixer-2.8.0/i686-w64-mingw32/include/SDL2"
 )
 
 add_executable(Hack_a_duck
@@ -30,10 +30,12 @@ add_executable(Hack_a_duck
         src/MainGameplay/Path.cpp
         src/MainGameplay/Cat.cpp
         src/MainGameplay/Player.h
-        src/MainGameplay/Player.cpp)
+        src/MainGameplay/Player.cpp
+        src/UserInterface/TextureManager.h
+        src/UserInterface/TextureManager.cpp)
 
 target_link_libraries(${PROJECT_NAME}
-        "${LIBPATH}SDL2_mixer-2.8.0/lib/x64/SDL2_mixer.lib"
+        "${LIBPATH}SDL2_mixer-2.8.0/SDL2_mixer-2.8.0/lib/x64/SDL2_mixer.lib"
         "${LIBPATH}SDL2-2.28.5/lib/x64/SDL2.lib"
         "${LIBPATH}SDL2_image-2.8.2/lib/x64/SDL2_image.lib"
         "${LIBPATH}SDL2_ttf-2.20.2/lib/x64/SDL2_ttf.lib"

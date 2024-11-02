@@ -5,6 +5,7 @@
 #include <cmath>
 #include "Cat.h"
 #include "Player.h"
+#include "../UserInterface/TextureManager.h"
 
 GenericCat::GenericCat() {
     currPathNode = pathNodes.front().get();
@@ -12,16 +13,14 @@ GenericCat::GenericCat() {
     x = catRect->x;
     y = catRect->y;
 
-    auto s = IMG_Load(imgPath.c_str());
-    catTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-    SDL_FreeSurface(s);
+    tm->GetTexture(imgPath);
 }
 
 void GenericCat::Display() {
     SDL_Rect displayRect = *catRect;
     displayRect.x -= displayRect.w/2;
     displayRect.h -= displayRect.h/2;
-    SDL_RenderCopy(window->GetRenderer(), catTexture, src, &displayRect);
+    SDL_RenderCopy(window->GetRenderer(), tm->GetTexture(imgPath), src, &displayRect);
 }
 
 void GenericCat::TakeDamage(int dmg) {

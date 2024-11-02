@@ -23,6 +23,8 @@ int main(int argc, char** argv) {
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
 
+    tm = std::make_unique<TextureManager>();
+
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
         std::cout << "shitass mixer broke :(\n";
         return 0;
