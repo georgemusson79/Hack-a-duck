@@ -4,11 +4,13 @@
 #include <SDL_mixer.h>
 
 #include <iostream>
+#include <thread>
 class Sound {
    private:
     Mix_Chunk* snd;
     std::string sndPath;
     int chnl = -1;
+    int volume = 128;
 
    public:
     void loadSound(std::string sndPath) {
@@ -22,21 +24,29 @@ class Sound {
         return this->sndPath;
     }
 
-    Sound(std::string path) {
+    Sound(std::string path, bool playImmediately = false, int loops = 0) {
         this->loadSound(path);
+        if (playImmediately) this->play(loops);
     }
 
     void deleteSound() {
         Mix_FreeChunk(snd);
     }
 
+    void setVolume(int volume) {
+        Mix_VolumeChunk(this->snd, volume);
+        this->volume = volume;
+    }
+
+    int getVolume() {
+        return this->volume;
+    }
+
     ~Sound() {
         this->deleteSound();
     }
 
-    void play(bool loop = false) {
-        int loops = 0;
-        if (loop) loops = -1;
+    void play(int loops = 0) {
         this->chnl = Mix_PlayChannel(-1, this->snd, loops);
     }
 

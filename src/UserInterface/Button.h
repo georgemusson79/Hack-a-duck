@@ -13,11 +13,13 @@
 #include <string>
 
 #include "MainWindow.h"
+#include "Sound.h"
 
 class Button {
    private:
     SDL_Rect clickRegion{};
     SDL_Rect buttonRect{};
+    std::unique_ptr<Sound> clickSound;
 
     std::string imgPath = "resources/StartButten.png";
     SDL_Texture* buttonTexture{};

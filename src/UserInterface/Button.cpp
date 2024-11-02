@@ -11,7 +11,7 @@
 
 Button::Button(std::string imgPath, SDL_Rect dims, std::function<void()> _fn) {
     this->imgPath = imgPath;
-
+    this->clickSound = std::make_unique<Sound>("resources/clickSFX.wav");
     buttonRect = dims;
     clickRegion = buttonRect;
     fn = std::move(_fn);
@@ -36,6 +36,7 @@ void Button::CheckClick() {
     // mousedown over the button
     if (mouse->IsUnheldActive()) {
         clicked = true;
+        this->clickSound->play();
         fn();
     }
 }

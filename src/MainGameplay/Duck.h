@@ -8,79 +8,79 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include <string>
 #include <memory>
+#include <string>
 #include <vector>
 
+#include "../UserInterface/Button.h"
+#include "../UserInterface/Mouse.h"
+#include "../UserInterface/Sound.h"
 #include "Cat.h"
 #include "Player.h"
-#include "../UserInterface/Mouse.h"
-#include "../UserInterface/Button.h"
 
 class BreadCrumbProjectile;
 
 class Duck {
-    private:
-        // image
-        std::string baselvl = "../resources/chicksheet.png";
-        SDL_Texture* duckTexture;
-        SDL_Rect* duckRect = new SDL_Rect{0,0,40,40};
-        SDL_Rect* srcRect = new SDL_Rect{304, 0, 304, 192};
-        bool showRedError = false;
-        int shoddyTimer = 0;
+   private:
+    // image
+    std::unique_ptr<Sound> spawnSnd1;
+    std::unique_ptr<Sound> shootSnd1;
+    std::string baselvl = "resources/chicksheet.png";
+    SDL_Texture* duckTexture;
+    SDL_Rect* duckRect = new SDL_Rect{0, 0, 40, 40};
+    SDL_Rect* srcRect = new SDL_Rect{304, 0, 304, 192};
+    bool showRedError = false;
+    int shoddyTimer = 0;
 
-        // projectiles
-        std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
-        std::vector<GenericCat*> targets {};
-        float radius = 200;
-        int dmg = 1;
+    // projectiles
+    std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
+    std::vector<GenericCat*> targets{};
+    float radius = 200;
+    int dmg = 1;
 
-        Uint64 attackTimer = 800;
-        Uint64 ticksSinceLastAttack = 0;
+    Uint64 attackTimer = 800;
+    Uint64 ticksSinceLastAttack = 0;
 
-        // abilities
-        static int baseCost;
-        int lvl = 1;
-        int upgradeCost = baseCost + 70;
-        bool showUpgWindow = false;
-        std::string displayName {"Basic Bread-Lobbing Duck"};
-        int catCount {0};
+    // abilities
+    static int baseCost;
+    int lvl = 1;
+    int upgradeCost = baseCost + 70;
+    bool showUpgWindow = false;
+    std::string displayName{"Basic Bread-Lobbing Duck"};
+    int catCount{0};
 
-        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
-        Button* upgButton = new Button("../resources/chick.png",
-                                       {825, 75, 25, 25},
-                                       [this]{Upgrade();});
-        SDL_Texture* labelTexture {};
-        SDL_Texture* upgLabelTexture {};
+    TTF_Font* font = TTF_OpenFont("resources/TCFR.ttf", 100);
+    Button* upgButton = new Button("resources/chick.png",
+                                   {825, 75, 25, 25},
+                                   [this] { Upgrade(); });
+    SDL_Texture* labelTexture{};
+    SDL_Texture* upgLabelTexture{};
 
-    public:
-        Duck();
+   public:
+    Duck();
 
-        void Display();
-        void FindTarget();
-        void AttackTarget(Uint64 _deltaTicks);
-        void Update(Uint64 _deltaTicks);
+    void Display();
+    void FindTarget();
+    void AttackTarget(Uint64 _deltaTicks);
+    void Update(Uint64 _deltaTicks);
 
-        // upgrades
-        void ShowUpgradeWindow(bool _show);
-        static Duck* DuckAtMouse(float _mouseRadius);
-        static void PlaceDuck();
-        void SetDuckPosition(SDL_Rect _rect);
-        void Upgrade();
+    // upgrades
+    void ShowUpgradeWindow(bool _show);
+    static Duck* DuckAtMouse(float _mouseRadius);
+    static void PlaceDuck();
+    void SetDuckPosition(SDL_Rect _rect);
+    void Upgrade();
 
-        void CheckButtons();
+    void CheckButtons();
 
-        [[nodiscard]] int GetDamage() const { return dmg; };
-        [[nodiscard]] int GetCost() const { return baseCost; };
+    [[nodiscard]] int GetDamage() const { return dmg; };
+    [[nodiscard]] int GetCost() const { return baseCost; };
 };
 
 inline int Duck::baseCost = 125;
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
-inline Duck* mouseHoverDuck {};
-inline Duck* selectedDuck {};
-
-
-
+inline Duck* mouseHoverDuck{};
+inline Duck* selectedDuck{};
 
 inline std::unique_ptr<Duck> displayDuck;
 inline DUCK lastDuck = DUCK::NONE;
@@ -94,7 +94,7 @@ inline void DisplayDuckMode() {
                 displayDuck = std::make_unique<Duck>();
                 break;
 
-            default: // DUCK::NONE
+            default:  // DUCK::NONE
                 displayDuck.reset();
         }
         lastDuck = d;
@@ -108,30 +108,30 @@ inline void DisplayDuckMode() {
 }
 
 class BreadCrumbProjectile {
-    private:
-        Texture* t;
-        std::string imgPath = "../resources/bread.png";
-        SDL_Texture* breadTexture {};
-        SDL_Rect breadRect {};
+   private:
+    Texture* t;
+    std::string imgPath = "resources/bread.png";
+    SDL_Texture* breadTexture{};
+    SDL_Rect breadRect{};
 
-        GenericCat* target;
-        double x = 0, y = 0;
-        double spd = 300;
-        bool hitTarget = false;
+    GenericCat* target;
+    double x = 0, y = 0;
+    double spd = 300;
+    bool hitTarget = false;
 
-        Uint64 decayTime = 100;
+    Uint64 decayTime = 100;
 
-        Duck* parentDuck {};
+    Duck* parentDuck{};
 
-        friend class Duck;
+    friend class Duck;
 
-    public:
-        BreadCrumbProjectile(Duck* _parent, GenericCat* _target, SDL_Rect _origin);
+   public:
+    BreadCrumbProjectile(Duck* _parent, GenericCat* _target, SDL_Rect _origin);
 
-        void MoveToTarget(Uint64 _deltaTicks);
-        void Display();
+    void MoveToTarget(Uint64 _deltaTicks);
+    void Display();
 
-        [[nodiscard]] bool HitTarget() const { return hitTarget; };
+    [[nodiscard]] bool HitTarget() const { return hitTarget; };
 };
 
-#endif //HACK_A_DUCK_DUCK_H
+#endif  // HACK_A_DUCK_DUCK_H
