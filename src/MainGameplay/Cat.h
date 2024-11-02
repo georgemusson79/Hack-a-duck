@@ -11,11 +11,12 @@ class GenericCat {
     SDL_Rect* catRect = new SDL_Rect{-100, 750, 50, 50};
 
     // texture
-    std::string imgPath{"resources/redcat1.png"};
+    std::string imgPath{"../resources/redcat1.png"};
     SDL_Texture* catTexture{};
 
     // inc with difficulty? change per type
-    int health = 1;
+    int baseHp = 3;
+    int health = baseHp;
     double spd{100.0};
     Uint64 waitTicks = 0;
 

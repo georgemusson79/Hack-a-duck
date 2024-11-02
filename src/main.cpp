@@ -101,15 +101,16 @@ int main(int argc, char** argv) {
             if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck != nullptr) {
                 mouseHoverDuck->ShowUpgradeWindow(true);
                 selectedDuck = mouseHoverDuck;
-            } else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {
+            }
+            else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {
                 if (selectedDuck != nullptr && mouse->GetPosition().first <= 800) {
                     selectedDuck->ShowUpgradeWindow(false);
                     selectedDuck = nullptr;
                 }
             }
 
-            else
-                Duck::PlaceDuck();
+
+            else Duck::PlaceDuck();
         }
 
         for (auto& duck : playerDucks) {
@@ -121,6 +122,7 @@ int main(int argc, char** argv) {
             // attack target
             duck->AttackTarget(deltaTicks);
             duck->Update(deltaTicks);
+            duck->CheckButtons();
         }
 
         /*
@@ -133,10 +135,8 @@ int main(int argc, char** argv) {
             cat->get()->Display();
             cat->get()->MoveToNode(deltaTicks);
 
-            if (cat->get()->IsDead() || cat->get()->ReachedEnd())
-                cat = cats.erase(cat);
-            else
-                cat++;
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
+            else cat++;
         }
 
         // cats defeated?

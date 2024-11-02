@@ -29,7 +29,7 @@ void GenericCat::TakeDamage(int dmg) {
 
     // cat perish
     if (health <= 0) {
-        player->AddMoney(1);
+        player->AddMoney(baseHp);
     }
 }
 
