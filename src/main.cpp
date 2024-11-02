@@ -21,16 +21,29 @@ int main(int argc, char** argv) {
     mouse = std::make_unique<Mouse>();
     SetupPath();
 
+    if (TTF_Init() != 0) {
+        printf("ERROR INITING TTF");
+        return 0;
+    }
+
     Menu m;
 
     // Path creation
     SetupPath();
     cats.push_back(std::make_unique<GenericCat>());
 
+    // Player Setup
+    player = std::make_unique<Player>();
+    player->Setup();
+
     // Time tracking
     Uint64 tickStart;
     Uint64 tickEnd;
     Uint64 deltaTicks;
+
+    /*
+     * MAIN LOOP MAIN LOOP MAIN LOOP MAIN LOOP MAIN LOOP MAIN LOOP
+     */
 
     bool running = true;
     while (running) {
@@ -95,6 +108,12 @@ int main(int argc, char** argv) {
             if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
             else cat++;
         }
+
+        /*
+         * PLAYER UI PLAYER UI PLAYER UI PLAYER UI PLAYER UI PLAYER
+         */
+
+        player->Display();
 
         window->Display();
     }

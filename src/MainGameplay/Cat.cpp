@@ -40,6 +40,7 @@ void GenericCat::MoveToNode() {
         // has reached current node, select next node, if end node
         if (currPathNode->GetNextNode() == nullptr) {
             // END NODE TAKE LIFE
+            player->TakeDamage(health);
             currPathNode = nullptr;
             return;
         }
