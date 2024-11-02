@@ -26,9 +26,9 @@ int main(int argc, char** argv) {
     }
 
     Menu m;
-    Node* b = new Node({50, 50}, NULL, true);
-    Node* n = new Node({0, 0}, b, false);
-    b->generateTextures();
+
+    Node* b = new Node({400, 500}, NULL, false);
+    Node* n = new Node({0, 0}, b, true);
 
     // Path creation
     SetupPath();
@@ -83,6 +83,7 @@ int main(int argc, char** argv) {
          */
 
         m.Display();
+        b->render();
 
         if (!gameMenuFlop) {
             m.CheckButtons();
@@ -118,8 +119,10 @@ int main(int argc, char** argv) {
             cat->get()->Display();
             cat->get()->MoveToNode();
 
-            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
-            else cat++;
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd())
+                cat = cats.erase(cat);
+            else
+                cat++;
         }
 
         /*

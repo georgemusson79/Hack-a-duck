@@ -5,37 +5,37 @@
 #include "Path.h"
 
 class GenericCat {
-    protected:
-        // positioning
-        double x, y;
-        SDL_Rect* catRect{};
+   protected:
+    // positioning
+    double x, y;
+    SDL_Rect* catRect{};
 
-        // texture
-        std::string imgPath{"../resources/redcat1.png"};
-        SDL_Texture* catTexture;
+    // texture
+    std::string imgPath{"resources/redcat1.png"};
+    SDL_Texture* catTexture;
 
-        // inc with difficulty? change per type
-        int health = 1;
-        double spd {0.1};
+    // inc with difficulty? change per type
+    int health = 1;
+    double spd{0.1};
 
-        // pathfinding
-        Node* currPathNode {};
+    // pathfinding
+    Node* currPathNode{};
 
-        friend class Duck;
+    friend class Duck;
 
-    public:
-        GenericCat();
+   public:
+    GenericCat();
 
-        void Display();
+    void Display();
 
-        void TakeDamage(int dmg);
-        void MoveToNode();
-        void setRotation(double rot);
+    void TakeDamage(int dmg);
+    void MoveToNode();
+    void setRotation(double rot);
 
-        [[nodiscard]] SDL_Rect* GetRect() const { return catRect; };
-        [[nodiscard]] bool IsDead() const { return health <= 0; };
-        [[nodiscard]] bool ReachedEnd() const { return currPathNode == nullptr; };
-        //        [[nodiscard]] double getRotation() {return this->t.rotation;}
+    [[nodiscard]] SDL_Rect* GetRect() const { return catRect; };
+    [[nodiscard]] bool IsDead() const { return health <= 0; };
+    [[nodiscard]] bool ReachedEnd() const { return currPathNode == nullptr; };
+    //        [[nodiscard]] double getRotation() {return this->t.rotation;}
 };
 
 inline std::vector<std::unique_ptr<GenericCat>> cats;
