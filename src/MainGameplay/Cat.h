@@ -3,7 +3,6 @@
 
 #include "../UserInterface/Texture.h"
 #include "Path.h"
-#include "Player.h"
 
 class GenericCat {
     protected:

@@ -13,6 +13,8 @@
 #include <vector>
 
 #include "Cat.h"
+#include "Player.h"
+#include "../UserInterface/Mouse.h"
 
 class BreadCrumbProjectile;
 
@@ -49,6 +51,7 @@ class Duck {
 
         static Duck* DuckAtMouse(float _mouseRadius);
         static void PlaceDuck();
+        void SetDuckPosition(SDL_Rect _rect);
 
         [[nodiscard]] int GetDamage() const { return dmg; };
         [[nodiscard]] int GetCost() const { return cost; };
@@ -57,6 +60,26 @@ class Duck {
 inline int Duck::cost = 125;
 
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
+inline std::unique_ptr<Duck> displayDuck;
+
+inline void DisplayDuckMode() {
+    DUCK d = player->HoldingDuck();
+
+    switch (d) {
+        case DUCK::BASIC:
+            displayDuck = std::make_unique<Duck>();
+            break;
+
+        default: // DUCK::NONE
+            displayDuck.reset();
+    }
+
+    if (displayDuck != nullptr) {
+        auto [x, y] = mouse->GetPosition();
+        displayDuck->SetDuckPosition({x, y, 40, 40});
+        displayDuck->Display();
+    }
+}
 
 class BreadCrumbProjectile {
     private:

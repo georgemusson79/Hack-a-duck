@@ -91,7 +91,10 @@ int main(int argc, char** argv) {
          */
 
         // Check for the user trying to place a duck down
-        if (gameMenuFlop) Duck::PlaceDuck();
+        if (gameMenuFlop) {
+            DisplayDuckMode();
+            Duck::PlaceDuck();
+        }
 
         for (auto& duck : playerDucks) {
             duck->Display();

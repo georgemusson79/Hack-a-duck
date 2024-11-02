@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include "Cat.h"
+#include "Player.h"
 
 GenericCat::GenericCat() {
     catRect = new SDL_Rect{200,200,50,50};

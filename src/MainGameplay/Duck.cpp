@@ -128,6 +128,10 @@ void Duck::PlaceDuck() {
 }
 
 
+void Duck::SetDuckPosition(SDL_Rect _rect) {
+    duckRect = new SDL_Rect(_rect);
+}
+
 
 
 
