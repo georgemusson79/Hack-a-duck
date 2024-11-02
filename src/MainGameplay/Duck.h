@@ -29,6 +29,7 @@ class Duck {
         std::vector<std::unique_ptr<BreadCrumbProjectile>> breadCrumbs;
         GenericCat* target {};
         float radius = 200;
+        int dmg = 1;
 
         Uint64 attackTimer = 800;
         Uint64 ticksSinceLastAttack = 0;
@@ -47,6 +48,8 @@ class Duck {
 
         static Duck* DuckAtMouse(float _mouseRadius);
         static void PlaceDuck();
+
+        [[nodiscard]] int GetDamage() const { return dmg; };
 };
 
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
@@ -63,8 +66,10 @@ class BreadCrumbProjectile {
         double spd = 0.3;
         bool hitTarget = false;
 
+        Duck* parentDuck {};
+
     public:
-        BreadCrumbProjectile(GenericCat* _target, SDL_Rect _origin);
+        BreadCrumbProjectile(Duck* _parent, GenericCat* _target, SDL_Rect _origin);
 
         void MoveToTarget();
         void Display();

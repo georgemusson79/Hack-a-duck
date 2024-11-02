@@ -88,9 +88,12 @@ int main(int argc, char** argv) {
          * CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS CATS
          */
 
-        for (auto& cat : cats) {
-            cat->Display();
-            cat->moveToNextPath();
+        for (auto cat = cats.begin(); cat != cats.end();) {
+            cat->get()->Display();
+            cat->get()->MoveToNode();
+
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
+            else cat++;
         }
 
         window->Display();

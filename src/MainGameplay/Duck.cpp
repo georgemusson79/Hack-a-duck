@@ -71,7 +71,7 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
         SDL_Rect origin = *duckRect;
         origin.w = 40;
         origin.h = 40;
-        breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(target, origin));
+        breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
     }
 }
 
@@ -123,7 +123,8 @@ void Duck::PlaceDuck() {
 
 
 
-BreadCrumbProjectile::BreadCrumbProjectile(GenericCat *_target, SDL_Rect _origin) {
+BreadCrumbProjectile::BreadCrumbProjectile(Duck* _parent, GenericCat *_target, SDL_Rect _origin) {
+    parentDuck = _parent;
     target = _target;
     breadRect = _origin;
     x = breadRect.x;
@@ -143,8 +144,8 @@ void BreadCrumbProjectile::MoveToTarget() {
 
     // Check for collision
     if (std::abs(distX) < 2 && std::abs(distY) < 2 ) {
-        target->die();
-        hitTarget = true;
+        target->TakeDamage(parentDuck->GetDamage());
+        hitTarget = true; // dissapear now
         return;
     }
 

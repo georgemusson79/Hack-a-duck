@@ -21,8 +21,17 @@ void GenericCat::Display() {
     SDL_RenderCopy(window->GetRenderer(), catTexture, nullptr, catRect);
 }
 
-void GenericCat::moveToNextPath() {
-    if (currPathNode == nullptr) return;
+void GenericCat::TakeDamage(int dmg) {
+    health -= dmg;
+
+    // cat perish
+    if (health <= 0) {
+
+    }
+}
+
+void GenericCat::MoveToNode() {
+    if (currPathNode == nullptr) return; // end of track
 
     int distX = currPathNode->GetPosition().x - catRect->x;
     int distY = currPathNode->GetPosition().y - catRect->y;

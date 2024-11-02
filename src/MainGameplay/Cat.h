@@ -6,15 +6,19 @@
 
 class GenericCat {
     protected:
+        // positioning
         double x, y;
-        double spd {0.1};
         SDL_Rect* catRect{};
+
+        // texture
         std::string imgPath{"../resources/redcat1.png"};
         SDL_Texture* catTexture;
 
-        int health = 100;
-        int speed = 1;
+        // inc with difficulty? change per type
+        int health = 1;
+        double spd {0.1};
 
+        // pathfinding
         Node* currPathNode {};
 
         friend class Duck;
@@ -24,15 +28,13 @@ class GenericCat {
 
         void Display();
 
-        void hurt(int dmg);
-        void moveToNextPath();
-        void die() {printf("CAT IS DEAD\n");};
-        void dealDmgToPlayer();
+        void TakeDamage(int dmg);
+        void MoveToNode();
         void setRotation(double rot);
 
-        void update();
-
         [[nodiscard]] SDL_Rect* GetRect() const { return catRect; };
+        [[nodiscard]] bool IsDead() const { return health <= 0; };
+        [[nodiscard]] bool ReachedEnd() const { return currPathNode == nullptr; };
         //        [[nodiscard]] double getRotation() {return this->t.rotation;}
 };
 
