@@ -115,6 +115,7 @@ int main(int argc, char** argv) {
             Duck::DuckAtMouse(40);
             if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck != nullptr) {
                 mouseHoverDuck->ShowUpgradeWindow(true);
+                if (selectedDuck != nullptr) selectedDuck->ShowUpgradeWindow(false);
                 selectedDuck = mouseHoverDuck;
             }
             else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {

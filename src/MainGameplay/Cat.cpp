@@ -46,7 +46,7 @@ void GenericCat::MoveToNode(Uint64 _deltaTicks) {
 
     if (std::abs(distX) < 2 && std::abs(distY) < 2) {
         // has reached current node, select next node, if end node
-        if (currPathNode->GetNextNode() == nullptr) {
+        if (currPathNode->GetNextNode() == nullptr || currPathNode->LastNode()) {
             // END NODE TAKE LIFE
             player->TakeDamage(health);
             currPathNode = nullptr;

@@ -59,8 +59,11 @@ class Node {
     }
 
     Node(Vector2 _nodePos, Node* _lastNode, bool isLast = false);
+
     [[nodiscard]] Node* GetNextNode() const { return nextNode; };
+    [[nodiscard]] bool LastNode() const { return isLastNode; }
     [[nodiscard]] Vector2 GetPosition() const { return nodePos; };
+
     void render() {
         t->render();
         for (Texture* t : this->toNextNode) t->render();
