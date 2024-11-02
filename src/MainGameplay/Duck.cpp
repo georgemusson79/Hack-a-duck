@@ -262,6 +262,15 @@ void BreadCrumbProjectile::MoveToTarget(Uint64 _deltaTicks) {
         target = nullptr;
         return;
     }
+
+    // janky ass soultion but it might work
+    try {
+        if (this->target->getImgPath() == "") this->target = nullptr;
+    } catch (std::exception e) {
+        this->target = nullptr;
+    }
+    if (this->target == nullptr) return;
+
     int distX = target->GetRect()->x - breadRect.x;
     int distY = target->GetRect()->y - breadRect.y;
 

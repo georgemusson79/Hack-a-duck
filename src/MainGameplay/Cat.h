@@ -29,7 +29,9 @@ class GenericCat {
 
    public:
     GenericCat();
-
+    std::string getImgPath() {
+        return this->imgPath;
+    }
     void Display();
 
     void TakeDamage(int dmg);
