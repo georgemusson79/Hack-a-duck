@@ -10,7 +10,9 @@ class Menu {
    private:
     bool exitMenu = false;
     Texture* bg;
+    Texture* overlay;
     Texture* path;
+    Texture* title;
     std::vector<Button> buttons;
 
     SDL_Rect* menuRect = new SDL_Rect{800, 0, 200, 800};
@@ -19,27 +21,43 @@ class Menu {
     bool roundStarted = false;
     int roundNumber = 1;
     int roundReward = 250;
+    int ty = 50;
+    int endy;
 
    public:
     Menu() {
-        this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
-        path = new Texture("../resources/Path.png", 0, 0, 800, 800);
+        int twidth = 800 / 1.5;
+        int theight = 300;
+        int tx = (800 / 2) - (twidth / 2);
+        int tyStart = -theight - 50;
+        this->title = new Texture("resources/title2.png", tx, tyStart, twidth, theight);
+        this->bg = new Texture("resources/mapback.png", 0, 0, 800, 800);
+        this->overlay = new Texture("resources/overlay.png", 0, 0, 800, 800);
+        path = new Texture("resources/Path.png", 0, 0, 800, 800);
         int w = 200;
         int h = 150;
         int x = 400 - (w / 2);
-        int y = 400 - (h / 2);
-        this->buttons.push_back(Button("../resources/StartButten.png",
+        int y = 800 + h;
+        endy = 400 - (h / 2);
+        this->buttons.push_back(Button("resources/red button.png",
                                        {x, y, w, h},
                                        [this] { Start(); }));
 
-        buttons.push_back(Button("../resources/justbutten.png",
+        buttons.push_back(Button("resources/justbutten.png",
                                  {805, 720, 75, 75}, [this] { roundStarted = true; }));
         buttons[1].MakeHidden(true);
     }
 
     void Display() {
+        if (title->r->y != ty) title->r->y += 2;
+        if (this->buttons[0].getRect().y > endy) {
+            SDL_Rect r = this->buttons[0].getRect();
+            r.y -= 2;
+            this->buttons[0].setRect(r);
+        }
         bg->render();
         path->render();
+        title->render();
 
         SDL_SetRenderDrawColor(window->GetRenderer(), 0, 120, 30, 255);
         SDL_RenderFillRect(window->GetRenderer(), menuRect);

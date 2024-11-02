@@ -36,6 +36,14 @@ class Button {
     void Display();
     void CheckClick();
     void MakeHidden(bool hidden) { hide = hidden; };
+    SDL_Rect getRect() {
+        return this->buttonRect;
+    }
+
+    void setRect(SDL_Rect r) {
+        this->buttonRect = r;
+        this->clickRegion = r;
+    }
 
     [[nodiscard]] bool IsClicked() const { return clicked; }
 };
