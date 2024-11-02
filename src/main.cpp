@@ -6,6 +6,7 @@
 #include <SDL_mixer.h>
 
 #include <iostream>
+#include <SDL.h>
 
 #include "MainGameplay/Duck.h"
 #include "MainGameplay/Path.h"
@@ -21,7 +22,7 @@ int main(int argc, char** argv) {
 
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
-    SetupPath();
+
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
         std::cout << "shitass mixer broke :(\n";
         return 0;
@@ -32,9 +33,9 @@ int main(int argc, char** argv) {
     }
 
     Menu userMenu;
-    //    Node* b = new Node({50, 50}, NULL, true);
-    //    Node* n = new Node({0, 0}, b, false);
-    //    b->generateTextures();
+//    Node* b = new Node({50, 50}, NULL, true);
+//    Node* n = new Node({0, 0}, b, false);
+//    b->generateTextures();
 
     // Path creation
     SetupPath();
@@ -95,6 +96,12 @@ int main(int argc, char** argv) {
             gameMenuFlop = userMenu.MenuClosed();
         }
 
+        if (player->GameOver()) {
+            userMenu.ReturnToMenu();
+            cats.clear();
+            playerDucks.clear();
+        }
+
         /*
          * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS
          */
@@ -107,7 +114,8 @@ int main(int argc, char** argv) {
             if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck != nullptr) {
                 mouseHoverDuck->ShowUpgradeWindow(true);
                 selectedDuck = mouseHoverDuck;
-            } else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {
+            }
+            else if (player->HoldingDuck() == DUCK::NONE && mouse->IsUnheldActive() && mouseHoverDuck == nullptr) {
                 if (selectedDuck != nullptr && mouse->GetPosition().first <= 800) {
                     selectedDuck->ShowUpgradeWindow(false);
                     selectedDuck = nullptr;
@@ -115,7 +123,7 @@ int main(int argc, char** argv) {
             }
 
             if (mouse->GetPosition().first >= 25 && mouse->GetPosition().first <= 775 &&
-                mouse->GetPosition().second >= 25 && mouse->GetPosition().second <= 775)
+                    mouse->GetPosition().second >= 25 && mouse->GetPosition().second <= 775)
                 Duck::PlaceDuck();
         }
 
@@ -141,10 +149,8 @@ int main(int argc, char** argv) {
             cat->get()->Display();
             cat->get()->MoveToNode(deltaTicks);
 
-            if (cat->get()->IsDead() || cat->get()->ReachedEnd())
-                cat = cats.erase(cat);
-            else
-                cat++;
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
+            else cat++;
         }
 
         // cats defeated?
