@@ -1,5 +1,5 @@
 # Pre-Text
-This game was made by **The Sleepy Squad**, consisting of Callum, Tilly, George, and Iris (Justinas).
+This game was made by **The Sleepy Squad**, consisting of Callum, Tilly, George, and Iris (Justinas).\br
 We made this game for Nottingham Trent University's 2nd Hack-a-Duck.
 
 # Game Explanation
