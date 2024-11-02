@@ -19,6 +19,8 @@ int main(int argc, char** argv) {
 
     window = std::make_unique<MainWindow>();
     mouse = std::make_unique<Mouse>();
+    SetupPath();
+
     Menu m;
 
     // Path creation

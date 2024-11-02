@@ -1,25 +1,32 @@
 
 
-
 #ifndef PATHHEADER_H
 #define PATHHEADER_H
 
-#include <vector>
 #include <memory>
+#include <vector>
+
+#include "../UserInterface/Texture.h"
 #include "Vector2.h"
 
 // Each Tile is 20x20, making a 50x50 grid.
 class Node {
-    private:
-        Vector2 nodePos;
-        Node* nextNode;
-        bool isLastNode;
-        bool isFirstNode;
+   private:
+    Texture t;
+    Vector2 nodePos;
+    Node* nextNode;
+    bool isLastNode;
+    bool isFirstNode;
+    int w = 800 / 20;
+    int h = 800 / 20;
 
-    public:
-        Node(Vector2 _nodePos, Node* _lastNode, bool isLast = false);
-        [[nodiscard]] Node* GetNextNode() const { return nextNode; };
-        [[nodiscard]] Vector2 GetPosition() const { return nodePos; };
+   public:
+    Node(Vector2 _nodePos, Node* _lastNode, bool isLast = false);
+    [[nodiscard]] Node* GetNextNode() const { return nextNode; };
+    [[nodiscard]] Vector2 GetPosition() const { return nodePos; };
+    void display() {
+        this->t.render();
+    }
 };
 
 inline std::vector<std::unique_ptr<Node>> pathNodes;
@@ -44,7 +51,6 @@ inline void SetupPath() {
     pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get()));
     pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get()));
     pathNodes.push_back(std::make_unique<Node>(Vector2{-100, 750}, pathNodes.back().get(), true));
-
 }
 
 #endif

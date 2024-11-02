@@ -125,6 +125,7 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj: C:/Users/george/Documen
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr_atomic.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/shared_ptr_base.h \
+  C:/msys64/mingw64/include/c++/13.2.0/bits/specfun.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/std_abs.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/std_mutex.h \
   C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algobase.h \
@@ -152,6 +153,7 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj: C:/Users/george/Documen
   C:/msys64/mingw64/include/c++/13.2.0/cctype \
   C:/msys64/mingw64/include/c++/13.2.0/cerrno \
   C:/msys64/mingw64/include/c++/13.2.0/clocale \
+  C:/msys64/mingw64/include/c++/13.2.0/cmath \
   C:/msys64/mingw64/include/c++/13.2.0/compare \
   C:/msys64/mingw64/include/c++/13.2.0/concepts \
   C:/msys64/mingw64/include/c++/13.2.0/cstddef \
@@ -174,6 +176,7 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj: C:/Users/george/Documen
   C:/msys64/mingw64/include/c++/13.2.0/iosfwd \
   C:/msys64/mingw64/include/c++/13.2.0/iostream \
   C:/msys64/mingw64/include/c++/13.2.0/istream \
+  C:/msys64/mingw64/include/c++/13.2.0/limits \
   C:/msys64/mingw64/include/c++/13.2.0/memory \
   C:/msys64/mingw64/include/c++/13.2.0/new \
   C:/msys64/mingw64/include/c++/13.2.0/numbers \
@@ -187,6 +190,18 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj: C:/Users/george/Documen
   C:/msys64/mingw64/include/c++/13.2.0/string \
   C:/msys64/mingw64/include/c++/13.2.0/string_view \
   C:/msys64/mingw64/include/c++/13.2.0/system_error \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/bessel_function.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/beta_function.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/ell_integral.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/exp_integral.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/gamma.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/hypergeometric.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/legendre_function.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/modified_bessel_func.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/poly_hermite.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/poly_laguerre.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/riemann_zeta.tcc \
+  C:/msys64/mingw64/include/c++/13.2.0/tr1/special_function_util.h \
   C:/msys64/mingw64/include/c++/13.2.0/tuple \
   C:/msys64/mingw64/include/c++/13.2.0/type_traits \
   C:/msys64/mingw64/include/c++/13.2.0/typeinfo \
@@ -214,6 +229,7 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Cat.cpp.obj: C:/Users/george/Documen
   C:/msys64/mingw64/include/limits.h \
   C:/msys64/mingw64/include/locale.h \
   C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/math.h \
   C:/msys64/mingw64/include/process.h \
   C:/msys64/mingw64/include/psdk_inc/intrin-impl.h \
   C:/msys64/mingw64/include/pthread.h \
@@ -1052,7 +1068,6 @@ CMakeFiles/Hack_a_duck.dir/src/MainGameplay/Path.cpp.obj: C:/Users/george/Docume
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsaveoptintrin.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xsavesintrin.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/xtestintrin.h \
-  C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Cat.h \
   C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Path.h \
   C:/Users/george/Documents/comp\ sci/hackaduck4/Hack-a-duck/src/MainGameplay/Vector2.h
 
@@ -2461,6 +2476,8 @@ C:/Libs/SDL2-2.28.5/include/SDL.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/hresetintrin.h:
 
+C:/msys64/mingw64/include/c++/13.2.0/bits/specfun.h:
+
 C:/Libs/SDL2-2.28.5/include/SDL_atomic.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/backward/binders.h:
@@ -2570,6 +2587,8 @@ C:/Libs/SDL2-2.28.5/include/SDL_log.h:
 C:/Libs/SDL2-2.28.5/include/SDL_main.h:
 
 C:/Libs/SDL2-2.28.5/include/SDL_messagebox.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/limits:
 
 C:/msys64/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h:
 
@@ -2709,6 +2728,8 @@ C:/msys64/mingw64/include/c++/13.2.0/bits/exception.h:
 
 C:/msys64/mingw64/include/wctype.h:
 
+C:/msys64/mingw64/include/c++/13.2.0/tr1/beta_function.tcc:
+
 C:/msys64/mingw64/include/c++/13.2.0/bits/exception_defines.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/bits/exception_ptr.h:
@@ -2817,6 +2838,8 @@ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_funcs.h:
 
+C:/msys64/mingw64/include/c++/13.2.0/tr1/special_function_util.h:
+
 C:/msys64/mingw64/include/c++/13.2.0/bits/stl_pair.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/bits/stl_raw_storage_iter.h:
@@ -2845,6 +2868,8 @@ C:/msys64/mingw64/include/intrin.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/bits/uses_allocator.h:
 
+C:/msys64/mingw64/include/c++/13.2.0/tr1/bessel_function.tcc:
+
 C:/msys64/mingw64/include/c++/13.2.0/exception:
 
 C:/msys64/mingw64/include/c++/13.2.0/bits/uses_allocator_args.h:
@@ -2856,6 +2881,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/cldemoteintrin.h:
 C:/msys64/mingw64/include/c++/13.2.0/concepts:
 
 C:/msys64/mingw64/include/c++/13.2.0/clocale:
+
+C:/msys64/mingw64/include/c++/13.2.0/cmath:
 
 C:/msys64/mingw64/include/c++/13.2.0/compare:
 
@@ -2876,6 +2903,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/movdirintrin.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512pfintrin.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/debug/debug.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/gamma.tcc:
 
 C:/msys64/mingw64/include/c++/13.2.0/ext/aligned_buffer.h:
 
@@ -2925,6 +2954,24 @@ C:/msys64/mingw64/include/c++/13.2.0/streambuf:
 
 C:/msys64/mingw64/include/c++/13.2.0/system_error:
 
+C:/msys64/mingw64/include/c++/13.2.0/tr1/ell_integral.tcc:
+
+C:/msys64/mingw64/include/pthread_compat.h:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/exp_integral.tcc:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/hypergeometric.tcc:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/legendre_function.tcc:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/modified_bessel_func.tcc:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/poly_hermite.tcc:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/poly_laguerre.tcc:
+
+C:/msys64/mingw64/include/c++/13.2.0/tr1/riemann_zeta.tcc:
+
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/fmaintrin.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/cpu_defines.h:
@@ -2967,13 +3014,13 @@ C:/msys64/mingw64/include/ctype.h:
 
 C:/msys64/mingw64/include/malloc.h:
 
+C:/msys64/mingw64/include/math.h:
+
 C:/msys64/mingw64/include/psdk_inc/intrin-impl.h:
 
 C:/msys64/mingw64/include/c++/13.2.0/functional:
 
 C:/msys64/mingw64/include/pthread.h:
-
-C:/msys64/mingw64/include/pthread_compat.h:
 
 C:/msys64/mingw64/include/pthread_signal.h:
 

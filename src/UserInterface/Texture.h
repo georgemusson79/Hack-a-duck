@@ -20,6 +20,7 @@ class Texture {
     SDL_Rect* r = new SDL_Rect();
     int rx;
     int ry;
+    bool ready = true;
     int rw;
     int rh;
     double rotation = 0;
@@ -36,6 +37,10 @@ class Texture {
         return this->path;
     }
 
+    Texture() {
+        this->ready = false;
+    }
+
     Texture(const std::string& path, int x, int y, int w, int h) {
         this->path = path;
 
@@ -49,12 +54,15 @@ class Texture {
         r->y = y;
     }
 
-    void render() {
-        SDL_RenderCopy(window->GetRenderer(), this->texture, NULL, r);
+    void
+    render() {
+        if (!this->ready) return;
+        SDL_RenderCopyEx(window->GetRenderer(), this->texture, NULL, r, this->rotation, NULL, SDL_FLIP_NONE);
         // SDL_RenderCopyEx(renderer, texture, NULL, &dstrect, this->rotation, NULL, SDL_FLIP_NONE);
     }
 
     void render(int sx, int sy, int sw, int sh) {
+        if (!this->ready) return;
         SDL_Rect srcrect = {sx, sy, sw, sh};
         SDL_RenderCopyEx(window->GetRenderer(), texture, &srcrect, r, this->rotation, NULL, SDL_FLIP_NONE);
     }
