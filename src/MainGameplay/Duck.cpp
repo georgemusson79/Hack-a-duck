@@ -77,6 +77,8 @@ void Duck::FindTarget() {
             targets.push_back(cat.get());
             if (targets.size() > lvl) return;
         }
+
+        if (targets.size() >= lvl) break;
     }
 }
 
@@ -97,7 +99,6 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
             origin.w = 40;
             origin.h = 40;
             breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
-            if (targets.size() >= lvl) break;
         }
 
         for (auto& crumb : breadCrumbs) {
@@ -207,7 +208,7 @@ void Duck::Upgrade() {
             srcRect = new SDL_Rect{0, 0, 304, 256};
             break;
 
-        case 6:
+        default:
             modelPath = "../resources/BlackArmoredGoose.png";
             srcRect = new SDL_Rect{0, 0, 304, 287};
             break;
