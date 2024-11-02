@@ -121,6 +121,7 @@ class Menu {
         exitMenu = false;
         buttons[1].MakeHidden(true);
         buttons[0].MakeHidden(false);
+        roundNumber = 1;
     }
 
     [[nodiscard]] bool MenuClosed() const { return exitMenu; };
