@@ -45,6 +45,7 @@ class Player {
 
     [[nodiscard]] int GetMoney() const { return money; };
     [[nodiscard]] DUCK HoldingDuck() const { return holdingDucky; };
+    [[nodiscard]] bool GameOver() const { return lives <= 0; };
 };
 
 inline std::unique_ptr<Player> player;

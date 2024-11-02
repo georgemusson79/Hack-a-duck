@@ -20,6 +20,8 @@ class Menu {
 
     SDL_Rect* menuRect = new SDL_Rect{800, 0, 200, 800};
 
+    SDL_Texture* roundLabel{};
+
     // Rounds
     bool roundStarted = false;
     int roundNumber = 1;
@@ -29,6 +31,7 @@ class Menu {
 
    public:
     Menu() {
+        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
         this->bgMusic = std::make_unique<Sound>("resources/titleMusic.wav", true, -1);
         int twidth = 800 / 1.5;
         int theight = 300;
@@ -50,6 +53,11 @@ class Menu {
         buttons.push_back(Button("resources/justbutten.png",
                                  {805, 720, 75, 75}, [this] { roundStarted = true; }));
         buttons[1].MakeHidden(true);
+
+        std::string str{"Start Round " + std::to_string(roundNumber)};
+        auto s = TTF_RenderText_Blended(font, str.c_str(), {255, 255, 255, 255});
+        roundLabel = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+        SDL_FreeSurface(s);
     }
 
     void Display() {
@@ -69,6 +77,10 @@ class Menu {
         for (auto& button : this->buttons) {
             button.Display();
             button.CheckClick();
+        }
+        if (exitMenu) {
+            SDL_Rect r{812, 675, 175, 25};
+            SDL_RenderCopy(window->GetRenderer(), roundLabel, nullptr, &r);
         }
     }
 
@@ -91,7 +103,21 @@ class Menu {
         roundNumber++;
         int r = roundReward;
         roundReward = int((float)roundReward * 1.28);
+
+        // update round label
+        std::string str{"Start Round " + std::to_string(roundNumber)};
+        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
+        auto s = TTF_RenderText_Blended(font, str.c_str(), {255, 255, 255, 255});
+        roundLabel = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+        SDL_FreeSurface(s);
+
         return r;
+    }
+
+    void ReturnToMenu() {
+        exitMenu = false;
+        buttons[1].MakeHidden(true);
+        buttons[0].MakeHidden(false);
     }
 
     [[nodiscard]] bool MenuClosed() const { return exitMenu; };
