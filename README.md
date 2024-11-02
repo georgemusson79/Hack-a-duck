@@ -3,7 +3,7 @@
 All in-game sprites and images were made by Tilly.\
 Gameplay was made by Callum.\
 Game funcationality was made by both George and Callum.\
-Partial path following was made by Justinas.
+Partial path following was made by Iris.
 
 # Game Explanation
 Welcome to our game, **Duck Bread Defence**. This is our version of a tower defence style game, where the enemies are cats that want to attack you. You have to strategically place down the towers, which are ducks, that spit bread at the cats to kill them before they get to the end.
