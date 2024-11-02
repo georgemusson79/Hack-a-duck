@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
          */
 
         m.Display();
-        n->render();
+
         if (!gameMenuFlop) {
             m.CheckButtons();
             gameMenuFlop = m.MenuClosed();
@@ -118,17 +118,15 @@ int main(int argc, char** argv) {
             cat->get()->Display();
             cat->get()->MoveToNode();
 
-            if (cat->get()->IsDead() || cat->get()->ReachedEnd())
-                cat = cats.erase(cat);
-            else
-                cat++;
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
+            else cat++;
         }
 
         /*
          * PLAYER UI PLAYER UI PLAYER UI PLAYER UI PLAYER UI PLAYER
          */
 
-        player->Display();
+        if (gameMenuFlop) player->Display();
         window->Display();
     }
 
