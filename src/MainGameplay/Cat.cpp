@@ -21,7 +21,7 @@ void GenericCat::Display() {
     SDL_Rect displayRect = *catRect;
     displayRect.x -= displayRect.w/2;
     displayRect.h -= displayRect.h/2;
-    SDL_RenderCopy(window->GetRenderer(), catTexture, nullptr, &displayRect);
+    SDL_RenderCopy(window->GetRenderer(), catTexture, src, &displayRect);
 }
 
 void GenericCat::TakeDamage(int dmg) {
