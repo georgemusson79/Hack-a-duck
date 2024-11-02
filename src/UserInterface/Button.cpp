@@ -3,12 +3,12 @@
 //
 
 #include "Button.h"
-#include "TextureManager.h"
 
 #include <utility>
 
 #include "MainWindow.h"
 #include "Mouse.h"
+#include "TextureManager.h"
 
 Button::Button(std::string imgPath, SDL_Rect dims, std::function<void()> _fn) {
     this->imgPath = imgPath;
@@ -16,7 +16,6 @@ Button::Button(std::string imgPath, SDL_Rect dims, std::function<void()> _fn) {
     buttonRect = dims;
     clickRegion = buttonRect;
     fn = std::move(_fn);
-
 }
 
 void Button::Display() {

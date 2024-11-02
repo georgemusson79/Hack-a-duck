@@ -99,6 +99,7 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
         for (auto& target : targets) {
             // throw projectile at target
             SDL_Rect origin = *duckRect;
+            shootSnd1->play();
             origin.w = 40;
             origin.h = 40;
             breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
@@ -156,6 +157,7 @@ void Duck::PlaceDuck() {
     // place a duck at the mouse position
     auto [x, y] = mouse->GetPosition();
     std::unique_ptr<Duck> d = std::make_unique<Duck>();
+    d->spawnSnd1->play();
 
     d->duckRect = new SDL_Rect{x - 25, y - 25, 50, 50};
     playerDucks.push_back(std::move(d));
