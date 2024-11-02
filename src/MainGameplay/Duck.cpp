@@ -104,6 +104,9 @@ Duck* Duck::DuckAtMouse(float _mouseRadius) {
 void Duck::PlaceDuck() {
     if (!mouse->IsUnheldActive()) return;
 
+    DUCK pd = player->HoldingDuck();
+    if (pd == DUCK::NONE) return; // not duck placing mode
+
     // is space occupied by another duck?
     Duck* duck;
     if ((duck = DuckAtMouse(50)) != nullptr) {

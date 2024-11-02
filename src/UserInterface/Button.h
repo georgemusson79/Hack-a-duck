@@ -26,22 +26,17 @@ class Button {
     bool clicked = false;
     bool clickStarted = false;
 
+    bool hide = false;
+
+    std::function<void()> func;
+
    public:
-    template <typename Fn>
-    Button(std::string imgPath, SDL_Rect dims, Fn fn) {
-        this->imgPath = imgPath;
-
-        buttonRect = dims;
-        clickRegion = buttonRect;
-        this->fn = std::bind(fn);
-
-        auto s = IMG_Load(imgPath.c_str());
-        buttonTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        SDL_FreeSurface(s);
-    }
+    Button(std::string imgPath, SDL_Rect dims, std::function<void()> _fn);
 
     void Display();
     void CheckClick();
+    void MakeHidden(bool hidden) { hide = hidden; };
+
     [[nodiscard]] bool IsClicked() const { return clicked; }
 };
 

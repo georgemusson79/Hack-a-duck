@@ -12,19 +12,24 @@
 
 #include "../UserInterface/MainWindow.h"
 
+enum class DUCK {
+    NONE, BASIC, // ...
+};
+
 class Player {
     private:
-
         TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
         int lives = 150;
         int lastLives = lives + 1;
-        SDL_Texture* livesTexture;
-        SDL_Rect* livesRect;
+        SDL_Texture* livesTexture {};
+        SDL_Rect* livesRect {};
 
         int money = 350;
         int lastMoney = money + 1;
-        SDL_Texture* moneyTexture;
-        SDL_Rect* moneyRect;
+        SDL_Texture* moneyTexture {};
+        SDL_Rect* moneyRect {};
+
+        DUCK holdingDucky = DUCK::NONE;
 
     public:
         Player() = default;
@@ -36,6 +41,7 @@ class Player {
         void Display();
 
         [[nodiscard]] int GetMoney() const { return money; };
+        [[nodiscard]] DUCK HoldingDuck() const { return holdingDucky; };
 };
 
 inline std::unique_ptr<Player> player;

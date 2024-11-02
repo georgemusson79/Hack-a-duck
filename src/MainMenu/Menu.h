@@ -16,13 +16,15 @@ class Menu {
     Texture* path;
     std::vector<Button> buttons;
     Menu() {
-        this->bg = new Texture("resources/mapback.png", 0, 0, 800, 800);
-        path = new Texture("resources/Path.png", 0, 0, 800, 800);
+        this->bg = new Texture("../resources/mapback.png", 0, 0, 800, 800);
+        path = new Texture("../resources/Path.png", 0, 0, 800, 800);
         int w = 200;
         int h = 150;
         int x = 400 - (w / 2);
         int y = 400 - (h / 2);
-        this->buttons.push_back(Button("resources/StartButten.png", {x, y, w, h}, startGame));
+        this->buttons.push_back(Button("../resources/StartButten.png",
+                                       {x, y, w, h},
+                                       [this]{Start();}));
     }
 
     void Display() {
@@ -33,6 +35,17 @@ class Menu {
             button.Display();
             button.CheckClick();
         }
+    }
+
+    void CheckButtons() {
+        for (auto& button : buttons) {
+            button.CheckClick();
+        }
+    }
+
+    void Start() {
+        player->Setup();
+        buttons[0].MakeHidden(true);
     }
 };
 

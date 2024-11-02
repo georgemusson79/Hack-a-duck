@@ -4,10 +4,25 @@
 
 #include "Button.h"
 
+#include <utility>
+
 #include "MainWindow.h"
 #include "Mouse.h"
 
+Button::Button(std::string imgPath, SDL_Rect dims, std::function<void()> _fn) {
+    this->imgPath = imgPath;
+
+    buttonRect = dims;
+    clickRegion = buttonRect;
+    fn = std::move(_fn);
+
+    auto s = IMG_Load(imgPath.c_str());
+    buttonTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+    SDL_FreeSurface(s);
+}
+
 void Button::Display() {
+    if (hide) return;
     SDL_RenderCopy(window->GetRenderer(), buttonTexture, nullptr, &buttonRect);
 }
 
