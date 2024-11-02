@@ -2,14 +2,16 @@
 // Created by cew05 on 01/11/2024.
 //
 
-#include <cmath>
 #include "Cat.h"
-#include "Player.h"
+
+#include <cmath>
+
 #include "../UserInterface/TextureManager.h"
+#include "Player.h"
 
 GenericCat::GenericCat() {
     currPathNode = pathNodes.front().get();
-    catRect = new SDL_Rect{currPathNode->GetPosition().x,currPathNode->GetPosition().y,50,50};
+    catRect = new SDL_Rect{currPathNode->GetPosition().x, currPathNode->GetPosition().y, 50, 50};
     x = catRect->x;
     y = catRect->y;
 
@@ -18,8 +20,8 @@ GenericCat::GenericCat() {
 
 void GenericCat::Display() {
     SDL_Rect displayRect = *catRect;
-    displayRect.x -= displayRect.w/2;
-    displayRect.h -= displayRect.h/2;
+    displayRect.x -= displayRect.w / 2;
+    displayRect.h -= displayRect.h / 2;
     SDL_RenderCopy(window->GetRenderer(), tm->GetTexture(imgPath), src, &displayRect);
 }
 
@@ -33,16 +35,16 @@ void GenericCat::TakeDamage(int dmg) {
 }
 
 void GenericCat::MoveToNode(Uint64 _deltaTicks) {
-    if (currPathNode == nullptr) return; // end of track
+    if (currPathNode == nullptr) return;  // end of track
 
     waitTicks -= _deltaTicks;
-    if ((int)waitTicks > 0) return; // YES THE INT IS NECESSARY
+    if ((int)waitTicks > 0) return;  // YES THE INT IS NECESSARY
     waitTicks = -1;
 
     int distX = currPathNode->GetPosition().x - catRect->x;
     int distY = currPathNode->GetPosition().y - catRect->y;
 
-    if (std::abs(distX) < 2 && std::abs(distY) < 2 ) {
+    if (std::abs(distX) < 2 && std::abs(distY) < 2) {
         // has reached current node, select next node, if end node
         if (currPathNode->GetNextNode() == nullptr) {
             // END NODE TAKE LIFE
@@ -60,7 +62,6 @@ void GenericCat::MoveToNode(Uint64 _deltaTicks) {
 
     catRect->x = (int)std::round(x);
     catRect->y = (int)std::round(y);
-
 }
 
 void GenericCat::AddDelayBeforeMoving(Uint64 _ticksDelay) {
@@ -75,5 +76,5 @@ void GenericCat::MoveToRect(SDL_Rect _rect) {
 }
 
 void GenericCat::setRotation(double rot) {
-//    this->t.rotation = rot;
+    //    this->t.rotation = rot;
 }
