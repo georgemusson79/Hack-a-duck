@@ -19,7 +19,7 @@ class Button {
     SDL_Rect clickRegion{};
     SDL_Rect buttonRect{};
 
-    std::string imgPath = "../resources/StartButten.png";
+    std::string imgPath = "resources/StartButten.png";
     SDL_Texture* buttonTexture{};
     std::function<void()> fn;
 
