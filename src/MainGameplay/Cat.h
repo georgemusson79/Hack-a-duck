@@ -15,7 +15,7 @@ class GenericCat {
     SDL_Texture* catTexture{};
 
     // inc with difficulty? change per type
-    int baseHp = 3;
+    int baseHp = 2;
     int health = baseHp;
     double spd{100.0};
     Uint64 waitTicks = 0;

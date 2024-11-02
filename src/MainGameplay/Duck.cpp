@@ -97,11 +97,11 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
             origin.w = 40;
             origin.h = 40;
             breadCrumbs.push_back(std::make_unique<BreadCrumbProjectile>(this, target, origin));
+            if (targets.size() >= lvl) break;
         }
 
         for (auto& crumb : breadCrumbs) {
             if (crumb->target == nullptr) crumb->target = targets.back();
-            if (targets.size() >= lvl) break;
         }
     }
 }
@@ -167,6 +167,7 @@ void Duck::SetDuckPosition(SDL_Rect _rect) {
 }
 
 void Duck::Upgrade() {
+    if (selectedDuck != this) return;
     if (player->GetMoney() < baseCost) return;
 
     player->AddMoney(-baseCost);
