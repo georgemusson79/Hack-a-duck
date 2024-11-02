@@ -111,12 +111,17 @@ void Duck::PlaceDuck() {
         return;
     }
 
+    // Money Check
+    if (player->GetMoney() < cost) return;
+
     // place a duck at the mouse position
     auto [x, y] = mouse->GetPosition();
     std::unique_ptr<Duck> d = std::make_unique<Duck>();
-    d->duckRect = new SDL_Rect{x-25, y-25, 50, 50};
 
+    d->duckRect = new SDL_Rect{x-25, y-25, 50, 50};
     playerDucks.push_back(std::move(d));
+
+    player->AddMoney(-cost);
 }
 
 

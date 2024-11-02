@@ -35,6 +35,7 @@ class Duck {
         Uint64 ticksSinceLastAttack = 0;
 
         // abilities
+        static int cost;
         std::string displayName {"Basic Bread-Lobbing Duck"};
         int catCount {0};
 
@@ -50,7 +51,10 @@ class Duck {
         static void PlaceDuck();
 
         [[nodiscard]] int GetDamage() const { return dmg; };
+        [[nodiscard]] int GetCost() const { return cost; };
 };
+
+inline int Duck::cost = 125;
 
 inline std::vector<std::unique_ptr<Duck>> playerDucks;
 
