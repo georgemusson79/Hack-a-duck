@@ -45,7 +45,7 @@ inline std::vector<std::unique_ptr<GenericCat>> cats;
 inline bool catsSummoned = false;
 
 inline void SummonCats() {
-    int delay = 50;
+    int delay = 500;
     int quantity = 25;
 
     for (int c = 0; c < quantity; c++) {
