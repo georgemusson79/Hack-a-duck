@@ -1,3 +1,0 @@
-C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build/CMakeFiles/Hack_a_duck.dir
-C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build/CMakeFiles/edit_cache.dir
-C:/Users/george/Documents/comp sci/hackerduck6/Hack-a-duck/build/CMakeFiles/rebuild_cache.dir

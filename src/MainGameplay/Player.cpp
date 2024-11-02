@@ -45,6 +45,18 @@ void Player::Display() {
     SDL_RenderCopy(window->GetRenderer(), moneyTexture, nullptr, moneyRect);
 }
 
+void Player::UpdateSelection(int _scroll) {
+    _scroll = _scroll/_scroll; // turn to +-1
+
+    int selected = (int)holdingDucky;
+    selected += _scroll;
+
+    if (selected < (int)DUCK::NONE) selected = (int)DUCK::BASIC;
+    if (selected > (int)DUCK::BASIC) selected = (int)DUCK::NONE;
+
+    holdingDucky = (DUCK)selected;
+}
+
 void Player::AddMoney(int _amount) {
     money += _amount;
 }

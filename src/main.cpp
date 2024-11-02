@@ -32,11 +32,9 @@ int main(int argc, char** argv) {
 
     // Path creation
     SetupPath();
-    cats.push_back(std::make_unique<GenericCat>());
 
     // Player Setup
     player = std::make_unique<Player>();
-    player->Setup();
 
     // Time tracking
     Uint64 tickStart;
@@ -48,6 +46,8 @@ int main(int argc, char** argv) {
      */
 
     bool running = true;
+    bool gameMenuFlop = false;
+
     while (running) {
         // Update deltaTicks
         tickStart = SDL_GetTicks64();
@@ -69,6 +69,9 @@ int main(int argc, char** argv) {
                 case SDL_MOUSEBUTTONUP:
                     mouse->MouseDown(false);
                     break;
+
+                case SDL_MOUSEWHEEL:
+                    player->UpdateSelection((int)e.wheel.y);
             }
         }
 
@@ -81,13 +84,17 @@ int main(int argc, char** argv) {
 
         m.Display();
         n->render();
+        if (!gameMenuFlop) {
+            m.CheckButtons();
+            gameMenuFlop = m.MenuClosed();
+        }
 
         /*
          * DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS DUCKS
          */
 
         // Check for the user trying to place a duck down
-        Duck::PlaceDuck();
+        if (gameMenuFlop) Duck::PlaceDuck();
 
         for (auto& duck : playerDucks) {
             duck->Display();
