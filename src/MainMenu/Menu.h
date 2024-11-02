@@ -11,6 +11,10 @@ void startGame() {
 }
 
 class Menu {
+    private:
+        bool exitMenu = false;
+
+
    public:
     Texture* bg;
     Texture* path;
@@ -46,7 +50,10 @@ class Menu {
     void Start() {
         player->Setup();
         buttons[0].MakeHidden(true);
+        exitMenu = true;
     }
+
+    [[nodiscard]] bool MenuClosed() const { return exitMenu;};
 };
 
 #endif

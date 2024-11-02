@@ -39,6 +39,7 @@ class Player {
         void AddMoney(int _amount);
 
         void Display();
+        void UpdateSelection(int _scroll);
 
         [[nodiscard]] int GetMoney() const { return money; };
         [[nodiscard]] DUCK HoldingDuck() const { return holdingDucky; };
