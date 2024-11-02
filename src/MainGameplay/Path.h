@@ -24,7 +24,7 @@ class Node {
    public:
     void generateTextures() {
         std::vector<std::string> pngs = {"pad.png", "lilypad.png", "cluster.png"};
-        std::string png = "resources/" + pngs[rand() % 3];
+        std::string png = "../resources/" + pngs[rand() % 3];
         this->t = new Texture(png, this->nodePos.x, this->nodePos.y, this->w, this->h);
         double rotation = rand() % 360;
         this->t->rotation = rotation;
@@ -52,7 +52,7 @@ class Node {
 
                 double rotation = rand() % 360;
                 std::vector<std::string> pngs = {"pad.png", "lilypad.png", "cluster.png"};
-                std::string png = "resources/" + pngs[rand() % 3];
+                std::string png = "../resources/" + pngs[rand() % 3];
                 this->toNextNode.push_back(new Texture(png, x, y, this->w, this->h));
             }
         }

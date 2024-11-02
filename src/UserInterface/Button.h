@@ -21,7 +21,7 @@ class Button {
     SDL_Rect buttonRect{};
     std::unique_ptr<Sound> clickSound;
 
-    std::string imgPath = "resources/StartButten.png";
+    std::string imgPath = "../resources/StartButten.png";
     SDL_Texture* buttonTexture{};
     std::function<void()> fn;
 

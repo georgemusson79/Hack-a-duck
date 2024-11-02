@@ -20,7 +20,7 @@ enum class DUCK {
 
 class Player {
    private:
-    TTF_Font* font = TTF_OpenFont("resources/TCFR.ttf", 100);
+    TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
     int lives = 150;
     int lastLives = lives + 1;
     SDL_Texture* livesTexture{};
