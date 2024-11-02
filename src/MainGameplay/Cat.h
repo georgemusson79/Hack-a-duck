@@ -15,7 +15,6 @@ class GenericCat {
 
     // texture
     std::string imgPath{"../resources/redcat1.png"};
-    SDL_Texture* catTexture{};
 
     // inc with difficulty? change per type
     int baseHp = 2;
@@ -51,46 +50,40 @@ inline bool catsSummoned = false;
 // Sub Cats
 
 class TankCat : public GenericCat {
-   public:
-    TankCat() : GenericCat() {
-        baseHp = 5;
-        health = baseHp;
+    public:
+        TankCat() : GenericCat() {
+            baseHp = 5;
+            health = baseHp;
 
-        catRect->w = 60;
-        catRect->h = 60;
-        src = new SDL_Rect{0, 0, 512, 512};
+            catRect->w = 60;
+            catRect->h = 60;
+            src = new SDL_Rect{0,0,512,512};
 
-        imgPath = "../resources/lion.png";
-        auto s = IMG_Load(imgPath.c_str());
-        catTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        SDL_FreeSurface(s);
-    }
+            imgPath = "../resources/lion.png";
+        }
 };
 
 class MiniCat : public GenericCat {
-   public:
-    MiniCat() : GenericCat() {
-        baseHp = 1;
-        health = baseHp;
+    public:
+        MiniCat() : GenericCat() {
+            baseHp = 1;
+            health = baseHp;
 
-        src = new SDL_Rect{0, 0, 512, 512};
+            src = new SDL_Rect{0,0,512,512};
 
-        imgPath = "../resources/Ratos.png";
-        auto s = IMG_Load(imgPath.c_str());
-        catTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        SDL_FreeSurface(s);
-    }
+            imgPath = "../resources/Ratos.png";
+        }
 };
 
 inline void SummonCats(int _lvl) {
     int amplifier = (int)_lvl / 2;
     int delay = 500;
-    int quantity = 25 + _lvl * 5 * amplifier;
+    int quantity = 25 + _lvl*5*amplifier;
 
-    int tankQuantity = (int)pow(_lvl - 1, 2) * amplifier;
-    int tankDelay = delay * quantity;
+    int tankQuantity = (int)pow(_lvl-1, 2)*amplifier;
+    int tankDelay = delay*quantity;
 
-    int miniQuantity = 15 * (_lvl - 2) * amplifier / 2;
+    int miniQuantity = 15*(_lvl - 2)*amplifier/2;
     int miniDelay = 150;
 
     for (int c = 0; c < quantity; c++) {
@@ -100,7 +93,7 @@ inline void SummonCats(int _lvl) {
 
     for (int c = 0; c < tankQuantity; c++) {
         cats.push_back(std::make_unique<TankCat>());
-        cats.back()->AddDelayBeforeMoving(tankDelay / (c + 1));
+        cats.back()->AddDelayBeforeMoving(tankDelay / (c+1));
     }
 
     for (int c = 0; c < miniQuantity; c++) {

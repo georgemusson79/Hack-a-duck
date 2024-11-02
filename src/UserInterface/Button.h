@@ -22,7 +22,6 @@ class Button {
     std::unique_ptr<Sound> clickSound;
 
     std::string imgPath = "../resources/StartButten.png";
-    SDL_Texture* buttonTexture{};
     std::function<void()> fn;
 
     bool clicked = false;

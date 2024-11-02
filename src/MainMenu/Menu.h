@@ -91,6 +91,7 @@ class Menu {
     }
 
     void Start() {
+        if (exitMenu) return;
         player->Setup();
         buttons[0].MakeHidden(true);
         buttons[1].MakeHidden(false);

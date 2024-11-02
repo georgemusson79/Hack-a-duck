@@ -8,12 +8,7 @@
 
 #include "../UserInterface/MainWindow.h"
 #include "../UserInterface/Mouse.h"
-#include "../UserInterface/Sound.h"
-Duck::~Duck() {
-    delete this->upgButton;
-    SDL_DestroyTexture(this->upgLabelTexture);
-    SDL_DestroyTexture(duckTexture);
-}
+
 Duck::Duck() {
     spawnSnd1 = std::make_unique<Sound>("../resources/placeDuckSFX1.wav");
     shootSnd1 = std::make_unique<Sound>("../resources/duckShoot1.wav");
@@ -21,7 +16,7 @@ Duck::Duck() {
     duckRect = new SDL_Rect{150, 150, 50, 50};
 
     auto s = IMG_Load(baselvl.c_str());
-    duckTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+    tm->GetTexture(baselvl);
     SDL_FreeSurface(s);
 
     SDL_Color c{255, 255, 255, 255};
@@ -42,11 +37,7 @@ void Duck::Display() {
         r.x -= duckRect->w / 2;
         r.y -= duckRect->h / 2;
 
-        auto s = IMG_Load("../resources/red (1).png");
-        auto t = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-        SDL_RenderCopy(window->GetRenderer(), t, nullptr, &r);
-        SDL_FreeSurface(s);
-        SDL_DestroyTexture(t);
+        SDL_RenderCopy(window->GetRenderer(), tm->GetTexture("../resources/red (1).png"), nullptr, &r);
         shoddyTimer++;
         if (shoddyTimer > 50) {
             showRedError = false;
@@ -54,7 +45,7 @@ void Duck::Display() {
         }
     }
 
-    SDL_RenderCopy(window->GetRenderer(), duckTexture, srcRect, duckRect);
+    SDL_RenderCopy(window->GetRenderer(), tm->GetTexture(baselvl), srcRect, duckRect);
 
     for (const auto& crumb : breadCrumbs) {
         crumb->Display();
@@ -107,7 +98,6 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
 
         for (auto& target : targets) {
             // throw projectile at target
-            this->shootSnd1->play();
             SDL_Rect origin = *duckRect;
             origin.w = 40;
             origin.h = 40;
@@ -166,7 +156,6 @@ void Duck::PlaceDuck() {
     // place a duck at the mouse position
     auto [x, y] = mouse->GetPosition();
     std::unique_ptr<Duck> d = std::make_unique<Duck>();
-    d->spawnSnd1->play();
 
     d->duckRect = new SDL_Rect{x - 25, y - 25, 50, 50};
     playerDucks.push_back(std::move(d));
@@ -192,6 +181,7 @@ void Duck::Upgrade() {
 
     SDL_Color c{255, 255, 255, 255};
     std::string str = "<- " + std::to_string(upgradeCost) + " Coins!";
+    SDL_DestroyTexture(upgLabelTexture);
     auto s = TTF_RenderText_Blended(font, str.c_str(), c);
     upgLabelTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
     SDL_FreeSurface(s);
@@ -206,28 +196,31 @@ void Duck::Upgrade() {
 
         case 3:
             modelPath = "../resources/ArmoredDuckSheet.png";
+            modelPath = "../resources/ArmoredDuckSheet.png";
             srcRect = new SDL_Rect{304, 0, 304, 224};
             break;
 
         case 4:
+            modelPath = "../resources/BlackGooseling.png";
             modelPath = "../resources/BlackGooseling.png";
             srcRect = new SDL_Rect{0, 0, 304, 224};
             break;
 
         case 5:
             modelPath = "../resources/BlackHelmetGoose.png";
+            modelPath = "../resources/BlackHelmetGoose.png";
             srcRect = new SDL_Rect{0, 0, 304, 256};
             break;
 
         default:
             modelPath = "../resources/BlackArmoredGoose.png";
+            modelPath = "../resources/BlackArmoredGoose.png";
             srcRect = new SDL_Rect{0, 0, 304, 287};
             break;
     }
 
-    s = IMG_Load(modelPath.c_str());
-    duckTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-    SDL_FreeSurface(s);
+    baselvl = modelPath;
+    tm->GetTexture(baselvl);
 }
 
 void Duck::CheckButtons() {
@@ -241,9 +234,15 @@ BreadCrumbProjectile::BreadCrumbProjectile(Duck* _parent, GenericCat* _target, S
     x = breadRect.x;
     y = breadRect.y;
 
-    auto s = IMG_Load(imgPath.c_str());
-    breadTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
-    SDL_FreeSurface(s);
+    tm->GetTexture(imgPath);
+}
+
+void BreadCrumbProjectile::Move(Uint64 _deltaTicks) {
+    if (target != nullptr) return MoveToTarget(_deltaTicks);
+
+    // normal straight movement
+    x += spd * (_deltaTicks / 1000.0) * cos(directionAngle);
+    y += spd * (_deltaTicks / 1000.0) * sin(directionAngle);
 }
 
 void BreadCrumbProjectile::MoveToTarget(Uint64 _deltaTicks) {
@@ -281,5 +280,5 @@ void BreadCrumbProjectile::MoveToTarget(Uint64 _deltaTicks) {
 void BreadCrumbProjectile::Display() {
     if (hitTarget) return;
     SDL_Rect src{0, 0, 192, 140};
-    SDL_RenderCopy(window->GetRenderer(), breadTexture, &src, &breadRect);
+    SDL_RenderCopy(window->GetRenderer(), tm->GetTexture(imgPath), &src, &breadRect);
 }
