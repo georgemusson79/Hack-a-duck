@@ -19,7 +19,7 @@ To place ducks you need to first use your scroll wheel to select the type of duc
 To update the ducks you have placed you just need to click on them, and a menu will open on the right side of the game. In the menu you can click the upgrade option and your duck will evolve.
 
 # Technical Explanation
-To build the game we used CMake to make transfering between other machines and general library linking as easy as we could. The language that we decided on is C++ due to its machine cross-compatability, and because general knowledge of C++ was high within the group. To render the windows and images we used the SDL c++ library, making  
+To build the game we used CMake to make transfering between other machines and general library linking as easy as we could. The language that we decided on is C++ due to its machine cross-compatability, and because general knowledge of C++ was high within the group. To render the windows and images we used the SDL2 c++ library, making use of the ttf and image modules, whilst using the SDL2 mixer module to be able to play sound. 
 
 ## Difficulties
 Justinas - "I would say that the most difficult part of the project for me was getting it to actually build and run on my machine xD I must have switched between Linux and Windows 3 or 4 times before I got it to work the first time, and the worst thing is that it broke straight after I pulled again! We got there in the end though, which is what matters."
