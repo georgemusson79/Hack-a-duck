@@ -5,7 +5,7 @@
 #include "Player.h"
 
 void Player::Setup() {
-    lives = 1;
+    lives = 150;
     money = 350;
 
     livesRect = new SDL_Rect{25, 25, 150, 25};

@@ -26,7 +26,7 @@ class Duck {
     // image
     std::unique_ptr<Sound> spawnSnd1;
     std::unique_ptr<Sound> shootSnd1;
-    std::string baselvl = "resources/chicksheet.png";
+    std::string baselvl = "../resources/chicksheet.png";
     SDL_Texture* duckTexture;
     SDL_Rect* duckRect = new SDL_Rect{0, 0, 40, 40};
     SDL_Rect* srcRect = new SDL_Rect{304, 0, 304, 192};
@@ -50,8 +50,8 @@ class Duck {
     std::string displayName{"Basic Bread-Lobbing Duck"};
     int catCount{0};
 
-    TTF_Font* font = TTF_OpenFont("resources/TCFR.ttf", 100);
-    Button* upgButton = new Button("resources/chick.png",
+    TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
+    Button* upgButton = new Button("../resources/chick.png",
                                    {825, 75, 25, 25},
                                    [this] { Upgrade(); });
     SDL_Texture* labelTexture{};
@@ -111,7 +111,7 @@ inline void DisplayDuckMode() {
 class BreadCrumbProjectile {
    private:
     Texture* t;
-    std::string imgPath = "resources/bread.png";
+    std::string imgPath = "../resources/bread.png";
     SDL_Texture* breadTexture{};
     SDL_Rect breadRect{};
 

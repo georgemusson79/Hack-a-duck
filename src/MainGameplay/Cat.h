@@ -14,7 +14,7 @@ class GenericCat {
     SDL_Rect* src = nullptr;
 
     // texture
-    std::string imgPath{"resources/redcat1.png"};
+    std::string imgPath{"../resources/redcat1.png"};
     SDL_Texture* catTexture{};
 
     // inc with difficulty? change per type
@@ -60,7 +60,7 @@ class TankCat : public GenericCat {
         catRect->h = 60;
         src = new SDL_Rect{0, 0, 512, 512};
 
-        imgPath = "resources/lion.png";
+        imgPath = "../resources/lion.png";
         auto s = IMG_Load(imgPath.c_str());
         catTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
         SDL_FreeSurface(s);
@@ -75,7 +75,7 @@ class MiniCat : public GenericCat {
 
         src = new SDL_Rect{0, 0, 512, 512};
 
-        imgPath = "resources/Ratos.png";
+        imgPath = "../resources/Ratos.png";
         auto s = IMG_Load(imgPath.c_str());
         catTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
         SDL_FreeSurface(s);
