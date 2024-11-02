@@ -6,13 +6,12 @@
 #include <iostream>
 
 #include "MainGameplay/Duck.h"
+#include "MainGameplay/Path.h"
 #include "MainMenu/Menu.h"
 #include "UserInterface/MainWindow.h"
 #include "UserInterface/Mouse.h"
-#include "MainGameplay/Path.h"
 
 int main(int argc, char** argv) {
-
     /*
      * SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP SETUP
      */
@@ -27,6 +26,9 @@ int main(int argc, char** argv) {
     }
 
     Menu m;
+    Node* b = new Node({50, 50}, NULL, true);
+    Node* n = new Node({0, 0}, b, false);
+    b->generateTextures();
 
     // Path creation
     SetupPath();
@@ -81,6 +83,7 @@ int main(int argc, char** argv) {
          */
 
         m.Display();
+        n->render();
         if (!gameMenuFlop) {
             m.CheckButtons();
             gameMenuFlop = m.MenuClosed();
@@ -115,16 +118,17 @@ int main(int argc, char** argv) {
             cat->get()->Display();
             cat->get()->MoveToNode();
 
-            if (cat->get()->IsDead() || cat->get()->ReachedEnd()) cat = cats.erase(cat);
-            else cat++;
+            if (cat->get()->IsDead() || cat->get()->ReachedEnd())
+                cat = cats.erase(cat);
+            else
+                cat++;
         }
 
         /*
          * PLAYER UI PLAYER UI PLAYER UI PLAYER UI PLAYER UI PLAYER
          */
 
-        if (gameMenuFlop) player->Display();
-
+        player->Display();
         window->Display();
     }
 
