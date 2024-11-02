@@ -31,7 +31,7 @@ class Menu {
 
    public:
     Menu() {
-        TTF_Font* font = TTF_OpenFont("../../resources/TCFR.ttf", 100);
+        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
         this->bgMusic = std::make_unique<Sound>("../resources/titleMusic.wav", true, -1);
         int twidth = 800 / 1.5;
         int theight = 300;
@@ -54,6 +54,7 @@ class Menu {
                                  {805, 720, 75, 75}, [this] { roundStarted = true; }));
         buttons[1].MakeHidden(true);
 
+        SDL_DestroyTexture(roundLabel);
         std::string str{"Start Round " + std::to_string(roundNumber)};
         auto s = TTF_RenderText_Blended(font, str.c_str(), {255, 255, 255, 255});
         roundLabel = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
@@ -106,8 +107,9 @@ class Menu {
         roundReward = int((float)roundReward * 1.28);
 
         // update round label
+        SDL_DestroyTexture(roundLabel);
         std::string str{"Start Round " + std::to_string(roundNumber)};
-        TTF_Font* font = TTF_OpenFont("../../resources/TCFR.ttf", 100);
+        TTF_Font* font = TTF_OpenFont("../resources/TCFR.ttf", 100);
         auto s = TTF_RenderText_Blended(font, str.c_str(), {255, 255, 255, 255});
         roundLabel = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
         SDL_FreeSurface(s);
