@@ -24,7 +24,8 @@ Duck::Duck() {
     labelTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
     SDL_FreeSurface(s);
 
-    s = TTF_RenderText_Blended(font, "<- 150 coins!", c);
+    std::string str = "<- " + std::to_string(upgradeCost) + " coins!";
+    s = TTF_RenderText_Blended(font, str.c_str(), c);
     upgLabelTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
     SDL_FreeSurface(s);
 }
@@ -171,9 +172,9 @@ void Duck::SetDuckPosition(SDL_Rect _rect) {
 
 void Duck::Upgrade() {
     if (selectedDuck != this) return;
-    if (player->GetMoney() < baseCost) return;
+    if (player->GetMoney() < upgradeCost) return;
 
-    player->AddMoney(-baseCost);
+    player->AddMoney(-upgradeCost);
     upgradeCost += 70;
 
     // apply upgrades
