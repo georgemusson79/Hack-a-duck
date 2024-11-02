@@ -25,6 +25,7 @@ class Duck {
         std::string baselvl = "../resources/chick.png";
         SDL_Texture* duckTexture;
         SDL_Rect* duckRect = new SDL_Rect{0,0,40,40};
+        SDL_Rect* srcRect {nullptr};
         bool showRedError = false;
         int shoddyTimer = 0;
 
@@ -66,6 +67,8 @@ class Duck {
         static void PlaceDuck();
         void SetDuckPosition(SDL_Rect _rect);
         void Upgrade();
+
+        void CheckButtons();
 
         [[nodiscard]] int GetDamage() const { return dmg; };
         [[nodiscard]] int GetCost() const { return baseCost; };

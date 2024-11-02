@@ -5,6 +5,7 @@
 #include "Duck.h"
 #include "../UserInterface/Mouse.h"
 #include "../UserInterface/MainWindow.h"
+#include <SDL_ttf.h>
 
 Duck::Duck() {
     duckRect = new SDL_Rect{150,150,50,50};
@@ -41,7 +42,7 @@ void Duck::Display() {
         }
     }
 
-    SDL_RenderCopy(window->GetRenderer(), duckTexture, nullptr, duckRect);
+    SDL_RenderCopy(window->GetRenderer(), duckTexture, srcRect, duckRect);
 
     for (const auto& crumb : breadCrumbs) {
         crumb->Display();
@@ -100,6 +101,7 @@ void Duck::AttackTarget(Uint64 _deltaTicks) {
 
         for (auto& crumb : breadCrumbs) {
             if (crumb->target == nullptr) crumb->target = targets.back();
+            if (targets.size() >= lvl) break;
         }
     }
 }
@@ -175,6 +177,48 @@ void Duck::Upgrade() {
     attackTimer -= 50;
     lvl++;
 
+    SDL_Color c{255, 255, 255, 255};
+    std::string str =  "<- " + std::to_string(upgradeCost) + " Coins!";
+    auto s = TTF_RenderText_Blended(font, str.c_str(), c);
+    upgLabelTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+    SDL_FreeSurface(s);
+
+    // upgrade duck model
+    std::string modelPath;
+    switch(lvl) {
+        case 2:
+            modelPath = "../resources/helmetDuckSheet.png";
+            srcRect = new SDL_Rect{304, 0, 304, 224};
+            break;
+
+        case 3:
+            modelPath = "../resources/ArmoredDuckSheet.png";
+            srcRect = new SDL_Rect{304, 0, 304, 224};
+            break;
+
+        case 4:
+            modelPath = "../resources/BlackGooseling.png";
+            srcRect = new SDL_Rect{0, 0, 304, 224};
+            break;
+
+        case 5:
+            modelPath = "../resources/BlackHelmetGoose.png";
+            srcRect = new SDL_Rect{0, 0, 304, 256};
+            break;
+
+        case 6:
+            modelPath = "../resources/BlackArmoredGoose.png";
+            srcRect = new SDL_Rect{0, 0, 304, 287};
+            break;
+    }
+
+    s = IMG_Load(modelPath.c_str());
+    duckTexture = SDL_CreateTextureFromSurface(window->GetRenderer(), s);
+    SDL_FreeSurface(s);
+}
+
+void Duck::CheckButtons() {
+    upgButton->CheckClick();
 }
 
 

@@ -109,6 +109,7 @@ int main(int argc, char** argv) {
                 }
             }
 
+
             else Duck::PlaceDuck();
         }
 
@@ -121,6 +122,7 @@ int main(int argc, char** argv) {
             // attack target
             duck->AttackTarget(deltaTicks);
             duck->Update(deltaTicks);
+            duck->CheckButtons();
         }
 
         /*
