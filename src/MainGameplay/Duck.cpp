@@ -13,7 +13,7 @@
 Duck::Duck() {
     spawnSnd1 = std::make_unique<Sound>("resources/placeDuckSFX1.wav");
     shootSnd1 = std::make_unique<Sound>("resources/duckShoot1.wav");
-    shootSnd1->setVolume(64);
+    shootSnd1->setVolume(30);
     duckRect = new SDL_Rect{150, 150, 50, 50};
 
     auto s = IMG_Load(baselvl.c_str());
